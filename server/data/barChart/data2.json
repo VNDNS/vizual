@@ -1,0 +1,5 @@
+[
+  { "name": "Microsoft", "value": 1000, "logo": "microsoft" },
+  { "name": "Nintendo", "value": 2000, "logo": "nintendo" },
+  { "name": "Sony", "value": 3000, "logo": "sony" }
+]

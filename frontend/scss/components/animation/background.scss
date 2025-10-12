@@ -1,0 +1,13 @@
+.background {
+  
+  .point {
+
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+    &.selected {
+      fill: lime;
+    }
+  }
+}

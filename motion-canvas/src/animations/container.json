@@ -1,0 +1,79 @@
+{
+  "components": [
+    {
+      "type": "flowChart",
+      "configuration": {
+        "data": {
+          "nodes": [
+            {
+              "id": 1,
+              "name": "root",
+              "x": 0,
+              "y": 0,
+              "year": 0,
+              "suggestedChildren": [],
+              "children": [
+                912202
+              ],
+              "text": "",
+              "group": "A",
+              "type": "square"
+            },
+            {
+              "id": 912202,
+              "parent": 1,
+              "children": [],
+              "x": 1860,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Node 2",
+              "componentId": "wezg5c2ozieqnl1gl1xa1i",
+              "type": "container"
+            }
+          ],
+          "edges": [
+            {
+              "id": "1-912202",
+              "x1": 160,
+              "y1": 0,
+              "x2": 1700,
+              "y2": 0,
+              "sourceId": 1,
+              "targetId": 912202,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": 0
+                },
+                {
+                  "x": 1700,
+                  "y": 0
+                }
+              ]
+            }
+          ],
+          "containerNodes": [],
+          "name": "flowChart"
+        },
+        "x": 0,
+        "y": 0,
+        "size": 240
+      },
+      "color": "hsl(0,   40%, 45%)",
+      "id": "wezg5c2ozieqnl1gl1xa1i",
+      "name": "flowChart0"
+    }
+  ],
+  "animation": [],
+  "tracks": 1,
+  "panel": [],
+  "audio": []
+}

@@ -1,0 +1,183 @@
+@use '../../variables' as *;
+
+.arrangement {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+  }
+
+  .container {
+    flex: 1;
+  }
+
+  .screen {
+    flex: 1;
+    height: 100vh;
+    background-color: $background-color-2;
+    //position: relative;
+
+    .grid {
+      position: absolute;
+      top: -500000px;
+      left: -500000px;
+      pointer-events: none;
+      z-index: 0;
+      width: 1000000px;
+      height: 1000000px;
+      --grid-line-color: rgba(0, 0, 0, 0.303);
+      --grid-spacing: 60px;
+      --grid-line-thickness: calc(1px / var(--grid-zoom, 1));
+      --grid-highlight-line-color: rgba(255, 255, 255, 0);
+      --grid-highlight-line-thickness: calc(2px / var(--grid-zoom, 1));
+      --grid-highlight-interval: calc(var(--grid-spacing) * 7);
+      background-image:
+        linear-gradient(var(--grid-highlight-line-color) var(--grid-highlight-line-thickness), transparent var(--grid-highlight-line-thickness)),
+        linear-gradient(var(--grid-line-color) var(--grid-line-thickness), transparent var(--grid-line-thickness)),
+        linear-gradient(90deg, var(--grid-line-color) var(--grid-line-thickness), transparent var(--grid-line-thickness));
+      background-size: var(--grid-spacing) var(--grid-highlight-interval), var(--grid-spacing) var(--grid-spacing), var(--grid-spacing) var(--grid-spacing);
+      background-position: 20px 20px, 20px 20px, 20px 20px;
+    }
+
+    .grid-ticks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+    }
+
+    .grid-tick {
+      position: absolute;
+      left: 8px;
+      display: flex;
+      align-items: center;
+      transform: translateY(-100%);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 12px;
+      line-height: 1;
+      font-family: inherit;
+      gap: 6px;
+    }
+
+    .grid-tick-label {
+      font-size: 16px;
+    }
+
+    .paths {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 111;
+      height: 100%;
+      width: 100%;
+    }
+
+    .animation-nodes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 115;
+      height: 100%;
+      width: 100%;
+    }
+
+    .node {
+      border-radius: 50%;
+      border: 2px solid rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(0, 0, 0);
+      font-size: 16px;
+      cursor: grab;
+      position: absolute;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 120;
+
+      background-color: rgba(255, 141, 80);
+      border: 3px solid rgb(255, 255, 255);
+
+      .resize-handle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border: 1px solid black;
+        z-index: 10;
+      }
+
+      .resize-handle.left {
+        left: -4px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: ew-resize;
+      }
+
+      .resize-handle.right {
+        right: -4px;
+        top: 50%;
+        transform: translate(50%, -50%);
+        cursor: ew-resize;
+      }
+
+      .resize-handle.top {
+        top: -4px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: ns-resize;
+      }
+
+      .resize-handle.bottom {
+        bottom: -4px;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        cursor: ns-resize;
+      }
+    }
+
+    .node:active {
+      cursor: grabbing;
+    }
+  }
+
+  .rectangle-state {
+    display: flex;
+    gap: 10px;
+    height: 50px;
+    padding-left: 10px;
+    align-items: center;
+    .rectangle-state-item {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(159, 255, 255);
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(255, 141, 80);
+      }
+      &.active {
+        background-color: rgb(255, 141, 80);
+      }
+    }
+
+
+  }
+}

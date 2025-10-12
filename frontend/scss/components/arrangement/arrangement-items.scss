@@ -1,0 +1,12 @@
+.arrangement-item {
+  user-select: none;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.arrangement-item.selected {
+  outline: 5px solid #fff;
+  border-radius: 6px;
+}

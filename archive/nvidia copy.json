@@ -1,0 +1,158 @@
+[
+  [
+    {
+      "type": "video",
+      "title": "Consoles Market Share",
+      "data": "./videos/clip.mp4"
+    }
+  ],
+  [
+    {
+      "type": "pieChart",
+      "title": "Consoles Market Share",
+      "data": [
+        { "name": "Microsoft", "value": 19800, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+        { "name": "Sony", "value": 3920, "logo": "sony" }
+      ]
+    }
+  ],
+  [
+    {
+      "type": "linePlot",
+      "title": "RTX 4090 Sales",
+      "data": [{
+        "name": "data1",
+        "values": [
+        {"x": 1, "y": 2.3},
+        {"x": 2, "y": 4.1}, 
+        {"x": 3, "y": 2.8},
+        {"x": 4, "y": 6.2},
+        {"x": 5, "y": 3.9},
+        {"x": 6, "y": 7.1},
+        {"x": 7, "y": 5.4},
+        {"x": 8, "y": 8.7},
+        {"x": 9, "y": 6.8},
+        {"x": 10, "y": 9.2}
+      ]},
+      {
+        "name": "data2",
+        "values": [
+        {"x": 1, "y": 1.3},
+        {"x": 2, "y": 2.1}, 
+        {"x": 3, "y": 3.8},
+        {"x": 4, "y": 4.2},
+        {"x": 5, "y": 5.9},
+        {"x": 6, "y": 6.1},
+        {"x": 7, "y": 7.4},
+        {"x": 8, "y": 8.7},
+        {"x": 9, "y": 9.8},
+        {"x": 10, "y": 10.2}
+      ]}
+      ]
+    }
+  ],
+  [
+    {
+      "type": "image",
+      "title": "RTX 4090",
+      "data": "./images/4090.jpg"
+    }
+  ],
+  [
+    {
+      "type": "video",
+      "title": "Consoles Market Share",
+      "data": "./videos/clip.mp4"
+    }
+  ],
+  [
+    {
+      "type": "barChart",
+      "title": "Gaming Console Sales Q1",
+      "data": [
+        { "name": "Microsoft", "value": 15600, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2240, "logo": "nintendo" },
+        { "name": "Sony", "value": 3180, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "barChart",
+      "title": "Gaming Console Sales Q2",
+      "data": [
+        { "name": "Microsoft", "value": 16800, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2450, "logo": "nintendo" },
+        { "name": "Sony", "value": 3290, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "barChart",
+      "title": "Gaming Console Sales Q3",
+      "data": [
+        { "name": "Microsoft", "value": 17200, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2580, "logo": "nintendo" },
+        { "name": "Sony", "value": 3350, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "barChart",
+      "title": "Gaming Console Sales Q4",
+      "data": [
+        { "name": "Microsoft", "value": 17900, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2720, "logo": "nintendo" },
+        { "name": "Sony", "value": 3480, "logo": "sony" }
+      ]
+    }
+  ],
+  [
+    {
+      "type": "pieChart",
+      "title": "Consoles Market Share",
+      "data": [
+        { "name": "Microsoft", "value": 19200, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 3050, "logo": "nintendo" },
+        { "name": "Sony", "value": 3780, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "pieChart",
+      "title": "Consoles Market Share",
+      "data": [
+        { "name": "Microsoft", "value": 19800, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+        { "name": "Sony", "value": 3920, "logo": "sony" }
+      ]
+    }
+  ],
+  [
+    {
+      "type": "pieChart",
+      "title": "Regional Console Distribution",
+      "data": [
+        { "name": "Microsoft", "value": 15600, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2240, "logo": "nintendo" },
+        { "name": "Sony", "value": 3180, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "pieChart",
+      "title": "Console Performance Metrics",
+      "data": [
+        { "name": "Microsoft", "value": 15600, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2240, "logo": "nintendo" },
+        { "name": "Sony", "value": 3180, "logo": "sony" }
+      ]
+    },
+    {
+      "type": "pieChart",
+      "title": "Console Market Trends",
+      "data": [
+        { "name": "Microsoft", "value": 15600, "logo": "microsoft" },
+        { "name": "Nintendo", "value": 2240, "logo": "nintendo" },
+        { "name": "Sony", "value": 3180, "logo": "sony" }
+      ]
+    }
+  ]
+]
+
+

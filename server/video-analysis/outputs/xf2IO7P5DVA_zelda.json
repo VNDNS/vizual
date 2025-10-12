@@ -1,0 +1,213 @@
+{
+  "lastProcessedIndex": 25,
+  "results": [
+    {
+      "heartContainers": 0,
+      "rupees": 0,
+      "currentLocation": "Unknown",
+      "questProgress": "No visual information available. The screenshot is completely black, so UI elements and progression details cannot be determined.",
+      "snapshotIndex": 0,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0001.png"
+    },
+    {
+      "heartContainers": 3,
+      "rupees": 11,
+      "currentLocation": "Hyrule Castle Sanctuary",
+      "questProgress": "Receiving instructions to open the ornamental shelf and proceed further (need a light as it is dark inside).",
+      "snapshotIndex": 1,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0002.png"
+    },
+    {
+      "heartContainers": 3,
+      "rupees": 72,
+      "currentLocation": "Hyrule Castle Dungeon (Treasure Room)",
+      "questProgress": "Opening chests and collecting items in the castle dungeon as part of escaping with the princess.",
+      "snapshotIndex": 2,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0003.png"
+    },
+    {
+      "heartContainers": 4,
+      "rupees": 319,
+      "currentLocation": "Hyrule Castle Dungeon (Upper Floor)",
+      "questProgress": "Exploring deeper into the castle dungeon, avoiding traps and fighting enemies while searching for a way forward.",
+      "snapshotIndex": 3,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0004.png"
+    },
+    {
+      "heartContainers": 5,
+      "rupees": 558,
+      "currentLocation": "Outside Link's House (Overworld)",
+      "questProgress": "Escaped Hyrule Castle and now exploring the overworld, likely heading to the next story objective after rescuing Zelda.",
+      "snapshotIndex": 4,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0005.png"
+    },
+    {
+      "heartContainers": 6,
+      "rupees": 968,
+      "currentLocation": "Sanctuary",
+      "questProgress": "Escorted Princess Zelda through the castle and reached the Sanctuary for safety.",
+      "snapshotIndex": 5,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0006.png"
+    },
+    {
+      "heartContainers": 7,
+      "rupees": 499,
+      "currentLocation": "Zora's Domain (Waterfall Area)",
+      "questProgress": "Exploring Zora's Domain, likely to obtain the Zora Flippers needed to swim and access new areas.",
+      "snapshotIndex": 6,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0007.png"
+    },
+    {
+      "heartContainers": 8,
+      "rupees": 503,
+      "currentLocation": "Eastern Palace (Dungeon)",
+      "questProgress": "Currently exploring the Eastern Palace dungeon, progressing towards defeating the boss and obtaining the Pendant of Courage.",
+      "snapshotIndex": 7,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0008.png"
+    },
+    {
+      "heartContainers": 8,
+      "rupees": 211,
+      "currentLocation": "Outside Eastern Palace",
+      "questProgress": "Likely just completed the Eastern Palace dungeon and is exploring the outside area, potentially heading to the next objective or returning to deliver the Pendant of Courage.",
+      "snapshotIndex": 8,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0009.png"
+    },
+    {
+      "heartContainers": 8,
+      "rupees": 33,
+      "currentLocation": "Eastern Palace (Dungeon)",
+      "questProgress": "Continuing exploration of the Eastern Palace dungeon, likely progressing towards acquiring the Pendant of Courage.",
+      "snapshotIndex": 9,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0010.png"
+    },
+    {
+      "heartContainers": 8,
+      "rupees": 31,
+      "currentLocation": "Eastern Palace (Dungeon)",
+      "questProgress": "Active exploration of the Eastern Palace dungeon, likely progressing deeper through puzzles and preparing to face the boss for the Pendant of Courage.",
+      "snapshotIndex": 10,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0011.png"
+    },
+    {
+      "heartContainers": 10,
+      "rupees": 336,
+      "currentLocation": "Eastern Palace (Boss Room)",
+      "questProgress": "Currently fighting the boss of the Eastern Palace, Moldorm, to obtain the Pendant of Courage.",
+      "snapshotIndex": 11,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0012.png"
+    },
+    {
+      "heartContainers": 10,
+      "rupees": 971,
+      "currentLocation": "Eastern Palace courtyard (Overworld)",
+      "questProgress": "Having defeated the boss and obtained the Pendant of Courage, the player is now outside the Eastern Palace, likely progressing toward the next objective, such as visiting Sahasrahla or heading to the next pendant location.",
+      "snapshotIndex": 12,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0013.png"
+    },
+    {
+      "heartContainers": 10,
+      "rupees": 964,
+      "currentLocation": "Bridge east of the Eastern Palace (Overworld)",
+      "questProgress": "Having defeated the Eastern Palace boss and collected the Pendant of Courage, the player is currently navigating the overworld, likely heading toward the next objective such as Sahasrahla's hideout or the next pendant location.",
+      "snapshotIndex": 13,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0014.png"
+    },
+    {
+      "heartContainers": 10,
+      "rupees": 270,
+      "currentLocation": "Water dungeon interior (possibly the 'Eastern Palace' basement or Water Dungeon area)",
+      "questProgress": "Player has entered a water-themed dungeon or area, progressing through the dungeon, likely heading toward the next major objective or pendant.",
+      "snapshotIndex": 14,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0015.png"
+    },
+    {
+      "heartContainers": 0,
+      "rupees": 0,
+      "currentLocation": "Unknown (screen is black)",
+      "questProgress": "No gameplay visible; the screen is completely black, likely during a transition, loading, or cutscene. Cannot determine quest or location from this frame.",
+      "snapshotIndex": 15,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0016.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 459,
+      "currentLocation": "Dungeon interior (likely in the Tower of Hera or a similar Light World dungeon)",
+      "questProgress": "Navigating a dungeon room with spike traps and a floor switch, progressing toward the dungeon boss or a key item.",
+      "snapshotIndex": 16,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0017.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 472,
+      "currentLocation": "Dark World dungeon (at the crystal maiden rescue cutscene)",
+      "questProgress": "Player has just rescued a crystal maiden in a Dark World dungeon and is viewing the post-boss dialogue.",
+      "snapshotIndex": 17,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0018.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 432,
+      "currentLocation": "Ice Palace (Dark World dungeon)",
+      "questProgress": "Exploring the Ice Palace dungeon; currently inside a room with blue ice tiles, likely progressing towards the dungeon boss or key item.",
+      "snapshotIndex": 18,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0019.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 436,
+      "currentLocation": "Dark World dungeon (crystal maiden rescue cutscene)",
+      "questProgress": "Player has just defeated the dungeon boss and is rescuing a crystal maiden, triggering the post-boss dialogue cutscene.",
+      "snapshotIndex": 19,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0020.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 489,
+      "currentLocation": "Ice Palace (Dark World dungeon)",
+      "questProgress": "Exploring the Ice Palace dungeon, actively progressing through its rooms and puzzles.",
+      "snapshotIndex": 20,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0021.png"
+    },
+    {
+      "heartContainers": 12,
+      "rupees": 391,
+      "currentLocation": "Death Mountain (Dark World)",
+      "questProgress": "Player has exited the Ice Palace and is now exploring the overworld area of Death Mountain in the Dark World, likely en route to the next dungeon or objective.",
+      "snapshotIndex": 21,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0022.png"
+    },
+    {
+      "heartContainers": 15,
+      "rupees": 523,
+      "currentLocation": "Death Mountain (Dark World) - Heart Container ledge (Spectacle Rock)",
+      "questProgress": "Player has collected a Heart Container on top of Spectacle Rock, increasing maximum health. Preparing to continue exploration or head towards the next dungeon/objective.",
+      "snapshotIndex": 22,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0023.png"
+    },
+    {
+      "heartContainers": 15,
+      "rupees": 453,
+      "currentLocation": "Turtle Rock (Dark World dungeon) interior room",
+      "questProgress": "Player is exploring Turtle Rock, the next major Dark World dungeon, progressing through its rooms and puzzles.",
+      "snapshotIndex": 23,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0024.png"
+    },
+    {
+      "heartContainers": 15,
+      "rupees": 484,
+      "currentLocation": "Turtle Rock (Dark World dungeon) interior room",
+      "questProgress": "Player is actively exploring a room within Turtle Rock, continuing to progress through one of the final dungeons of the Dark World.",
+      "snapshotIndex": 24,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0025.png"
+    },
+    {
+      "heartContainers": 0,
+      "rupees": 0,
+      "currentLocation": "End Credits",
+      "questProgress": "The game has been completed and the ending credits are rolling. No active quest objectives remain.",
+      "snapshotIndex": 25,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0026.png"
+    }
+  ]
+}

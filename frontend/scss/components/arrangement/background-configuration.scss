@@ -1,0 +1,27 @@
+@use '../../variables' as *;
+
+.background-configuration {
+
+
+  .background-section-items {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: $background-color-2;
+    border-radius: 5px;
+    padding: 5px;
+    outline: 1px solid $border-color;
+  }
+
+  .background-section-item {
+    border-radius: 3px;
+    height: 30px;
+    width: 30px;
+    background-color: $background-color-3;
+    cursor: pointer;
+  }
+
+  .background-section-item-selected {
+    background-color: orange;
+  }
+}

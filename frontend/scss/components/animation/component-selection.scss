@@ -1,0 +1,45 @@
+@use '../../variables' as *;
+@use '../../mixins/hover-brighten' as *;
+
+.component-selection {
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  gap: 10px;
+
+
+  
+  &-dropdown {
+    flex: 1;
+    select {
+      width: 100%;
+      outline: 1px solid $border-color;
+      border-radius: 3px;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 3px;
+  }
+
+  &-item {
+    background-color: $background-color-1;
+    padding: 4px 6px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &-selected {
+      cursor: pointer;
+      @include hover-brighten();
+      filter: brightness(1.4);
+    }
+  }
+}
+

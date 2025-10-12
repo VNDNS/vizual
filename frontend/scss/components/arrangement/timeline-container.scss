@@ -1,0 +1,12 @@
+@use '../../variables' as *;
+
+.timelineContainer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 1550px;
+  padding: 10px;
+  background-color: $background-color-1;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+}

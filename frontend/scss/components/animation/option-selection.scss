@@ -1,0 +1,34 @@
+@use '../../variables' as *;
+@use '../../mixins/hover-brighten' as *;
+
+.option-selection-label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  opacity: 0.7;
+}
+
+.option-selection {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  outline: 1px solid $border-color;
+
+
+  &-item {
+    padding: 5px 10px;
+    background-color: $background-color-3;
+    text-align: center;
+    cursor: pointer;
+
+    &:not(.selected):hover {
+      @include hover-brighten();
+    }
+
+    &.selected {
+      background-color: orange;
+      color: black;
+    }
+  }
+}
+

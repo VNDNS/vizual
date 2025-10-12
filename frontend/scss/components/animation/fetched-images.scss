@@ -1,0 +1,33 @@
+@use '../../variables' as *;
+
+.fetched-images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .image-grid-cell {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .image-grid-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}

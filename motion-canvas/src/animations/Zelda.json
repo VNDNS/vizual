@@ -1,0 +1,407 @@
+{
+  "components": [
+    {
+      "type": "flowChart",
+      "configuration": {
+        "data": {
+          "nodes": [
+            {
+              "id": 389981,
+              "children": [
+                597467,
+                138639
+              ],
+              "x": 0,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Nintendo",
+              "componentId": "4oy926i7lwr5vojd0vvy7x"
+            },
+            {
+              "id": 597467,
+              "parent": 389981,
+              "children": [
+                238813
+              ],
+              "x": 1200,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "NES",
+              "componentId": "4oy926i7lwr5vojd0vvy7x"
+            },
+            {
+              "id": 138639,
+              "parent": 389981,
+              "children": [
+                597104
+              ],
+              "x": 1200,
+              "y": 300,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "N64",
+              "componentId": "4oy926i7lwr5vojd0vvy7x"
+            },
+            {
+              "id": 238813,
+              "parent": 597467,
+              "children": [],
+              "x": 2400,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "The Legend of Zelda",
+              "componentId": "4oy926i7lwr5vojd0vvy7x"
+            },
+            {
+              "id": 597104,
+              "parent": 138639,
+              "children": [],
+              "x": 2400,
+              "y": 300,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Ocarina of Time",
+              "componentId": "4oy926i7lwr5vojd0vvy7x"
+            }
+          ],
+          "edges": [
+            {
+              "id": "389981-597467",
+              "x1": 160,
+              "y1": -40,
+              "x2": 1040,
+              "y2": 0,
+              "sourceId": 389981,
+              "targetId": 597467,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": -40
+                },
+                {
+                  "x": 580,
+                  "y": -40
+                },
+                {
+                  "x": 600,
+                  "y": -20
+                },
+                {
+                  "x": 600,
+                  "y": -20
+                },
+                {
+                  "x": 620,
+                  "y": 0
+                },
+                {
+                  "x": 1040,
+                  "y": 0
+                }
+              ]
+            },
+            {
+              "id": "389981-138639",
+              "x1": 160,
+              "y1": 40,
+              "x2": 1040,
+              "y2": 300,
+              "sourceId": 389981,
+              "targetId": 138639,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": 40
+                },
+                {
+                  "x": 470,
+                  "y": 40
+                },
+                {
+                  "x": 600,
+                  "y": 170
+                },
+                {
+                  "x": 600,
+                  "y": 170
+                },
+                {
+                  "x": 730,
+                  "y": 300
+                },
+                {
+                  "x": 1040,
+                  "y": 300
+                }
+              ]
+            },
+            {
+              "id": "597467-238813",
+              "x1": 1360,
+              "y1": 0,
+              "x2": 2240,
+              "y2": 0,
+              "sourceId": 597467,
+              "targetId": 238813,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 0
+                },
+                {
+                  "x": 2240,
+                  "y": 0
+                }
+              ]
+            },
+            {
+              "id": "138639-597104",
+              "x1": 1360,
+              "y1": 300,
+              "x2": 2240,
+              "y2": 300,
+              "sourceId": 138639,
+              "targetId": 597104,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 300
+                },
+                {
+                  "x": 2240,
+                  "y": 300
+                }
+              ]
+            }
+          ],
+          "containerNodes": [],
+          "name": "flowChart"
+        },
+        "x": 0,
+        "y": 0,
+        "size": 240
+      },
+      "data": null,
+      "color": "hsl(0,   40%, 45%)",
+      "id": "4oy926i7lwr5vojd0vvy7x",
+      "name": "flowChart0"
+    }
+  ],
+  "animation": [
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 1.8166666666666667,
+      "start": 0,
+      "inputs": {
+        "nodes": [
+          "Nintendo"
+        ]
+      },
+      "track": 0,
+      "id": "c1fpyo8eyj70f685zkdnwpo"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 1.8166666666666667,
+      "inputs": {
+        "x": 1200,
+        "y": 300,
+        "zoom": 0.6956521739130435
+      },
+      "track": 0,
+      "id": "k28wp6voagjsa7ut9bhr98"
+    },
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 2.1166666666666667,
+      "start": 2.8166666666666664,
+      "inputs": {
+        "nodes": [
+          "NES",
+          "SNES"
+        ]
+      },
+      "track": 0,
+      "id": "2tdx9jpkmxd2mj6jkbtbtz"
+    },
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 2.4166666666666665,
+      "start": 4.933333333333334,
+      "inputs": {
+        "nodes": [
+          "The Legend of Zelda",
+          "Zelda II: The Adventure of Link",
+          "A Link to the Past"
+        ]
+      },
+      "track": 0,
+      "id": "kjza5yzzszk5vx8pfxo4mn"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 7.35,
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "1qcnhfqqtag9zrtyu1r9o9"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 19.2,
+      "inputs": {
+        "x": 1200,
+        "y": 0,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "tlujatsee6h3pvmlu1it3k"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 32.2,
+      "inputs": {
+        "x": 2400,
+        "y": 0,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "yrt6gg0o87r2wm1wrme4o"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 47.4,
+      "inputs": {
+        "x": 2400,
+        "y": 300,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "khjnkxajtyhpw93qxvplv9"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 61.8,
+      "inputs": {
+        "x": 1200,
+        "y": 300,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "witwlj3cf1ipvilda81f"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 1,
+      "start": 72.2,
+      "inputs": {
+        "x": 2400,
+        "y": 600,
+        "zoom": 3
+      },
+      "track": 0,
+      "id": "7idw3k3ihlo76mwrbedr5g"
+    },
+    {
+      "component": "camera",
+      "method": "to",
+      "duration": 8,
+      "start": 79.4,
+      "inputs": {
+        "x": 1200,
+        "y": 300,
+        "zoom": 0.6956521739130435
+      },
+      "track": 0,
+      "id": "r88al4f3u1s9qwilsxyyj"
+    }
+  ],
+  "tracks": 1,
+  "panel": [],
+  "audio": [
+    {
+      "name": "Nintendo.wav",
+      "duration": 11.65,
+      "start": 7.4,
+      "id": "ht3r7kowb5dzwko0cmiwl"
+    },
+    {
+      "name": "NES.wav",
+      "duration": 13.2,
+      "start": 19.2,
+      "id": "essoa7vhrkme5l5zvzux2g"
+    },
+    {
+      "name": "The Legend of Zelda.wav",
+      "duration": 15.1,
+      "start": 32.4,
+      "id": "ju43utyjde0cu7srbrhma"
+    },
+    {
+      "name": "Zelda II: The Adventure of Link.wav",
+      "duration": 14.3,
+      "start": 47.6,
+      "id": "wll8r1wm1jaweuxkw8dgb"
+    },
+    {
+      "name": "SNES.wav",
+      "duration": 9.95,
+      "start": 62,
+      "id": "7o1pjgksidpnosicjaufx"
+    },
+    {
+      "name": "A Link to the Past.wav",
+      "duration": 14.65,
+      "start": 72.2,
+      "id": "kvrfo1k2ftoltt6pvp1mfq"
+    }
+  ]
+}

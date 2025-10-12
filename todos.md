@@ -1,0 +1,8 @@
+1) [ ] Replace `any` types with proper TypeScript interfaces and types throughout the codebase. The codebase currently has 246 uses of `any` across 85 files, which reduces type safety and makes refactoring error-prone. Priority areas: AnimationContext (line 8 in context.tsx), ComponentUI.configuration and ComponentUI.data fields, node and edge objects in NodeConfiguration.tsx, and websocket handlers.
+
+2) [ ] Extract magic numbers and hardcoded values into centralized constants files. Currently scattered throughout: grid size (60), layout dimensions (300, 150, 60), colors ("lime", "coral", "green"), font sizes (40), port numbers (3009, 4000), animation durations, and ID generation logic (Math.floor(Math.random() * 1000000)). Create frontend/constants.ts for UI values and consolidate server/constants.ts.
+
+3) [ ] Refactor large components with multiple responsibilities into smaller, focused components. NodeConfiguration.tsx (181 lines) contains node CRUD operations, animation logic, and UI rendering. Node.tsx (167 lines) mixes drag-and-drop, selection, and rendering logic. Break these into separate hooks (useNodeDrag, useNodeSelection, useNodeAnimation) and smaller presentational components.
+
+4) [ ] Replace conditional logic chains with lookup maps for better maintainability. The server/endpoints/get-directory.ts file contains a long if-else chain (lines 12-33) for path resolution. Convert to a configuration map. Similarly, refactor endpoint registration in server/index.ts (19 manual imports and app.use calls) into an auto-loading system that discovers and registers endpoints from the endpoints directory.
+

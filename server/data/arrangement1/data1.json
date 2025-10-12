@@ -1,0 +1,162 @@
+[
+  { "name": "GeForce 256", "value": 17, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Oct 1999" },
+    { "key": "Price", "value": "$299" },
+    { "key": "Transistors", "value": "17M" },
+    { "key": "Memory", "value": "32 MB" },
+    { "key": "GPU Clock", "value": "120MHz" },
+    { "key": "Process Size", "value": "220nm" }
+  ]},
+  { "name": "GeForce2 Ultra", "value": 25, "image": "geForce RTX 4090", "tableData": [
+    { "key": "Release", "value": "Aug 2000" },
+    { "key": "Price", "value": "$499" },
+    { "key": "Transistors", "value": "25M" },
+    { "key": "Memory", "value": "64 MB" },
+    { "key": "GPU Clock", "value": "250MHz" },
+    { "key": "Process Size", "value": "180nm" }
+  ]},
+  { "name": "GeForce3 Ti 500", "value": 57, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Oct 2001" },
+    { "key": "Price", "value": "$349" },
+    { "key": "Transistors", "value": "57M" },
+    { "key": "Memory", "value": "64 MB" },
+    { "key": "GPU Clock", "value": "240MHz" },
+    { "key": "Process Size", "value": "150nm" }
+  ]},
+  { "name": "GeForce4 Ti 4600", "value": 63, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Feb 2002" },
+    { "key": "Price", "value": "$399" },
+    { "key": "Transistors", "value": "63M" },
+    { "key": "Memory", "value": "128 MB" },
+    { "key": "GPU Clock", "value": "300MHz" },
+    { "key": "Process Size", "value": "150nm" }
+  ]},
+  { "name": "GeForce FX 5950 Ultra", "value": 135, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Oct 2003" },
+    { "key": "Price", "value": "$499" },
+    { "key": "Transistors", "value": "135M" },
+    { "key": "Memory", "value": "256 MB" },
+    { "key": "GPU Clock", "value": "475MHz" },
+    { "key": "Process Size", "value": "130nm" }
+  ]},
+  { "name": "GeForce 6800 Ultra", "value": 222, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "May 2004" },
+    { "key": "Price", "value": "$499" },
+    { "key": "Transistors", "value": "222M" },
+    { "key": "Memory", "value": "256 MB" },
+    { "key": "GPU Clock", "value": "400MHz" },
+    { "key": "Process Size", "value": "130nm" }
+  ]},
+  { "name": "GeForce 7950 GX2", "value": 556, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Jun 2006" },
+    { "key": "Price", "value": "$599" },
+    { "key": "Transistors", "value": "556M" },
+    { "key": "Memory", "value": "2 × 512 MB" },
+    { "key": "GPU Clock", "value": "500MHz" },
+    { "key": "Process Size", "value": "90nm" }
+  ]},
+  { "name": "GeForce 8800 Ultra", "value": 681, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "May 2007" },
+    { "key": "Price", "value": "$829" },
+    { "key": "Transistors", "value": "681M" },
+    { "key": "Memory", "value": "768 MB" },
+    { "key": "GPU Clock", "value": "612MHz" },
+    { "key": "Process Size", "value": "90nm" }
+  ]},
+  { "name": "GeForce 9800 GX2", "value": 1508, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Mar 2008" },
+    { "key": "Price", "value": "$599" },
+    { "key": "Transistors", "value": "1508M" },
+    { "key": "Memory", "value": "2 × 512 MB" },
+    { "key": "GPU Clock", "value": "600MHz" },
+    { "key": "Process Size", "value": "65nm" }
+  ]},
+  { "name": "GeFroce GTX 285", "value": 1400, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Jan 2009" },
+    { "key": "Price", "value": "$399" },
+    { "key": "Transistors", "value": "1400M" },
+    { "key": "Memory", "value": "1 GB" },
+    { "key": "GPU Clock", "value": "648MHz" },
+    { "key": "Process Size", "value": "55nm" }
+  ]},
+  { "name": "GeForce GTX 480", "value": 3000, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Mar 2010" },
+    { "key": "Price", "value": "$499" },
+    { "key": "Transistors", "value": "3000M" },
+    { "key": "Memory", "value": "1.5 GB" },
+    { "key": "GPU Clock", "value": "700MHz" },
+    { "key": "Process Size", "value": "40nm" }
+  ]},
+  { "name": "GeForce GTX 590", "value": 6000, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Mar 2011" },
+    { "key": "Price", "value": "$699" },
+    { "key": "Transistors", "value": "6000M" },
+    { "key": "Memory", "value": "2 × 1.5 GB" },
+    { "key": "GPU Clock", "value": "607MHz" },
+    { "key": "Process Size", "value": "40nm" }
+  ]},
+  { "name": "GeForce GTX 680", "value": 3540, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Mar 2012" },
+    { "key": "Price", "value": "$499" },
+    { "key": "Transistors", "value": "3540M" },
+    { "key": "Memory", "value": "2 GB" },
+    { "key": "GPU Clock", "value": "1006MHz" },
+    { "key": "Process Size", "value": "28nm" }
+  ]},
+  { "name": "GeForce GTX 780 Ti", "value": 7080, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Nov 2013" },
+    { "key": "Price", "value": "$699" },
+    { "key": "Transistors", "value": "7080M" },
+    { "key": "Memory", "value": "3 GB" },
+    { "key": "GPU Clock", "value": "875MHz" },
+    { "key": "Process Size", "value": "28nm" }
+  ]},
+  { "name": "GeForce GTX 980 Ti", "value": 8000, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Jun 2015" },
+    { "key": "Price", "value": "$649" },
+    { "key": "Transistors", "value": "8000M" },
+    { "key": "Memory", "value": "6 GB" },
+    { "key": "GPU Clock", "value": "1000MHz" },
+    { "key": "Process Size", "value": "28nm" }
+  ]},
+  { "name": "GeForce GTX 1080 Ti", "value": 12000, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Mar 2017" },
+    { "key": "Price", "value": "$699" },
+    { "key": "Transistors", "value": "12000M" },
+    { "key": "Memory", "value": "11 GB" },
+    { "key": "GPU Clock", "value": "1480MHz" },
+    { "key": "Process Size", "value": "16nm" }
+  ]},
+  { "name": "GeForce RTX 2080 Ti", "value": 18600, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Sep 2018" },
+    { "key": "Price", "value": "$999" },
+    { "key": "Transistors", "value": "18600M" },
+    { "key": "Memory", "value": "11 GB" },
+    { "key": "GPU Clock", "value": "1350MHz" },
+    { "key": "Process Size", "value": "12nm" }
+  ]},
+  { "name": "GeForce RTX 3090", "value": 28300, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Sep 2020" },
+    { "key": "Price", "value": "$1,499" },
+    { "key": "Transistors", "value": "28300M" },
+    { "key": "Memory", "value": "24 GB" },
+    { "key": "GPU Clock", "value": "1395MHz" },
+    { "key": "Process Size", "value": "8nm" }
+  ]},
+  { "name": "GeForce RTX 4090", "value": 76300, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "Oct 2022" },
+    { "key": "Price", "value": "$1,599" },
+    { "key": "Transistors", "value": "76300M" },
+    { "key": "Memory", "value": "24 GB" },
+    { "key": "GPU Clock", "value": "2235MHz" },
+    { "key": "Process Size", "value": "4nm" }
+  ]},
+  { "name": "GeForce RTX 5090", "value": 108000, "image": "geForce1", "tableData": [
+    { "key": "Release", "value": "2025" },
+    { "key": "Price", "value": "$1,999" },
+    { "key": "Transistors", "value": "108000M" },
+    { "key": "Memory", "value": "32 GB" },
+    { "key": "GPU Clock", "value": "2600MHz" },
+    { "key": "Process Size", "value": "3nm" }
+  ]}
+]

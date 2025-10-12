@@ -1,0 +1,29 @@
+.camera {
+  .camera-handle {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .zoom-handle {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .selection-handle {
+    cursor: pointer;
+  }
+
+  &.selected {
+    .camera-boundary {
+      stroke-width: 4;
+    }
+
+
+  }
+}

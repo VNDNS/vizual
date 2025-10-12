@@ -1,0 +1,40 @@
+@use '../../variables' as *;
+@use '../../mixins/hover-brighten' as *;
+
+.file-view {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  max-height: 300px;
+  overflow-y: auto;
+  height: 30px;
+
+  &-item {
+    @include hover-brighten();
+    background-color: $background-color-1;
+    cursor: pointer;
+    padding: 4px 6px;
+
+    &-selected {
+      filter: brightness(1.4);
+    }
+  }
+
+  &-export {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    &-input {
+      flex: 1;
+    }
+  }
+
+  &-select {
+    background-color: $background-color-1;
+    border: none;
+    width: 97%;
+
+  }
+}

@@ -1,0 +1,556 @@
+{
+  "components": [
+    {
+      "type": "flowChart",
+      "configuration": {
+        "data": {
+          "nodes": [
+            {
+              "id": 634662,
+              "children": [
+                572560,
+                657050,
+                944749,
+                427249,
+                338557
+              ],
+              "x": 0,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Nintendo",
+              "componentId": "n3mnb5qzes2xsu8r5cqb3",
+              "type": "square"
+            },
+            {
+              "id": 572560,
+              "parent": 634662,
+              "children": [
+                93370,
+                123456
+              ],
+              "x": 1200,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Super Mario",
+              "componentId": "n3mnb5qzes2xsu8r5cqb3",
+              "type": "square"
+            },
+            {
+              "id": 657050,
+              "parent": 634662,
+              "children": [],
+              "x": 1200,
+              "y": 300,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "The Legend of Zelda",
+              "componentId": "n3mnb5qzes2xsu8r5cqb3",
+              "type": "square"
+            },
+            {
+              "id": 944749,
+              "parent": 634662,
+              "children": [
+                884008,
+                29966,
+                267289,
+                330466
+              ],
+              "x": 1200,
+              "y": 600,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Pokemon"
+            },
+            {
+              "id": 93370,
+              "parent": 572560,
+              "children": [],
+              "x": 2400,
+              "y": 0,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Mario Kart"
+            },
+            {
+              "id": 427249,
+              "parent": 634662,
+              "children": [],
+              "x": 1200,
+              "y": 900,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Donkey Kong"
+            },
+            {
+              "id": 338557,
+              "parent": 634662,
+              "children": [],
+              "x": 1200,
+              "y": 1200,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Metroid"
+            },
+            {
+              "id": 884008,
+              "parent": 944749,
+              "children": [],
+              "x": 2400,
+              "y": 300,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Pikachu"
+            },
+            {
+              "id": 29966,
+              "parent": 944749,
+              "children": [],
+              "x": 2400,
+              "y": 600,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Charizard"
+            },
+            {
+              "id": 267289,
+              "parent": 944749,
+              "children": [],
+              "x": 2400,
+              "y": 900,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Pokemon Red"
+            },
+            {
+              "id": 330466,
+              "parent": 944749,
+              "children": [],
+              "x": 2400,
+              "y": 1200,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "name": "Pokemon GO"
+            }
+          ],
+          "edges": [
+            {
+              "id": "634662-572560",
+              "x1": 160,
+              "y1": -80,
+              "x2": 1040,
+              "y2": 0,
+              "sourceId": 634662,
+              "targetId": 572560,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": -80
+                },
+                {
+                  "x": 560,
+                  "y": -80
+                },
+                {
+                  "x": 600,
+                  "y": -40
+                },
+                {
+                  "x": 600,
+                  "y": -40
+                },
+                {
+                  "x": 640,
+                  "y": 0
+                },
+                {
+                  "x": 1040,
+                  "y": 0
+                }
+              ]
+            },
+            {
+              "id": "634662-657050",
+              "x1": 160,
+              "y1": -40,
+              "x2": 1040,
+              "y2": 300,
+              "sourceId": 634662,
+              "targetId": 657050,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": -40
+                },
+                {
+                  "x": 430,
+                  "y": -40
+                },
+                {
+                  "x": 600,
+                  "y": 130
+                },
+                {
+                  "x": 600,
+                  "y": 130
+                },
+                {
+                  "x": 770,
+                  "y": 300
+                },
+                {
+                  "x": 1040,
+                  "y": 300
+                }
+              ]
+            },
+            {
+              "id": "634662-944749",
+              "x1": 160,
+              "y1": 0,
+              "x2": 1040,
+              "y2": 600,
+              "sourceId": 634662,
+              "targetId": 944749,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": 0
+                },
+                {
+                  "x": 380,
+                  "y": 0
+                },
+                {
+                  "x": 600,
+                  "y": 220
+                },
+                {
+                  "x": 600,
+                  "y": 380
+                },
+                {
+                  "x": 820,
+                  "y": 600
+                },
+                {
+                  "x": 1040,
+                  "y": 600
+                }
+              ]
+            },
+            {
+              "id": "634662-427249",
+              "x1": 160,
+              "y1": 40,
+              "x2": 1040,
+              "y2": 900,
+              "sourceId": 634662,
+              "targetId": 427249,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": 40
+                },
+                {
+                  "x": 380,
+                  "y": 40
+                },
+                {
+                  "x": 600,
+                  "y": 260
+                },
+                {
+                  "x": 600,
+                  "y": 680
+                },
+                {
+                  "x": 820,
+                  "y": 900
+                },
+                {
+                  "x": 1040,
+                  "y": 900
+                }
+              ]
+            },
+            {
+              "id": "634662-338557",
+              "x1": 160,
+              "y1": 80,
+              "x2": 1040,
+              "y2": 1200,
+              "sourceId": 634662,
+              "targetId": 338557,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 160,
+                  "y": 80
+                },
+                {
+                  "x": 380,
+                  "y": 80
+                },
+                {
+                  "x": 600,
+                  "y": 300
+                },
+                {
+                  "x": 600,
+                  "y": 980
+                },
+                {
+                  "x": 820,
+                  "y": 1200
+                },
+                {
+                  "x": 1040,
+                  "y": 1200
+                }
+              ]
+            },
+            {
+              "id": "572560-93370",
+              "x1": 1360,
+              "y1": 0,
+              "x2": 2240,
+              "y2": 0,
+              "sourceId": 572560,
+              "targetId": 93370,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 0
+                },
+                {
+                  "x": 2240,
+                  "y": 0
+                }
+              ]
+            },
+            {
+              "id": "944749-884008",
+              "x1": 1360,
+              "y1": 528,
+              "x2": 2240,
+              "y2": 300,
+              "sourceId": 944749,
+              "targetId": 884008,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 528
+                },
+                {
+                  "x": 1686,
+                  "y": 528
+                },
+                {
+                  "x": 1800,
+                  "y": 414
+                },
+                {
+                  "x": 1800,
+                  "y": 414
+                },
+                {
+                  "x": 1914,
+                  "y": 300
+                },
+                {
+                  "x": 2240,
+                  "y": 300
+                }
+              ]
+            },
+            {
+              "id": "944749-29966",
+              "x1": 1360,
+              "y1": 576,
+              "x2": 2240,
+              "y2": 600,
+              "sourceId": 944749,
+              "targetId": 29966,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 576
+                },
+                {
+                  "x": 1788,
+                  "y": 576
+                },
+                {
+                  "x": 1800,
+                  "y": 588
+                },
+                {
+                  "x": 1800,
+                  "y": 588
+                },
+                {
+                  "x": 1812,
+                  "y": 600
+                },
+                {
+                  "x": 2240,
+                  "y": 600
+                }
+              ]
+            },
+            {
+              "id": "944749-267289",
+              "x1": 1360,
+              "y1": 624,
+              "x2": 2240,
+              "y2": 900,
+              "sourceId": 944749,
+              "targetId": 267289,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 624
+                },
+                {
+                  "x": 1662,
+                  "y": 624
+                },
+                {
+                  "x": 1800,
+                  "y": 762
+                },
+                {
+                  "x": 1800,
+                  "y": 762
+                },
+                {
+                  "x": 1938,
+                  "y": 900
+                },
+                {
+                  "x": 2240,
+                  "y": 900
+                }
+              ]
+            },
+            {
+              "id": "944749-330466",
+              "x1": 1360,
+              "y1": 672,
+              "x2": 2240,
+              "y2": 1200,
+              "sourceId": 944749,
+              "targetId": 330466,
+              "endSide": "left",
+              "startSide": "right",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 1360,
+                  "y": 672
+                },
+                {
+                  "x": 1580,
+                  "y": 672
+                },
+                {
+                  "x": 1800,
+                  "y": 892
+                },
+                {
+                  "x": 1800,
+                  "y": 980
+                },
+                {
+                  "x": 2020,
+                  "y": 1200
+                },
+                {
+                  "x": 2240,
+                  "y": 1200
+                }
+              ]
+            }
+          ],
+          "containerNodes": [],
+          "name": "flowChart"
+        },
+        "x": 0,
+        "y": 0,
+        "size": 240
+      },
+      "data": null,
+      "color": "hsl(0,   40%, 45%)",
+      "id": "n3mnb5qzes2xsu8r5cqb3",
+      "name": "flowChart0"
+    }
+  ],
+  "animation": [],
+  "tracks": 1,
+  "panel": [],
+  "audio": []
+}

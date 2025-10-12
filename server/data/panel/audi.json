@@ -1,0 +1,225 @@
+[
+  {
+    "type": "pieChart",
+    "title": "Consoles Market Share",
+    "data": [
+      { "name": "Microsoft", "value": 19800, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+      { "name": "Sony", "value": 3920, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "barChart",
+    "title": "Gaming Console Sales Q1",
+    "data": [
+      { "name": "Microsoft", "value": 150, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 324, "logo": "nintendo" },
+      { "name": "Nintendo", "value": 624, "logo": "nintendo" },
+      { "name": "Nintendo", "value": 424, "logo": "nintendo" },
+      { "name": "Nintendo", "value": 224, "logo": "nintendo" },
+      { "name": "Sony", "value": 318, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "linePlot",
+    "title": "RTX 4090 Sales",
+    "xLabel": "Time",
+    "yLabel": "Sales",
+    "data": [{
+      "name": "data1",
+      "values": [
+      {"x": 1, "y": 2.3},
+      {"x": 2, "y": 4.1}, 
+      {"x": 3, "y": 2.8},
+      {"x": 4, "y": 6.2},
+      {"x": 5, "y": 3.9},
+      {"x": 6, "y": 7.1},
+      {"x": 7, "y": 5.4},
+      {"x": 8, "y": 8.7},
+      {"x": 9, "y": 6.8},
+      {"x": 10, "y": 9.2}
+    ]},
+    {
+      "name": "data2",
+      "values": [
+      {"x": 1, "y": 3.3},
+      {"x": 2, "y": 5.1}, 
+      {"x": 3, "y": 1.8},
+      {"x": 4, "y": 9.2},
+      {"x": 5, "y": 3.9},
+      {"x": 6, "y": 3.1},
+      {"x": 7, "y": 1.4},
+      {"x": 8, "y": 6.7},
+      {"x": 9, "y": 2.8},
+      {"x": 10, "y": 7.2}
+    ]}
+  ]
+  },
+  {
+    "type": "keyValueTable",
+    "data": [
+      { "key": "Microsoft", "value": "19800" },
+      { "key": "Nintendo", "value": "3120" },
+      { "key": "Sony", "value": "3920" },
+      { "key": "Samsung", "value": "1120" },
+      { "key": "LG", "value": "1120" },
+      { "key": "Other", "value": "1120" },
+      { "key": "Other", "value": "1120" },
+      { "key": "Total", "value": "26920" }
+    ]
+  },
+  {
+    "type": "image",
+    "title": "RTX 4090",
+    "data": "./images/4090.jpg"
+  },
+  {
+    "type": "text",
+    "data": "RTX 4090 is the best GPU in the world. It is a powerful GPU that can run at 240Hz. It is the best GPU in the world. It really is.",
+    "textType": "citation",
+    "author": "John Doe",
+    "date": "1949"
+  },
+  {
+    "type": "text",
+    "data": "RTX 4090 is the best GPU in the world. It is a powerful GPU that can run at 240Hz. It is the best GPU in the world. It really is.",
+    "textType": "normal"
+  },
+  {
+    "type": "text",
+    "data": "RTX 4090 is the best GPU in the world. It is a powerful GPU that can run at 240Hz. It is the best GPU in the world. It really is.",
+    "subject": "NVIDIA RTX 4090",
+    "textType": "definition"
+  },
+
+  {
+    "type": "image",
+    "title": "RTX 4090",
+    "data": "./images/image5.png"
+  },
+
+  {
+    "type": "pieChart",
+    "title": "Consoles Market Share",
+    "data": [
+      { "name": "Microsoft", "value": 19800, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+      { "name": "Sony", "value": 3920, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "linePlot",
+    "title": "RTX 4090 Sales",
+    "data": [{
+      "name": "data1",
+      "values": [
+      {"x": 1, "y": 2.3},
+      {"x": 2, "y": 4.1}, 
+      {"x": 3, "y": 2.8},
+      {"x": 4, "y": 6.2},
+      {"x": 5, "y": 3.9},
+      {"x": 6, "y": 7.1},
+      {"x": 7, "y": 5.4},
+      {"x": 8, "y": 8.7},
+      {"x": 9, "y": 6.8},
+      {"x": 10, "y": 9.2}
+    ]},
+    {
+      "name": "data2",
+      "values": [
+      {"x": 1, "y": 1.3},
+      {"x": 2, "y": 2.1}, 
+      {"x": 3, "y": 3.8},
+      {"x": 4, "y": 4.2},
+      {"x": 5, "y": 5.9},
+      {"x": 6, "y": 6.1},
+      {"x": 7, "y": 7.4},
+      {"x": 8, "y": 8.7},
+      {"x": 9, "y": 9.8},
+      {"x": 10, "y": 10.2}
+    ]}
+    ]
+  },
+  {
+    "type": "pieChart",
+    "title": "Consoles Market Share",
+    "data": [
+      { "name": "Microsoft", "value": 2800, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+      { "name": "Sony", "value": 3920, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "pieChart",
+    "title": "Consoles Market Share",
+    "data": [
+      { "name": "Microsoft", "value": 2800, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+      { "name": "Sony", "value": 3920, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "video",
+    "title": "Consoles Market Share",
+    "data": "./videos/clip.mp4"
+  },
+  {
+    "type": "pieChart",
+    "title": "Consoles Market Share",
+    "data": [
+      { "name": "Microsoft", "value": 2800, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 3120, "logo": "nintendo" },
+      { "name": "Sony", "value": 3920, "logo": "sony" }
+    ]
+  },
+  {
+    "type": "image",
+    "title": "RTX 4090",
+    "data": "./images/4090.jpg"
+  },
+  {
+    "type": "linePlot",
+    "title": "RTX 4090 Sales",
+    "data": [{
+      "name": "data1",
+      "values": [
+      {"x": 1, "y": 2.3},
+      {"x": 2, "y": 4.1}, 
+      {"x": 3, "y": 2.8},
+      {"x": 4, "y": 6.2},
+      {"x": 5, "y": 3.9},
+      {"x": 6, "y": 7.1},
+      {"x": 7, "y": 5.4},
+      {"x": 8, "y": 8.7},
+      {"x": 9, "y": 6.8},
+      {"x": 10, "y": 9.2}
+    ]},
+    {
+      "name": "data2",
+      "values": [
+      {"x": 1, "y": 1.3},
+      {"x": 2, "y": 2.1}, 
+      {"x": 3, "y": 3.8},
+      {"x": 4, "y": 4.2},
+      {"x": 5, "y": 5.9},
+      {"x": 6, "y": 6.1},
+      {"x": 7, "y": 7.4},
+      {"x": 8, "y": 8.7},
+      {"x": 9, "y": 9.8},
+      {"x": 10, "y": 10.2}
+    ]}
+    ]
+  },
+  {
+    "type": "barChart",
+    "title": "Gaming Console Sales Q1",
+    "data": [
+      { "name": "Microsoft", "value": 15600, "logo": "microsoft" },
+      { "name": "Nintendo", "value": 2240, "logo": "nintendo" },
+      { "name": "Sony", "value": 3180, "logo": "sony" }
+    ]
+  }
+]
+
+
+

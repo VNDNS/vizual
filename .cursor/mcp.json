@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "vizual-mcp": {
+      "command": "npx",
+      "args": ["-y", "tsx", "/home/viktor/code/vizual/mcp/index.ts"]
+    }
+  }
+}
+
+

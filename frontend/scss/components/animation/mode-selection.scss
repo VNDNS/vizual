@@ -1,0 +1,28 @@
+@use '../../variables' as *;
+@use '../../mixins/hover-brighten' as *;
+
+.mode-selection {
+  display: flex;
+  gap: 5px;
+
+
+  &-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: $background-color-3;
+
+    cursor: pointer;
+
+    // brighten it not selected on hover
+
+    &:not(.selected):hover {
+      @include hover-brighten();
+    }
+
+    &.selected {
+      background-color: orange;
+      color: black;
+    }
+  }
+}

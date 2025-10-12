@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Nintendo, the legendary Japanese gaming company, revolutionized the video game industry and created some of the most beloved franchises in gaming history, including The Legend of Zelda series.",
+    "node": "Nintendo",
+    "audio": "./server/audio/Nintendo.wav"
+  },
+  {
+    "text": "The Nintendo Entertainment System, or NES, launched in 1983 in Japan and 1985 in North America, bringing gaming back from the brink after the 1983 crash and introducing the world to iconic franchises.",
+    "node": "NES",
+    "audio": "./server/audio/NES.wav"
+  },
+  {
+    "text": "The Super Nintendo Entertainment System arrived in 1990, pushing gaming forward with 16-bit graphics and sound, delivering more sophisticated and visually stunning adventures.",
+    "node": "SNES",
+    "audio": "./server/audio/SNES.wav"
+  },
+  {
+    "text": "Released in 1986, the original Legend of Zelda pioneered open-world exploration and non-linear gameplay, setting Link on his first quest to rescue Princess Zelda and defeat Ganon across the vast land of Hyrule.",
+    "node": "The Legend of Zelda",
+    "audio": "./server/audio/The Legend of Zelda.wav"
+  },
+  {
+    "text": "Zelda II, released in 1987, took a bold departure with side-scrolling action and RPG elements, following an older Link as he seeks to awaken the sleeping Princess Zelda by placing crystals in six palaces across Hyrule.",
+    "node": "Zelda II: The Adventure of Link",
+    "audio": "./server/audio/Zelda II: The Adventure of Link.wav"
+  },
+  {
+    "text": "A Link to the Past launched in 1991 and is considered one of the greatest games ever made, introducing the concept of parallel Light and Dark Worlds and perfecting the top-down Zelda formula with rich storytelling and innovative dungeon design.",
+    "node": "A Link to the Past",
+    "audio": "./server/audio/A Link to the Past.wav"
+  }
+]

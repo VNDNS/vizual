@@ -1,0 +1,19 @@
+@use '../../variables' as *;
+
+.image-items {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: $background-color-0;
+  outline: 1px solid $border-color;
+  gap: 5px;
+  border-radius: 5px;
+
+  .image-item.selected {
+    background-color: $background-color-4;
+  }
+
+  .image-item.generated {
+    background-color: rgba(77, 255, 0, 0.31);
+  }
+}

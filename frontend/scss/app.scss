@@ -1,0 +1,12 @@
+@use 'variables' as *;
+@use 'mixins/hover-brighten' as *;
+
+.app {
+  display: flex;
+  height: 100vh;
+  gap: $gap-2;
+
+  .content {
+    flex: 1;
+  }
+}

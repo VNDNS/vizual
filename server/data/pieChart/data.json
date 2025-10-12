@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Microsoft",
+    "value": 25,
+    "logo": "microsoft"
+  },
+  {
+    "name": "Nintendo",
+    "value": 40,
+    "logo": "nintendo"
+  },
+  {
+    "name": "Sony",
+    "value": 30,
+    "logo": "sony"
+  }
+]

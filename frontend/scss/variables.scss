@@ -1,0 +1,22 @@
+// colors
+$hue: 240;
+$saturation: 20%; 
+$lightness: 10%;
+
+$background-color-0: hsl($hue, $saturation, $lightness);
+$background-color-1: hsl($hue, $saturation, $lightness + 4%);
+$background-color-2: hsl($hue, $saturation, $lightness + 10%);
+$background-color-3: hsl($hue, $saturation, $lightness + 20%);
+$background-color-4: hsl($hue, $saturation, $lightness + 40%);
+
+
+$text-color: #dbdbdb;
+$border-color: #ffffff47;
+
+// gaps
+$gap-1: 5px;
+$gap-2: 10px;
+$gap-3: 20px;
+
+// heights
+$input-height: 30px;
