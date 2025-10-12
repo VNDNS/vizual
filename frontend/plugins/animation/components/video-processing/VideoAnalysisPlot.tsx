@@ -24,8 +24,8 @@ export const VideoAnalysisPlot = () => {
     return null
   }
 
-  const plotWidth = 800
-  const plotHeight = 400
+  const plotWidth = 1280
+  const plotHeight = 250
   const padding = 40
   const innerWidth = plotWidth - 2 * padding
   const innerHeight = plotHeight - 2 * padding
@@ -50,9 +50,8 @@ export const VideoAnalysisPlot = () => {
   }
 
   return (
-    <div className="video-analysis-plot" style={{ marginTop: '20px', padding: '20px', backgroundColor: '#1a1a1a', borderRadius: '8px' }}>
-      <h3 style={{ color: '#fff', marginBottom: '20px' }}>Analysis Data</h3>
-      <svg width={plotWidth} height={plotHeight} style={{ backgroundColor: '#2a2a2a', borderRadius: '4px' }}>
+    <div className="video-analysis-plot">
+      <svg width={plotWidth} height={plotHeight}>
         {numericalFields.map((field, fieldIndex) => {
           const { min, max } = getMinMax(field)
           const color = colors[fieldIndex % colors.length]
@@ -92,13 +91,13 @@ export const VideoAnalysisPlot = () => {
         <line x1={padding} y1={plotHeight - padding} x2={plotWidth - padding} y2={plotHeight - padding} stroke="#666" strokeWidth="1" />
       </svg>
 
-      <div style={{ marginTop: '10px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+      <div className="legend">
         {numericalFields.map((field, index) => {
           const color = colors[index % colors.length]
           return (
-            <div key={field} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ width: '12px', height: '12px', backgroundColor: color, borderRadius: '2px' }} />
-              <span style={{ color: '#fff', fontSize: '14px' }}>
+            <div key={field} className="legend-item">
+              <div className="legend-color" style={{ backgroundColor: color }} />
+              <span>
                 {field.replace(/([A-Z])/g, ' $1').trim()}
               </span>
             </div>
