@@ -4,6 +4,7 @@ interface AnalysisResult {
   heartContainers: number
   rupees: number
   snapshotIndex: number
+  time: number
   [key: string]: any
 }
 
