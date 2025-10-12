@@ -9,7 +9,7 @@ interface AnalysisResult {
 }
 
 export const VideoAnalysisPlot = () => {
-  const { videoAnalysisData } = useAnimation()
+  const { videoAnalysisData, setVideoPlaybackPosition } = useAnimation()
 
   if (!videoAnalysisData?.results) {
     return null
@@ -81,6 +81,8 @@ export const VideoAnalysisPlot = () => {
                     cy={y}
                     r="3"
                     fill={color}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setVideoPlaybackPosition(result.time)}
                   />
                 )
               })}
