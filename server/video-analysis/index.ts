@@ -57,7 +57,7 @@ export const runVideoAnalysis = async (config: VideoAnalysisConfig) => {
 
   const outputFile = path.join(
     process.cwd(),
-    'server/video-analysis/outputs',
+    'server/data/video-analysis',
     `${videoName}_${schemaName}.json`
   )
 
@@ -67,7 +67,8 @@ export const runVideoAnalysis = async (config: VideoAnalysisConfig) => {
     snapshotPaths,
     contextWindow,
     outputFile,
-    model
+    model,
+    snapshotInterval
   })
 
   console.log('\n=== Analysis Complete ===')

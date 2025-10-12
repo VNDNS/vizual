@@ -5,209 +5,235 @@
       "heartContainers": 0,
       "rupees": 0,
       "currentLocation": "Unknown",
-      "questProgress": "No visible gameplay UI or information due to a black screen.",
+      "questProgress": "Unknown",
       "snapshotIndex": 0,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0001.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0001.png",
+      "time": 0
     },
     {
       "heartContainers": 3,
       "rupees": 11,
-      "currentLocation": "Sanctuary (near ornamental shelf)",
-      "questProgress": "Preparing to open the ornamental shelf. Advised to use a light, as the next area is pitch dark.",
+      "currentLocation": "Hyrule Castle Sanctuary",
+      "questProgress": "Preparing to enter the secret passage with Princess Zelda; need a light source for the dark area ahead.",
       "snapshotIndex": 1,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0002.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0002.png",
+      "time": 600
     },
     {
       "heartContainers": 3,
       "rupees": 72,
-      "currentLocation": "Dungeon treasure room (early dungeon)",
-      "questProgress": "Opening treasure chests to gather items and rupees inside a dungeon.",
+      "currentLocation": "Hyrule Castle Sanctuary",
+      "questProgress": "Acquired items from treasure chests, progressing through the castle's secret passage with Princess Zelda.",
       "snapshotIndex": 2,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0003.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0003.png",
+      "time": 1200
+    },
+    {
+      "heartContainers": 4,
+      "rupees": 319,
+      "currentLocation": "Sewers Under Hyrule Castle",
+      "questProgress": "Navigating the sewers after leaving Hyrule Castle Sanctuary, progressing towards escaping the castle with Princess Zelda.",
+      "snapshotIndex": 3,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0004.png",
+      "time": 1800
     },
     {
       "heartContainers": 5,
-      "rupees": 319,
-      "currentLocation": "Dungeon (early palace, likely Eastern Palace)",
-      "questProgress": "Exploring the dungeon, fighting enemies and solving puzzles to progress deeper. Recently progressed through rooms with treasures and continues toward the dungeon boss.",
-      "snapshotIndex": 3,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0004.png"
-    },
-    {
-      "heartContainers": 7,
       "rupees": 558,
-      "currentLocation": "Outside Link's House (Overworld, near the starting area)",
-      "questProgress": "Exploring the overworld, likely heading to the next objective after completing an early dungeon based on previous progress and the location outside Link's house.",
+      "currentLocation": "Outside Link's House (Overworld - near starting area)",
+      "questProgress": "Princess Zelda has been escorted to safety. The next objective is likely to visit Kakariko Village to seek advice from the elder.",
       "snapshotIndex": 4,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0005.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0005.png",
+      "time": 2400
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 5,
       "rupees": 968,
-      "currentLocation": "Dungeon sanctuary or priest's chamber (likely the Sanctuary)",
-      "questProgress": "Interacting with the priest at the Sanctuary after completing a dungeon, likely having just rescued Zelda or finished an early important dungeon objective.",
+      "currentLocation": "Sanctuary",
+      "questProgress": "Link and Princess Zelda have reached the Sanctuary. Quest objective is likely to receive guidance from the priest and move on to the next task, likely involving contacting the village elder.",
       "snapshotIndex": 5,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0006.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0006.png",
+      "time": 3000
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 6,
       "rupees": 499,
-      "currentLocation": "Waterfall of Wishing (pond north of Zora's Domain)",
-      "questProgress": "Swimming in the Waterfall of Wishing area, likely to interact with the fairy pond to upgrade items or obtain the Zora Flippers. Player is in the water, progressing in overworld exploration and item acquisition.",
+      "currentLocation": "Waterfall of Wishing (fairy pond area, northeast corner of the Overworld)",
+      "questProgress": "Exploring the Waterfall of Wishing area, likely to obtain the Zora's Flippers or upgrade items from the magical fairy.",
       "snapshotIndex": 6,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0007.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0007.png",
+      "time": 3600
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 6,
       "rupees": 503,
-      "currentLocation": "Likely inside the Water Dungeon (Eastern Palace or a similar dungeon)",
-      "questProgress": "Currently progressing through a dungeon, solving puzzles and navigating rooms filled with enemies. The goal is likely to obtain the dungeon's treasure and defeat the boss to advance the main quest.",
+      "currentLocation": "Inside a dungeon (most likely the Eastern Palace, based on layout and enemy type)",
+      "questProgress": "Exploring a dungeon, likely seeking the Pendant of Courage or dungeon item to progress.",
       "snapshotIndex": 7,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0008.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0008.png",
+      "time": 4200
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 6,
       "rupees": 211,
-      "currentLocation": "Outside the Sanctuary (near the river and the Sanctuary building)",
-      "questProgress": "Having left the Sanctuary after an important event, possibly after speaking with the priest and escorting Zelda. The next objective is likely to head towards Kakariko Village or investigate the next dungeon.",
+      "currentLocation": "Outside Eastern Palace (Overworld area by the palace entrance)",
+      "questProgress": "Link is currently outside the Eastern Palace, likely heading in or resuming the quest for the Pendant of Courage.",
       "snapshotIndex": 8,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0009.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0009.png",
+      "time": 4800
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 6,
       "rupees": 33,
-      "currentLocation": "Inside a dungeon (looks like the Eastern Palace based on enemies and architecture)",
-      "questProgress": "Navigating a room with spear-throwing enemies in the dungeon. The player is exploring and likely seeking keys, solving puzzles, or progressing toward the dungeon boss.",
+      "currentLocation": "Inside a dungeon (likely Eastern Palace)",
+      "questProgress": "Navigating through a dungeon, progressing toward a key objective such as obtaining the Pendant of Courage or uncovering the dungeon's main item.",
       "snapshotIndex": 9,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0010.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0010.png",
+      "time": 5400
     },
     {
-      "heartContainers": 8,
+      "heartContainers": 6,
       "rupees": 31,
-      "currentLocation": "Inside a dungeon (very likely Eastern Palace based on decor and context)",
-      "questProgress": "Currently solving a puzzle in the dungeon (possibly needing to use a bomb in the room), progressing towards obtaining the dungeon treasure or boss key.",
+      "currentLocation": "Inside a dungeon (likely Eastern Palace)",
+      "questProgress": "Navigating the dungeon, solving puzzles, and advancing toward either the boss or collecting the main dungeon item.",
       "snapshotIndex": 10,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0011.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0011.png",
+      "time": 6000
     },
     {
       "heartContainers": 10,
       "rupees": 336,
-      "currentLocation": "Boss room of the Eastern Palace",
-      "questProgress": "Currently engaged in a boss fight against the dungeon boss, Moldorm. The objective is to defeat the boss and obtain the Pendant of Courage.",
+      "currentLocation": "Dungeon boss room (likely within a Dark World dungeon, facing Helmasaur King)",
+      "questProgress": "Currently fighting the dungeon boss (Helmasaur King). Objective: Defeat the boss to obtain the dungeon's prize, likely a crystal or pendant.",
       "snapshotIndex": 11,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0012.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0012.png",
+      "time": 6600
     },
     {
       "heartContainers": 10,
       "rupees": 971,
-      "currentLocation": "Outside near Eastern Palace (overworld area with Armos statues)",
-      "questProgress": "Exploring the overworld after defeating the Eastern Palace boss. Likely heading toward the next dungeon or side objectives such as upgrades or item collection.",
+      "currentLocation": "Overworld, near the statue garden south of the Haunted Grove (near Kakariko Village)",
+      "questProgress": "Exploring the overworld, possibly en route to the next dungeon or quest objective after defeating the Helmasaur King.",
       "snapshotIndex": 12,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0013.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0013.png",
+      "time": 7200
     },
     {
       "heartContainers": 10,
       "rupees": 964,
-      "currentLocation": "Overworld - bridge near Eastern Palace (likely between Eastern Palace and Hyrule Castle)",
-      "questProgress": "Travelling across the overworld; likely en route to the next dungeon or quest objective after completing the Eastern Palace.",
+      "currentLocation": "Overworld, crossing the bridge to the east of Kakariko Village",
+      "questProgress": "Traveling across the overworld, likely en route to the next dungeon or main objective after defeating a Dark World boss.",
       "snapshotIndex": 13,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0014.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0014.png",
+      "time": 7800
     },
     {
       "heartContainers": 10,
       "rupees": 270,
-      "currentLocation": "Dungeon interior (possibly the Water Dungeon or similar, given the watery environment)",
-      "questProgress": "Exploring a dungeon, likely seeking a key item or progressing towards the dungeon boss. The current objective is to navigate the dungeon's water-filled rooms.",
+      "currentLocation": "Swamp Palace (Light World Water Dungeon)",
+      "questProgress": "Navigating the Swamp Palace dungeon; currently swimming in a water-filled chamber, progressing toward the dungeon's main objectives.",
       "snapshotIndex": 14,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0015.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0015.png",
+      "time": 8400
     },
     {
-      "heartContainers": 0,
-      "rupees": 0,
-      "currentLocation": "Unknown (black screen)",
-      "questProgress": "No gameplay visible; possibly a loading screen, transition, or cutscene. Unable to determine quest or progression from this screenshot.",
+      "heartContainers": 10,
+      "rupees": 270,
+      "currentLocation": "Swamp Palace (Light World Water Dungeon)",
+      "questProgress": "Navigating the Swamp Palace dungeon; currently swimming in a water-filled chamber, progressing toward the dungeon's main objectives.",
       "snapshotIndex": 15,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0016.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0016.png",
+      "time": 9000
     },
     {
-      "heartContainers": 12,
+      "heartContainers": 10,
       "rupees": 459,
-      "currentLocation": "Dungeon interior (possibly Tower of Hera or a similar early Light World dungeon)",
-      "questProgress": "Exploring the dungeon; currently solving a room puzzle or navigating traps to advance towards the dungeon boss or a key item.",
+      "currentLocation": "Swamp Palace (Light World Water Dungeon)",
+      "questProgress": "Navigating the Swamp Palace dungeon; solving a puzzle room with spike traps and a floor switch, progressing toward the dungeon's main objectives.",
       "snapshotIndex": 16,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0017.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0017.png",
+      "time": 9600
+    },
+    {
+      "heartContainers": 10,
+      "rupees": 422,
+      "currentLocation": "Swamp Palace (Light World Water Dungeon)",
+      "questProgress": "Just rescued a maiden in a crystal; receiving story information, preparing to exit the Swamp Palace dungeon.",
+      "snapshotIndex": 17,
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0018.png",
+      "time": 10200
     },
     {
       "heartContainers": 12,
-      "rupees": 472,
-      "currentLocation": "Dark World Crystal Chamber (dialogue sequence after rescuing a crystal maiden)",
-      "questProgress": "Receiving information from a crystal maiden after defeating a dungeon boss. Transition phase before the next dungeon or objective is given.",
-      "snapshotIndex": 17,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0018.png"
-    },
-    {
-      "heartContainers": 13,
-      "rupees": 482,
-      "currentLocation": "Ice Palace (Dark World Dungeon)",
-      "questProgress": "Navigating the Ice Palace dungeon, likely progressing toward the boss after solving previous room's puzzle or defeating enemies.",
+      "rupees": 432,
+      "currentLocation": "Ice Palace (Dark World Ice Dungeon)",
+      "questProgress": "Navigating the Ice Palace dungeon; currently exploring a room with blue icy floors and collecting items, progressing toward the dungeon's main objectives.",
       "snapshotIndex": 18,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0019.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0019.png",
+      "time": 10800
     },
     {
-      "heartContainers": 13,
+      "heartContainers": 12,
       "rupees": 436,
-      "currentLocation": "Dark World Crystal Chamber",
-      "questProgress": "Dialogue with a crystal maiden after rescuing her from the dungeon; likely after defeating the dungeon boss and before receiving the next objective.",
+      "currentLocation": "Ice Palace (Dark World Ice Dungeon)",
+      "questProgress": "Rescuing the maiden from the Ice Palace; in the dialogue sequence after freeing her from the crystal.",
       "snapshotIndex": 19,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0020.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0020.png",
+      "time": 11400
     },
     {
-      "heartContainers": 13,
+      "heartContainers": 12,
       "rupees": 489,
-      "currentLocation": "Ice Palace (Dark World Dungeon)",
-      "questProgress": "Progressing through the Ice Palace, solving puzzles and navigating dungeon rooms en route to the boss.",
+      "currentLocation": "Ice Palace (Dark World Ice Dungeon)",
+      "questProgress": "Exploring deeper into the Ice Palace dungeon; currently traversing a room with floor switches and puzzles. Progressing toward the dungeon's main objective and potentially the boss encounter.",
       "snapshotIndex": 20,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0021.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0021.png",
+      "time": 12000
     },
     {
-      "heartContainers": 13,
+      "heartContainers": 15,
       "rupees": 391,
       "currentLocation": "Death Mountain (Light World)",
-      "questProgress": "Exploring Death Mountain area, likely en route to a dungeon entrance or progressing the main quest after completing the Ice Palace in the Dark World.",
+      "questProgress": "Exploring Death Mountain area, potentially en route to the Tower of Hera or traversing between dungeons after completing the Ice Palace.",
       "snapshotIndex": 21,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0022.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0022.png",
+      "time": 12600
     },
     {
-      "heartContainers": 14,
-      "rupees": 491,
-      "currentLocation": "Death Mountain (Light World, Heart Piece Ledge)",
-      "questProgress": "Just collected a Heart Container or Heart Piece on a ledge in Death Mountain, increasing maximum health. Likely still exploring Death Mountain or proceeding toward the next main objective after leaving the Ice Palace.",
+      "heartContainers": 15,
+      "rupees": 391,
+      "currentLocation": "Death Mountain (Light World) - Heart Piece Plateau",
+      "questProgress": "Collecting a Heart Piece on Death Mountain; player is standing on the Heart Piece plateau after obtaining it, possibly before advancing towards the Tower of Hera or another dungeon.",
       "snapshotIndex": 22,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0023.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0023.png",
+      "time": 13200
     },
     {
-      "heartContainers": 14,
+      "heartContainers": 15,
       "rupees": 453,
-      "currentLocation": "Death Mountain (Light World, dungeon room)",
-      "questProgress": "Exploring a dungeon or cave room on Death Mountain in the Light World, likely continuing to progress toward the next key objective after collecting the last Heart Container.",
+      "currentLocation": "Death Mountain (Light World) - Dungeon Room",
+      "questProgress": "Exploring an interior dungeon room on Death Mountain. Progressing through dungeon puzzles, likely en route to the next key objective or boss encounter.",
       "snapshotIndex": 23,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0024.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0024.png",
+      "time": 13800
     },
     {
-      "heartContainers": 14,
+      "heartContainers": 15,
       "rupees": 484,
-      "currentLocation": "Death Mountain (Light World, dungeon room)",
-      "questProgress": "Proceeding through a dungeon room in Light World Death Mountain, encountering enemies. Likely advancing towards a dungeon objective, possibly nearing a mini-boss or exploring further into the dungeon.",
+      "currentLocation": "Death Mountain (Light World) - Tower of Hera (Boss Room)",
+      "questProgress": "Player is currently engaged in a boss fight in the Tower of Hera, facing Moldorm, the dungeon boss.",
       "snapshotIndex": 24,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0025.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0025.png",
+      "time": 14400
     },
     {
-      "heartContainers": 0,
-      "rupees": 0,
+      "heartContainers": 15,
+      "rupees": 484,
       "currentLocation": "End Credits",
-      "questProgress": "The game has been completed and the end credits are rolling, indicating the final objective has been finished.",
+      "questProgress": "Game completed; end credits are rolling, indicating the player has defeated the final boss and finished the main quest.",
       "snapshotIndex": 25,
-      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0026.png"
+      "snapshotPath": "/home/viktor/code/vizual/server/video-analysis/snapshots/xf2IO7P5DVA/snapshot_0026.png",
+      "time": 15000
     }
   ]
 }

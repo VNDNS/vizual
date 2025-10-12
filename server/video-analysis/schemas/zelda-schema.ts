@@ -19,5 +19,7 @@ Based on the provided screenshot, identify and extract the following information
 - Current location or area name
 - Current quest or objective
 
+If you encounter a snapshot, that does not show the UI, just assume the information from the previous snapshot.
+
 Use the previous snapshots as context to understand the progression.`
 

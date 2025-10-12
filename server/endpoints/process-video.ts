@@ -86,7 +86,8 @@ processVideoRouter.post('/process-video', async (req, res) => {
       schema,
       snapshotPaths,
       contextWindow,
-      outputFile
+      outputFile,
+      snapshotInterval
     })
 
     console.log('\n=== Analysis Complete ===')
