@@ -7,7 +7,6 @@ const ArrangementItem = ({props}: any) => {
 
   const handleMouseDown = useHandleComponentMouseDown(props.id, "component");
   const { color, name, configuration } = props
-  console.log("configuration", configuration)
   const { width, height, x, y } = configuration
 
   const groupProps = {
@@ -16,9 +15,6 @@ const ArrangementItem = ({props}: any) => {
     onDragStart: (e: React.DragEvent) => e.preventDefault(),
     className: "arrangement-item"
   };
-
-  console.log("props", props)
-
 
   return (
     <g {...groupProps}>
