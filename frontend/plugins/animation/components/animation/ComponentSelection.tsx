@@ -2,12 +2,11 @@ import { useSetScene }  from "../../hooks/useSetScene"
 import { useAnimation } from "../../context"
 import { id } from "../../../../../common/id"
 import { componentUIColors } from "../../maps/componentUIColors"
-import { componentMap } from "../../maps/componentMap"
 import { getDirectory } from "../../../common/requests/get-directory"
 import { getJson } from "../../../common/requests/get-json"
 import { ComponentUI } from "../../../../../types/ComponentUI"
+import { componentTypes } from "../../maps/componentTypes"
 
-const fileTypes = Object.keys(componentMap)
 
 export const ComponentSelection = () => {
 
@@ -25,17 +24,19 @@ export const ComponentSelection = () => {
     const fullPath = '/home/viktor/code/vizual/server/data/' + fileType + '/' + files[0]
     const data = hasData ? null : await getJson(fullPath)
 
-    const hasWidthAndHeight = ['barChart', 'linePlot', 'timeLine', 'radarCharts', 'item', 'container'].includes(fileType)
+    //const hasWidthAndHeight = ['barChart', 'linePlot', 'timeLine', 'radarCharts', 'item', 'container'].includes(fileType)
 
     const component: ComponentUI = {
       type: fileType,
       configuration: {
-        data: data, 
+        data: data,
         x: 0,
         y: 0, 
-        width: hasWidthAndHeight ? 240 : undefined, 
-        height: hasWidthAndHeight ? 240 : undefined, 
-        size: hasWidthAndHeight ? undefined : 240
+        // width: hasWidthAndHeight ? 240 : undefined, 
+        // height: hasWidthAndHeight ? 240 : undefined, 
+        // size: hasWidthAndHeight ? undefined : 240
+        width: 240,
+        height: 240,
       },
       data: null,
       color,
@@ -53,7 +54,7 @@ export const ComponentSelection = () => {
           onChange={(e) => setFileType(e.target.value)}
           className="file-type-dropdown"
         >
-          {fileTypes.map((type) => (
+          {componentTypes.map((type) => (
             <option key={type} value={type}>
               {type}
             </option>

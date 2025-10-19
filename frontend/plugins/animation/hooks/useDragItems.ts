@@ -16,8 +16,8 @@ export const useDragItems = () => {
       if (item.itemType === 'component') {
         const component = components.find((component: any) => component.id === item.id);
         if (component) {
-          const x = component.configuration.x + draggingDeltaScreen.x;
-          const y = component.configuration.y + draggingDeltaScreen.y;
+          const x = component.configuration.x + draggingDeltaScreen.x/2;
+          const y = component.configuration.y + draggingDeltaScreen.y/2;
           component.configuration.x = x;
           component.configuration.y = y;
         }
@@ -33,7 +33,7 @@ export const useDragItems = () => {
       }
     });
     setComponents([...components])
-    computeEdges(nodes)
+    computeEdges()
   };
 
   return dragitems;

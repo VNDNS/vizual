@@ -1,177 +1,77 @@
 {
   "components": [
     {
+      "type": "item",
+      "configuration": {
+        "data": null,
+        "x": -360,
+        "y": -180,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
+      "color": "hsl(0,   40%, 45%)",
+      "id": "tzgu9phkv1s6ag2k7v2s",
+      "name": "item0"
+    },
+    {
       "type": "flowChart",
       "configuration": {
         "data": {
           "nodes": [
             {
-              "id": 624367,
+              "id": 70812,
               "children": [
-                886706,
-                757062,
-                174017
+                167251
               ],
-              "x": -540,
-              "y": 0,
+              "x": -720,
+              "y": 120,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
-              "name": "Nintendo",
-              "componentId": "955z786yfqip83obwynwwe",
-              "type": "square",
-              "image": "nintendo.png"
+              "name": "Node 1",
+              "componentId": "x72zh3yexjnmiygavx25jl",
+              "type": "square"
             },
             {
-              "id": 886706,
-              "parent": 624367,
+              "id": 167251,
+              "parent": 70812,
               "children": [],
-              "x": 660,
-              "y": -300,
+              "x": 60,
+              "y": 120,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
-              "name": "NES",
-              "componentId": "955z786yfqip83obwynwwe",
-              "type": "square",
-              "image": "NES.png"
-            },
-            {
-              "id": 757062,
-              "parent": 624367,
-              "children": [],
-              "x": 420,
-              "y": 0,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": " N64",
-              "componentId": "955z786yfqip83obwynwwe",
-              "type": "square",
-              "image": "N64.png"
-            },
-            {
-              "id": 174017,
-              "parent": 624367,
-              "children": [],
-              "x": 660,
-              "y": 300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Game Cube",
-              "componentId": "955z786yfqip83obwynwwe",
-              "type": "square",
-              "image": "GameCube.png"
+              "name": "Node 2",
+              "componentId": "x72zh3yexjnmiygavx25jl",
+              "type": "square"
             }
           ],
           "edges": [
             {
-              "id": "624367-886706",
-              "x1": -380,
-              "y1": -60,
-              "x2": 500,
-              "y2": -300,
-              "sourceId": 624367,
-              "targetId": 886706,
+              "id": "70812-167251",
+              "x1": -560,
+              "y1": 120,
+              "x2": -100,
+              "y2": 120,
+              "sourceId": 70812,
+              "targetId": 167251,
               "endSide": "left",
               "startSide": "right",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -380,
-                  "y": -60
+                  "x": -560,
+                  "y": 120
                 },
                 {
-                  "x": -60,
-                  "y": -60
-                },
-                {
-                  "x": 60,
-                  "y": -180
-                },
-                {
-                  "x": 60,
-                  "y": -180
-                },
-                {
-                  "x": 180,
-                  "y": -300
-                },
-                {
-                  "x": 500,
-                  "y": -300
-                }
-              ]
-            },
-            {
-              "id": "624367-757062",
-              "x1": -380,
-              "y1": 0,
-              "x2": 260,
-              "y2": 0,
-              "sourceId": 624367,
-              "targetId": 757062,
-              "endSide": "left",
-              "startSide": "right",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -380,
-                  "y": 0
-                },
-                {
-                  "x": 260,
-                  "y": 0
-                }
-              ]
-            },
-            {
-              "id": "624367-174017",
-              "x1": -380,
-              "y1": 60,
-              "x2": 500,
-              "y2": 300,
-              "sourceId": 624367,
-              "targetId": 174017,
-              "endSide": "left",
-              "startSide": "right",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -380,
-                  "y": 60
-                },
-                {
-                  "x": -60,
-                  "y": 60
-                },
-                {
-                  "x": 60,
-                  "y": 180
-                },
-                {
-                  "x": 60,
-                  "y": 180
-                },
-                {
-                  "x": 180,
-                  "y": 300
-                },
-                {
-                  "x": 500,
-                  "y": 300
+                  "x": -100,
+                  "y": 120
                 }
               ]
             }
@@ -181,44 +81,16 @@
         },
         "x": 0,
         "y": 0,
-        "size": 240
+        "width": 240,
+        "height": 240
       },
       "data": null,
-      "color": "hsl(0,   40%, 45%)",
-      "id": "955z786yfqip83obwynwwe",
-      "name": "flowChart0"
+      "color": "hsl(60,  40%, 45%)",
+      "id": "x72zh3yexjnmiygavx25jl",
+      "name": "flowChart1"
     }
   ],
-  "animation": [
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 1.8166666666666667,
-      "start": 2,
-      "inputs": {
-        "nodes": [
-          "Nintendo"
-        ]
-      },
-      "track": 0,
-      "id": "jmja09ikhndfdmfhdjvnlc"
-    },
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 2.4166666666666665,
-      "start": 3.8,
-      "inputs": {
-        "nodes": [
-          "NES",
-          " N64",
-          "Game Cube"
-        ]
-      },
-      "track": 0,
-      "id": "0n1juxyffx98cxg5zz3ng6l"
-    }
-  ],
+  "animation": [],
   "tracks": 1,
   "panel": [],
   "audio": [
@@ -226,37 +98,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "0lxu0sqh9ptisd8c8ql7h8"
+      "id": "wnysmgs2f2h4bo30db3iwy"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "1cfk3n6suguk0kb2jtp79g"
+      "id": "0si191010emippqzbvra5e"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "d1mbmm1x4674urin8qe1v4"
+      "id": "2zl1e07jhpf5agiax6yw2j"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "7o5jx3j0zafdhsybs355f"
+      "id": "v14sbvb4svpfrffc06y3bn"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "ueeumxidr61fyzx2hwb60h"
+      "id": "5p617ak9fgneanp4zg71oh"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "20nhkiy5517ifof1pjr2fen"
+      "id": "yqzzyu2xjzt36jyui1ny"
     }
   ]
 }

@@ -18,7 +18,7 @@ export const VideoAnalysisPlot = () => {
   const results: AnalysisResult[] = videoAnalysisData.results
 
   const numericalFields = Object.keys(results[0] || {}).filter(key => 
-    typeof results[0][key] === 'number' && key !== 'snapshotIndex'
+    typeof results[0][key] === 'number' && key !== 'snapshotIndex' && key !== 'time'
   )
 
   if (numericalFields.length === 0) {
@@ -74,16 +74,19 @@ export const VideoAnalysisPlot = () => {
               {results.map((result, index) => {
                 const x = getXPosition(index) + padding
                 const y = getScaledValue(result[field] as number, min, max) + padding
+                const value = result[field]
                 return (
-                  <circle
-                    key={index}
-                    cx={x}
-                    cy={y}
-                    r="3"
-                    fill={color}
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setVideoPlaybackPosition(result.time)}
-                  />
+                  <g key={index}>
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r="6"
+                      fill={color}
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => setVideoPlaybackPosition(result.time)}
+                    />
+                    <title>{`${field}: ${value}`}</title>
+                  </g>
                 )
               })}
             </g>

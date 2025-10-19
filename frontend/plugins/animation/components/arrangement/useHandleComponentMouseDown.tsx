@@ -7,7 +7,7 @@ export const useHandleComponentMouseDown = (id: string, itemType: string) => {
   const handleMouseDown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    setDraggingElement("node");
+    setDraggingElement(itemType || "node");
     setSelectedComponent(id);
 
     if (selectedItems.length <= 1) {

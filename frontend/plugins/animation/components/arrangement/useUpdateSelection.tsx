@@ -1,7 +1,5 @@
-import { nodeSize } from "@context/constants";
 import { useAnimation } from "@context/context";
 import { useAnimationHooks } from "@context/hooks/useAnimationHooks";
-import { Components } from "../common/Components";
 
 export const useUpdateSelection = () => {
   const { setSelectedNodes, setSelectedItems, components } = useAnimation();
@@ -14,11 +12,10 @@ export const useUpdateSelection = () => {
     const maxY = Math.max(p1.y, p2.y);
 
     const component = getSelectedComponent();
-    const nodes = component?.configuration.data.nodes || [];
+    const nodes = component?.configuration?.data?.nodes || [];
     const half = 0//nodeSize / 2;
     const components_ = components.map(component => ({id: component.id, x: component.configuration.x, y: component.configuration.y, type: component.type}))
 
-    console.log("components_", components_);
 
     const selectedNodes_ = [...nodes, ...components_.filter((c: any) => c.type !== 'flowChart')]
       .filter((n: any) => n.x >= minX - half && n.x <= maxX + half && n.y >= minY - half && n.y <= maxY + half)
@@ -28,8 +25,6 @@ export const useUpdateSelection = () => {
     const selectedItems_ = selectedNodes_.map((n: any) => {
       return ({id: n.id, x: n.x, y: n.y, componentId: n.componentId, itemType: n.componentId ? 'node' : 'component'})
     });
-
-    console.log("selectedItems_", selectedItems_);
     
     setSelectedNodes(selectedIds);
     setSelectedItems(selectedItems_);

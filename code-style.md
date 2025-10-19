@@ -50,3 +50,6 @@ Side effects are to be avoided if possible.
 Functions are always stored in a separate file with the name of the function.
 
 A custom hook should at max return one value.
+
+Logic within a react component should be moved to custom hooks.
+The focus should be on reducing the number of lines for each code.

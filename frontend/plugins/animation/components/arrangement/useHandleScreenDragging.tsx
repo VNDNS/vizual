@@ -25,6 +25,7 @@ export const useHandleScreenDragging = () => {
   const draggingNodes      = draggingElement === "node"        && isDragging
   const draggingCameraMove = draggingElement === "camera-move" && isDragging
   const draggingCameraZoom = draggingElement === "camera-zoom" && isDragging
+  const draggingComponent  = draggingElement === "component"   && isDragging
 
   useEffect(() => {
     if (showSelectionBox) {
@@ -32,6 +33,10 @@ export const useHandleScreenDragging = () => {
     }
     if (draggingNodes) {
       dragItems()
+    }
+    if (draggingComponent) {
+      dragItems()
+      console.log("draggingComponent")
     }
     if (draggingCameraMove) {
       updateCamera()

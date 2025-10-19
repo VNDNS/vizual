@@ -10,7 +10,7 @@ export const useSelectors = () => {
 
   const getSelectedNode = () => {
     const component = getSelectedComponent()
-    return component?.configuration.data.nodes?.find((node: any) => node.id === selectedNode);
+    return component?.configuration?.data?.nodes?.find((node: any) => node.id === selectedNode);
   }
 
   const getSelectedNodes = () => {
@@ -21,7 +21,7 @@ export const useSelectors = () => {
 
   const getNodes = () => {
     const component = getSelectedComponent()
-    return component?.configuration.data.nodes;
+    return component?.configuration?.data?.nodes;
   }
 
   return { getSelectedComponent, getSelectedNode, getSelectedNodes, getNodes }
