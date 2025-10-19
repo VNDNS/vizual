@@ -4,6 +4,8 @@ I want you to create a new component type called Textbox.
 Its a simple Rectangle with some text inside at the center.
 Inside the configuration we should be able to set the text.
 
+Please also follow the guidelines defined in ./code-style.md.
+
 To generate the component type follow these steps:
 
 1) Add component types to the component types array.
