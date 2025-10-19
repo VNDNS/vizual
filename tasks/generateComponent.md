@@ -1,9 +1,10 @@
 ## Task: Generate a new component type
 
-I want you to create a new component type called Textbox.
-Its a simple Rectangle with some text inside at the center.
-Inside the configuration we should be able to set the text.
+I want you to create a new component type called Worldmap.
+In the root you find world.geojson wihch contains the world map.
+Each country should be a polygon with some distinct color.
 The animations should include 'activate' and 'deactivate'.
+These animations fade in and out the world map.
 
 Please also follow the guidelines defined in ./code-style.md.
 
