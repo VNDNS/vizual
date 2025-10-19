@@ -3,6 +3,7 @@
 I want you to create a new component type called Textbox.
 Its a simple Rectangle with some text inside at the center.
 Inside the configuration we should be able to set the text.
+The animations should include 'activate' and 'deactivate'.
 
 Please also follow the guidelines defined in ./code-style.md.
 
@@ -21,6 +22,8 @@ To generate the component type follow these steps:
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.tsx
 
 5) Integrate the component configuration to Sidebar.tsx.
+For that you have to add a new entry to the sidebar options array (sidebarOptions).
+And within the div-element of class "sidebar-content" you have to add a new entry for the component configuration.
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
 6) Create a Class for the component type for motion-canvas. The name should be the same as the component type but uppercased.

@@ -1,9 +1,8 @@
 import express from 'express'
 import fs from 'fs'
 import { dataPath, paths } from '../constants'
+import { componentTypes } from '@context/maps/componentTypes'
 const getDirectoryRouter = express.Router()
-
-const plotTypes = ['barChart', 'container', 'linePlot', 'pieChart', 'radarCharts', 'dynamicBarChart', 'timeLine', 'largeNumber', 'flowChart', 'panel', 'background']
 
 getDirectoryRouter.post('/get-directory', (req, res) => {
   const { data: fileType } = req.body
@@ -18,7 +17,7 @@ getDirectoryRouter.post('/get-directory', (req, res) => {
     path = paths.animations
   } else if (fileType === 'shape-configs') {
     path = paths.shapeConfigs
-  } else if (plotTypes.includes(fileType)) {
+  } else if (componentTypes.includes(fileType)) {
     path = dataPath(fileType)
   } else if (fileType === 'input-images') {
     path = paths.inputImages
