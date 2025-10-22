@@ -20,28 +20,12 @@
               "type": "circle",
               "infos": [
                 {
-                  "name": "Info 0",
-                  "id": "nweqcefkrkcwkrd1wu72r"
+                  "name": "01.01.1950",
+                  "id": "fwmvh7b8uzm59yz3bz27ec"
                 },
                 {
-                  "name": "Info 1",
-                  "id": "f1el0kk9nps9jt5puvi5nn"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "8x54fuqyu6k8p2ho8ew1y4"
-                },
-                {
-                  "name": "Info 3",
-                  "id": "d3kn6qcmwt4po3v5tdmem"
-                },
-                {
-                  "name": "Info 4",
-                  "id": "3kkpohex7b45mk0iz5j7z5"
-                },
-                {
-                  "name": "Info 5",
-                  "id": "xqtpbgeblwurhg9j4qd5i"
+                  "name": "Jensen Huang",
+                  "id": "3nl405a32o36syeo21umai"
                 }
               ]
             },
@@ -108,5 +92,42 @@
   ],
   "tracks": 1,
   "panel": [],
-  "audio": []
+  "audio": [
+    {
+      "name": "A Link to the Past.wav",
+      "duration": 14.65,
+      "start": 0,
+      "id": "l9mn4ql5ximj1x1c999hjj"
+    },
+    {
+      "name": "NES.wav",
+      "duration": 13.2,
+      "start": 14.65,
+      "id": "gs7zbr3yby9i8pksxuzgen"
+    },
+    {
+      "name": "Nintendo.wav",
+      "duration": 11.65,
+      "start": 27.85,
+      "id": "ne7fqnimyqid95cdpl4"
+    },
+    {
+      "name": "SNES.wav",
+      "duration": 9.95,
+      "start": 39.5,
+      "id": "yoxzlnyavyqm1ry94jf7ul"
+    },
+    {
+      "name": "The Legend of Zelda.wav",
+      "duration": 15.1,
+      "start": 49.45,
+      "id": "ff6oc41cqyrrwwtjuvvxse"
+    },
+    {
+      "name": "Zelda II: The Adventure of Link.wav",
+      "duration": 14.3,
+      "start": 64.55,
+      "id": "qje758mgq2d7q87t8ktz"
+    }
+  ]
 }

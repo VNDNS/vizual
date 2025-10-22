@@ -3,7 +3,7 @@ import { useAnimationHooks } from "@context/hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
 import { id } from "../../../../../common/id"
 import { FileDisplay } from "../../../common/components/FileDisplay"
-import { OptionSelection } from "../common/OptionSelection2"
+import { ArrayConfiguration } from "../common/ArrayConfiguration"
 
 export const ContainerConfiguration = () => {
 
@@ -48,6 +48,16 @@ export const ContainerConfiguration = () => {
     const index = selectedComponent?.configuration?.data?.items.findIndex((item: any) => item.id === selectedItem)
     selectedComponent.configuration.data.items[index].name = name
     setComponents([...components])
+  }
+
+  const handleDeleteItem = (id: string) => {
+    if (selectedComponent?.configuration?.data?.items) {
+      selectedComponent.configuration.data.items = selectedComponent.configuration.data.items.filter((item: any) => item.id !== id)
+      if (selectedItem === id) {
+        setSelectedItem('')
+      }
+      setComponents([...components])
+    }
   }
 
   const getParentName = (id: number) => {
@@ -103,7 +113,7 @@ export const ContainerConfiguration = () => {
           <button onClick={handleAddItem}>Add Item</button>
           <button onClick={fadeInNodes}>Fade in</button>
           <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
-          <OptionSelection options={selectedComponent?.configuration?.data?.items} setValue={handleSetSelectedItem} value={selectedItem} />
+          <ArrayConfiguration options={selectedComponent?.configuration?.data?.items} setValue={handleSetSelectedItem} value={selectedItem} onDelete={handleDeleteItem} />
         </>
       )}
     </>

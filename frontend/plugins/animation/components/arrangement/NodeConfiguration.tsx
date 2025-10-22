@@ -3,7 +3,7 @@ import { useAnimation } from "../../context"
 import { useAnimationHooks } from "../../hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
 import { OptionSelection } from "../common/OptionSelection"
-import { OptionSelection as OptionSelection2 } from "../common/OptionSelection2"
+import { ArrayConfiguration } from "../common/ArrayConfiguration"
 import { useComputeEdges } from "@context/hooks/useComputeEdges"
 import { FlowChartNode } from "@type/FlowChartTypes"
 import { id } from "../../../../../common/id"
@@ -110,6 +110,16 @@ export const NodeConfiguration = () => {
     }
   }
 
+  const handleDeleteInfo = (id: string) => {
+    if (selectedNode?.infos) {
+      selectedNode.infos = selectedNode.infos.filter((info: any) => info.id !== id)
+      if (selectedInfo === id) {
+        setSelectedInfo('')
+      }
+      setComponents([...components])
+    }
+  }
+
   const selectedInfo_ = selectedNode?.infos?.find((info: any) => info.id === selectedInfo)
 
   return (
@@ -135,7 +145,7 @@ export const NodeConfiguration = () => {
         <input type="text" value={selectedInfo_?.name} onChange={(e) => handleSetInfoValue(e.target.value)} />
       </div>
       <button onClick={handleAddInfo}>Add Info</button>
-      <OptionSelection2 options={selectedNode?.infos} setValue={handleSetSelectedInfo} value={selectedInfo} />
+      <ArrayConfiguration options={selectedNode?.infos} setValue={handleSetSelectedInfo} value={selectedInfo} onDelete={handleDeleteInfo} />
         </>
       )}
     </>

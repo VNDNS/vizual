@@ -281,7 +281,7 @@ export class FlowChart extends Node {
 
     if (nodeData.infos && nodeData.infos.length > 0) {
       const infosContainer = new Node({
-        position: { x: x + size/2 + 120, y: y },
+        position: { x: x + size/2 + 80, y: y },
       })
 
       const dyInfo = 100
@@ -292,6 +292,7 @@ export class FlowChart extends Node {
           fill: 'white',
           fontFamily: 'Rubik',
           fontWeight: 400,
+          offset: [-1, 0],
           position: { x: 0, y: index * dyInfo - (nodeData.infos.length - 1) * dyInfo/2 },
           opacity: 1,
         })
