@@ -36,6 +36,7 @@ interface Nodes {
   image?: string
   type: 'square' | 'circle'
   componentId: number
+  infos?: { name: string, id: string }[]
 }
 
 interface FlowChartProps extends NodeProps {
@@ -56,6 +57,7 @@ export class FlowChart extends Node {
   private borders: Line[]
   private edges: Line[]
   private images: Img[]
+  private infos: Node[]
   private background: Line | null
   private nextBackground: Line | null
   private pathsActivation: any
@@ -77,6 +79,7 @@ export class FlowChart extends Node {
     this.add(this.backgroundPaths)
     this.edges = []
     this.images = []
+    this.infos = []
     this.initializeActivations()
     //this.initializeBackground()
     this.initializeNodes()
@@ -275,6 +278,31 @@ export class FlowChart extends Node {
       this.images.push(null)
     }
     nodeWrapper.add(border)
+
+    if (nodeData.infos && nodeData.infos.length > 0) {
+      const infosContainer = new Node({
+        position: { x: x + size/2 + 120, y: y },
+      })
+
+      const dyInfo = 100
+      nodeData.infos.forEach((info, index) => {
+        const infoText = new Txt({
+          text: info.name,
+          fontSize: 30,
+          fill: 'white',
+          fontFamily: 'Rubik',
+          fontWeight: 400,
+          position: { x: 0, y: index * dyInfo - (nodeData.infos.length - 1) * dyInfo/2 },
+          opacity: 1,
+        })
+        infosContainer.add(infoText)
+      })
+
+      nodeWrapper.add(infosContainer)
+      this.infos.push(infosContainer)
+    } else {
+      this.infos.push(null)
+    }
   }
 
   public *activate(index: number, duration: number) {
@@ -315,6 +343,7 @@ export class FlowChart extends Node {
       delay(startNode, tween(dtNode, value => { this.nodes[childIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
       delay(startNode, tween(dtNode, value => { this.nodes[childIndex].children()[1]?.opacity(value)})),
       delay(startNode, tween(dtNode, value => { this.images[childIndex]?.opacity(value)})),
+      // delay(startNode, this.infos[childIndex]?.opacity(1, dtNode)),
       delay(startLiftUp, this.activations[childIndex](1, dtLiftUp)),
       delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[childIndex].children()[1]?.scale(1+value*.1)})),
       delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[childIndex].children()[1]?.y(95+value*5)}))
@@ -335,6 +364,7 @@ export class FlowChart extends Node {
       delay(.0, tween(.01, value => { this.borders[nodeIndex].opacity(value)})),
       delay(dt1, tween(dt1, value => { this.nodes[nodeIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
       delay(dt1, tween(dt1, value => { this.images[nodeIndex]?.opacity(value)})),
+      //delay(dt1, this.infos[nodeIndex]?.opacity(1, dt1)),
       delay(dt1, this.activations[nodeIndex](1, dt1)),
     )
     //this.backgroundPaths.removeChildren()
@@ -363,6 +393,7 @@ export class FlowChart extends Node {
       delay(startBorder, tween(dtBorder, value => { this.borders[childIndex].start(value)})),
       delay(startNode, tween(dtNode, value => { this.nodes[childIndex].fill(Color.lerp(new Color(hsl(0, 60, 38)), new Color('rgb(52,50,57)'), value))})),
       delay(startNode, tween(dtNode, value => { this.images[childIndex]?.opacity(1 - value)})),
+      delay(startNode, this.infos[childIndex]?.opacity(0, dtNode)),
       delay(startLiftDown, this.activations[childIndex](0, dtLiftDown)),
       delay(startBorder+dtBorder, tween(.01, value => { this.borders[childIndex].opacity(1 - value)})),
     )

@@ -6,9 +6,9 @@
         "data": {
           "nodes": [
             {
-              "id": 930580,
+              "id": 596745,
               "children": [],
-              "x": -660,
+              "x": -600,
               "y": 0,
               "year": 0,
               "startSide": "right",
@@ -16,11 +16,37 @@
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "wc8z4fue8vhyzom47c7wq",
-              "type": "circle"
+              "componentId": "gz3a08q8ygpfkrpas2po3l",
+              "type": "circle",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "nweqcefkrkcwkrd1wu72r"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "f1el0kk9nps9jt5puvi5nn"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "8x54fuqyu6k8p2ho8ew1y4"
+                },
+                {
+                  "name": "Info 3",
+                  "id": "d3kn6qcmwt4po3v5tdmem"
+                },
+                {
+                  "name": "Info 4",
+                  "id": "3kkpohex7b45mk0iz5j7z5"
+                },
+                {
+                  "name": "Info 5",
+                  "id": "xqtpbgeblwurhg9j4qd5i"
+                }
+              ]
             },
             {
-              "id": 674160,
+              "id": 314051,
               "children": [],
               "x": 0,
               "y": 0,
@@ -30,13 +56,13 @@
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "wc8z4fue8vhyzom47c7wq",
+              "componentId": "gz3a08q8ygpfkrpas2po3l",
               "type": "circle"
             },
             {
-              "id": 932688,
+              "id": 707876,
               "children": [],
-              "x": 660,
+              "x": 600,
               "y": 0,
               "year": 0,
               "startSide": "right",
@@ -44,7 +70,7 @@
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "wc8z4fue8vhyzom47c7wq",
+              "componentId": "gz3a08q8ygpfkrpas2po3l",
               "type": "circle"
             }
           ],
@@ -59,39 +85,8 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "wc8z4fue8vhyzom47c7wq",
+      "id": "gz3a08q8ygpfkrpas2po3l",
       "name": "flowChart0"
-    },
-    {
-      "type": "container",
-      "configuration": {
-        "data": {
-          "rows": 1,
-          "items": [
-            {
-              "name": "Item 0",
-              "id": "6wtv4c5fvuwcyusmmnxjbn"
-            },
-            {
-              "name": "Item 1",
-              "id": "ducdusw3nb9xvid5jnfe7"
-            },
-            {
-              "name": "Item 2",
-              "id": "my4nm5rhrrm6fp9zfdudar"
-            }
-          ],
-          "parent": "1"
-        },
-        "x": 600,
-        "y": -840,
-        "width": 240,
-        "height": 240
-      },
-      "data": null,
-      "color": "hsl(60,  40%, 45%)",
-      "id": "p892hqp7minhm9r3frzm1o",
-      "name": "container1"
     }
   ],
   "animation": [
@@ -108,47 +103,10 @@
         ]
       },
       "track": 0,
-      "id": "srd1j2xzn1f4gcrud9i15d"
+      "id": "mu9td2tjrz1lo8z99b5wz"
     }
   ],
   "tracks": 1,
   "panel": [],
-  "audio": [
-    {
-      "name": "A Link to the Past.wav",
-      "duration": 14.65,
-      "start": 0,
-      "id": "cufxeht83eeistwqwhsk"
-    },
-    {
-      "name": "NES.wav",
-      "duration": 13.2,
-      "start": 14.65,
-      "id": "hy72m5z6puu9x1rs7c3355"
-    },
-    {
-      "name": "Nintendo.wav",
-      "duration": 11.65,
-      "start": 27.85,
-      "id": "zuvensoulqhle1dm1awdrk"
-    },
-    {
-      "name": "SNES.wav",
-      "duration": 9.95,
-      "start": 39.5,
-      "id": "ugfr1jajrmcmt8rm1adrep"
-    },
-    {
-      "name": "The Legend of Zelda.wav",
-      "duration": 15.1,
-      "start": 49.45,
-      "id": "6xsbkva1iu954qcdcf5v24"
-    },
-    {
-      "name": "Zelda II: The Adventure of Link.wav",
-      "duration": 14.3,
-      "start": 64.55,
-      "id": "j00prk3ssjsx69pydrypdb"
-    }
-  ]
+  "audio": []
 }

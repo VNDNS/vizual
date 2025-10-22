@@ -3,6 +3,7 @@ import { useAnimation } from "../../context"
 import { useAnimationHooks } from "../../hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
 import { OptionSelection } from "../common/OptionSelection"
+import { OptionSelection as OptionSelection2 } from "../common/OptionSelection2"
 import { useComputeEdges } from "@context/hooks/useComputeEdges"
 import { FlowChartNode } from "@type/FlowChartTypes"
 import { id } from "../../../../../common/id"
@@ -14,6 +15,7 @@ export const NodeConfiguration = () => {
   const { computeEdges } = useComputeEdges()
 
   const [imageFile, setImageFile] = useState<string>('')
+  const [selectedInfo, setSelectedInfo] = useState<string>('')
 
   const selectedNode = getSelectedNode()
   const selectedComponent_ = getSelectedComponent()
@@ -74,7 +76,7 @@ export const NodeConfiguration = () => {
     const newNodes = [...nodes, node]
     selectedComponent_.configuration.data.nodes = newNodes
     setComponents([...components])
-    computeEdges(newNodes)
+    computeEdges()
   }
 
   const fadeInNodes = () => {
@@ -86,6 +88,29 @@ export const NodeConfiguration = () => {
     const newAnimation = { component: selectedComponent_?.name || '', method: 'fadeIn', duration: duration, start: start, inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, track: 0, id: id() }
     setAnimation([...animation, newAnimation])
   }
+
+  const handleAddInfo = () => {
+    if (!selectedNode.infos) {
+      selectedNode.infos = []
+    }
+    const infos = selectedNode.infos
+    infos.push({ name: 'Info ' + infos.length, id: id() })
+    setComponents([...components])
+  }
+
+  const handleSetSelectedInfo = (id: string) => {
+    setSelectedInfo(id)
+  }
+
+  const handleSetInfoValue = (value: string) => {
+    const index = selectedNode?.infos?.findIndex((info: any) => info.id === selectedInfo)
+    if (index !== undefined && index !== -1) {
+      selectedNode.infos[index].name = value
+      setComponents([...components])
+    }
+  }
+
+  const selectedInfo_ = selectedNode?.infos?.find((info: any) => info.id === selectedInfo)
 
   return (
     <>
@@ -105,6 +130,12 @@ export const NodeConfiguration = () => {
       {/* <button onClick={onHighlight}>Highlight Node</button> */}
       {/* <button onClick={onResetHighlight}>Reset Highlight</button> */}
       <button onClick={fadeInNodes}>Fade In Nodes</button>
+      <div className="input-group">
+        <span>Info Value</span>
+        <input type="text" value={selectedInfo_?.name} onChange={(e) => handleSetInfoValue(e.target.value)} />
+      </div>
+      <button onClick={handleAddInfo}>Add Info</button>
+      <OptionSelection2 options={selectedNode?.infos} setValue={handleSetSelectedInfo} value={selectedInfo} />
         </>
       )}
     </>
