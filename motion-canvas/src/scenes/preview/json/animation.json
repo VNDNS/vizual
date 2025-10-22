@@ -1,97 +1,54 @@
 {
   "components": [
     {
-      "type": "item",
-      "configuration": {
-        "data": null,
-        "x": -360,
-        "y": -180,
-        "width": 240,
-        "height": 240
-      },
-      "data": null,
-      "color": "hsl(0,   40%, 45%)",
-      "id": "tzgu9phkv1s6ag2k7v2s",
-      "name": "item0"
-    },
-    {
       "type": "flowChart",
       "configuration": {
         "data": {
           "nodes": [
             {
-              "id": 70812,
-              "children": [
-                167251
-              ],
-              "x": -120,
-              "y": -120,
+              "id": 930580,
+              "children": [],
+              "x": -660,
+              "y": 0,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "x72zh3yexjnmiygavx25jl",
-              "type": "square"
+              "componentId": "wc8z4fue8vhyzom47c7wq",
+              "type": "circle"
             },
             {
-              "id": 167251,
-              "parent": 70812,
+              "id": 674160,
               "children": [],
-              "x": 420,
-              "y": 120,
+              "x": 0,
+              "y": 0,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "x72zh3yexjnmiygavx25jl",
-              "type": "square"
-            }
-          ],
-          "edges": [
+              "componentId": "wc8z4fue8vhyzom47c7wq",
+              "type": "circle"
+            },
             {
-              "id": "70812-167251",
-              "x1": 40,
-              "y1": -120,
-              "x2": 260,
-              "y2": 120,
-              "sourceId": 70812,
-              "targetId": 167251,
-              "endSide": "left",
+              "id": 932688,
+              "children": [],
+              "x": 660,
+              "y": 0,
+              "year": 0,
               "startSide": "right",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": 40,
-                  "y": -120
-                },
-                {
-                  "x": 95,
-                  "y": -120
-                },
-                {
-                  "x": 150,
-                  "y": -65
-                },
-                {
-                  "x": 150,
-                  "y": 65
-                },
-                {
-                  "x": 205,
-                  "y": 120
-                },
-                {
-                  "x": 260,
-                  "y": 120
-                }
-              ]
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Node 3",
+              "componentId": "wc8z4fue8vhyzom47c7wq",
+              "type": "circle"
             }
           ],
+          "edges": [],
           "containerNodes": [],
           "name": "flowChart"
         },
@@ -101,12 +58,59 @@
         "height": 240
       },
       "data": null,
+      "color": "hsl(0,   40%, 45%)",
+      "id": "wc8z4fue8vhyzom47c7wq",
+      "name": "flowChart0"
+    },
+    {
+      "type": "container",
+      "configuration": {
+        "data": {
+          "rows": 1,
+          "items": [
+            {
+              "name": "Item 0",
+              "id": "6wtv4c5fvuwcyusmmnxjbn"
+            },
+            {
+              "name": "Item 1",
+              "id": "ducdusw3nb9xvid5jnfe7"
+            },
+            {
+              "name": "Item 2",
+              "id": "my4nm5rhrrm6fp9zfdudar"
+            }
+          ],
+          "parent": "1"
+        },
+        "x": 600,
+        "y": -840,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
       "color": "hsl(60,  40%, 45%)",
-      "id": "x72zh3yexjnmiygavx25jl",
-      "name": "flowChart1"
+      "id": "p892hqp7minhm9r3frzm1o",
+      "name": "container1"
     }
   ],
-  "animation": [],
+  "animation": [
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 2.4166666666666665,
+      "start": 0,
+      "inputs": {
+        "nodes": [
+          "Node 1",
+          "Node 2",
+          "Node 3"
+        ]
+      },
+      "track": 0,
+      "id": "srd1j2xzn1f4gcrud9i15d"
+    }
+  ],
   "tracks": 1,
   "panel": [],
   "audio": [
@@ -114,37 +118,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "wnysmgs2f2h4bo30db3iwy"
+      "id": "cufxeht83eeistwqwhsk"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "0si191010emippqzbvra5e"
+      "id": "hy72m5z6puu9x1rs7c3355"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "2zl1e07jhpf5agiax6yw2j"
+      "id": "zuvensoulqhle1dm1awdrk"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "v14sbvb4svpfrffc06y3bn"
+      "id": "ugfr1jajrmcmt8rm1adrep"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "5p617ak9fgneanp4zg71oh"
+      "id": "6xsbkva1iu954qcdcf5v24"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "yqzzyu2xjzt36jyui1ny"
+      "id": "j00prk3ssjsx69pydrypdb"
     }
   ]
 }
