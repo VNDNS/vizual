@@ -23,4 +23,6 @@ export default makeScene2D(function* (view) {
 
 
   yield* flowChart0.fadeIn(['Node 1','Node 2','Node 3'],2.4166666666666665)
+
+  yield* flowChart0.fadeIn(['Node 4'],1.8166666666666667)
 })

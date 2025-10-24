@@ -6,59 +6,148 @@
         "data": {
           "nodes": [
             {
-              "id": 596745,
-              "children": [],
-              "x": -600,
-              "y": 0,
+              "id": 304700,
+              "children": [
+                686668
+              ],
+              "x": -540,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "gz3a08q8ygpfkrpas2po3l",
+              "componentId": "5z02bgk13z8wmqvtxy4hcd",
               "type": "circle",
               "infos": [
                 {
-                  "name": "01.01.1950",
-                  "id": "fwmvh7b8uzm59yz3bz27ec"
+                  "name": "Info 0",
+                  "id": "uruf3ie7ttnxifk0flizak"
                 },
                 {
-                  "name": "Jensen Huang",
-                  "id": "3nl405a32o36syeo21umai"
+                  "name": "Info 1",
+                  "id": "bz2d6dvau4dgmz83r0jvsn"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "e3zt07g7ngr98r4uzuplt"
                 }
               ]
             },
             {
-              "id": 314051,
+              "id": 457995,
               "children": [],
-              "x": 0,
-              "y": 0,
+              "x": 540,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "gz3a08q8ygpfkrpas2po3l",
-              "type": "circle"
+              "componentId": "5z02bgk13z8wmqvtxy4hcd",
+              "type": "circle",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "360vavtwqn4u8mjt0q254"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "iyx8i59qb6xr6y7akrmr"
+                }
+              ]
             },
             {
-              "id": 707876,
+              "id": 353764,
               "children": [],
-              "x": 600,
-              "y": 0,
+              "x": 0,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "gz3a08q8ygpfkrpas2po3l",
-              "type": "circle"
+              "componentId": "5z02bgk13z8wmqvtxy4hcd",
+              "type": "circle",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "nf5vz8j80gc2afkoqyqxda"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "mtjvpa64gwkroh8h2hh09"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "f32yuley2iow5mdzjwee5"
+                },
+                {
+                  "name": "Info 3",
+                  "id": "c8o4pju06mkem34rfrqfbf"
+                }
+              ]
+            },
+            {
+              "id": 686668,
+              "parent": 304700,
+              "children": [],
+              "x": -120,
+              "y": 300,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Node 4",
+              "componentId": "5z02bgk13z8wmqvtxy4hcd",
+              "type": "square"
             }
           ],
-          "edges": [],
+          "edges": [
+            {
+              "id": "304700-686668",
+              "x1": -540,
+              "y1": -140,
+              "x2": -120,
+              "y2": 140,
+              "sourceId": 304700,
+              "targetId": 686668,
+              "endSide": "top",
+              "startSide": "bottom",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": -540,
+                  "y": -140
+                },
+                {
+                  "x": -540,
+                  "y": -70
+                },
+                {
+                  "x": -470,
+                  "y": 0
+                },
+                {
+                  "x": -190,
+                  "y": 0
+                },
+                {
+                  "x": -120,
+                  "y": 70
+                },
+                {
+                  "x": -120,
+                  "y": 140
+                }
+              ]
+            }
+          ],
           "containerNodes": [],
           "name": "flowChart"
         },
@@ -69,7 +158,7 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "gz3a08q8ygpfkrpas2po3l",
+      "id": "5z02bgk13z8wmqvtxy4hcd",
       "name": "flowChart0"
     }
   ],
@@ -87,7 +176,20 @@
         ]
       },
       "track": 0,
-      "id": "mu9td2tjrz1lo8z99b5wz"
+      "id": "w9nez4sarunlqisv4462r"
+    },
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 1.8166666666666667,
+      "start": 2.4166666666666665,
+      "inputs": {
+        "nodes": [
+          "Node 4"
+        ]
+      },
+      "track": 0,
+      "id": "qyts1v2pw3kxk8hb7b4foi"
     }
   ],
   "tracks": 1,
@@ -97,37 +199,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "l9mn4ql5ximj1x1c999hjj"
+      "id": "jbbrc6snv9bmkbfsap3gn"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "gs7zbr3yby9i8pksxuzgen"
+      "id": "4ud5vtsoecv15tm1hgulr3"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "ne7fqnimyqid95cdpl4"
+      "id": "kvpwk3u3m9fobjn1q4e6ys"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "yoxzlnyavyqm1ry94jf7ul"
+      "id": "1y3awa74c4ym93u8zjxxd"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "ff6oc41cqyrrwwtjuvvxse"
+      "id": "259lv5rk4qzpret94ndlbs"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "qje758mgq2d7q87t8ktz"
+      "id": "jg3hsh4blclrncoqa8t5p"
     }
   ]
 }

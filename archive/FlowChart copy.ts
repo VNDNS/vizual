@@ -1,22 +1,17 @@
 import { Rect, Txt, Node, Img, NodeProps, Line, Circle } from "@motion-canvas/2d"
 import { Color, SimpleSignal, all, createSignal, delay, sequence, tween } from "@motion-canvas/core"
-import { textColor } from "../../../frontend/plugins/animation/constants"
-import { Point } from "./functions/Point"
-import { computeBackground } from "./functions/computeBackground"
-import { getSharedPoints, interpolateShapes } from "./functions/interpolateShapes"
-import { rotateArray } from "./functions/rotateArray"
-import { backgroundPaths } from "../../../debug"
-import { convexHull } from "./functions/convexHull"
-import { offsetPoints } from "./functions/offsetPoints"
-import { voronoiDiagram } from "./functions/voronoiDiagram"
-import { mergeCells } from "./functions/mergeVertices"
+import { textColor } from "../frontend/plugins/animation/constants"
+import { Point } from "../motion-canvas/src/components/functions/Point"
+import { computeBackground } from "../motion-canvas/src/components/functions/computeBackground"
+import { getSharedPoints, interpolateShapes } from "../motion-canvas/src/components/functions/interpolateShapes"
+import { rotateArray } from "../motion-canvas/src/components/functions/rotateArray"
+import { backgroundPaths } from "../debug"
+import { convexHull } from "../motion-canvas/src/components/functions/convexHull"
+import { offsetPoints } from "../motion-canvas/src/components/functions/offsetPoints"
+import { voronoiDiagram } from "../motion-canvas/src/components/functions/voronoiDiagram"
+import { mergeCells } from "../motion-canvas/src/components/functions/mergeVertices"
 
-export const hsl = (color: number, saturation: number = 60, lightness: number = 60) => {
-  return `hsl(${color}, ${saturation}%, ${lightness}%)`
-}
-
-const lineColor = hsl(0, 60, 83)
-
+const lineColor = '#9898b3'
 
 interface Edge {
   id: string
@@ -48,7 +43,9 @@ interface FlowChartProps extends NodeProps {
   data: { nodes: Nodes[], edges: Edge[], name: string }
 }
 
-
+export const hsl = (color: number, saturation: number = 60, lightness: number = 60) => {
+  return `hsl(${color}, ${saturation}%, ${lightness}%)`
+}
 
 export class FlowChart extends Node {
 
@@ -90,7 +87,7 @@ export class FlowChart extends Node {
   }
 
   private initializeActivations() {
-    this.activations = this.data.nodes.map(() => createSignal(0))
+    this.activations = this.data.nodes.map((_, i) => createSignal(i === 0 ? 0 : 0))
     this.edgeActivations = this.data.edges.map(() => createSignal(0))
   }
 
@@ -122,29 +119,114 @@ export class FlowChart extends Node {
     this.edges.push(edge)
   }
 
+  // ----------------------------------------------- //
+
+  private computeBackground(index: number) {
+    
+    const points: Point[] = []
+    
+    this.data.nodes.forEach((node, i) => {
+      if(this.activations[i]() === 1 || i === index) {
+        points.push({ x: node.x, y: node.y })
+      }
+    })
+    
+    const nextBackgroundPoints_ = computeBackground(points)
+    const backgroundPoints      = (this.background?.points() as any) || []
+    const firstBackgroundPoints = backgroundPoints[0] as any
+    const index_                = nextBackgroundPoints_.findIndex(point => firstBackgroundPoints && point.x === firstBackgroundPoints.x && point.y === firstBackgroundPoints.y)
+    const nextBackgroundPoints  = rotateArray(nextBackgroundPoints_, index_)
+
+    const convexHullPoints     = convexHull(points)
+    const offsetedPoints       = offsetPoints(convexHullPoints, 600)
+    const voronoiCells         = voronoiDiagram(offsetedPoints, points)
+
+    const {result: resultLines, unionPoints} = interpolateShapes(backgroundPoints as Point[], nextBackgroundPoints)
+
+    const paths = resultLines.map(line => new Line({ points: () => line, lineWidth: 5, stroke: 'red' }))
+    const shape = new Line({ points: () => offsetedPoints, lineWidth: 5, stroke: 'blue', closed: true })
+    voronoiCells.forEach(cell => {
+      const shape = new Line({ points: () => cell, lineWidth: 5, stroke: 'green', closed: true })
+      this.backgroundPaths.add(shape)
+    })
+
+
+    if(voronoiCells.length > 2) {
+
+      const mergedCells = mergeCells(voronoiCells[0], voronoiCells[1])
+      const shape2 = new Line({ points: () => mergedCells, lineWidth: 5, stroke: 'yellow', closed: true })
+      this.backgroundPaths.add(shape2)
+    }
+
+    //this.backgroundPaths.add(shape)
+    
+    //this.backgroundPaths.add(paths)
+    
+    unionPoints?.forEach((point, i) => {
+      const circle = new Circle({ x: point.x+15, y: point.y, size: 25, fill: 'black' })
+      circle.add(new Txt({ text: i.toString(), fontSize: 20, fill: 'white' }))
+      //this.backgroundPaths.add(circle)
+    })
+
+    nextBackgroundPoints?.forEach((point, i) => {
+      const circle = new Circle({ x: point.x-15, y: point.y, size: 25, fill: 'magenta' })
+      circle.add(new Txt({ text: i.toString(), fontSize: 20, fill: 'white' }))
+      //this.backgroundPaths.add(circle)
+    })
+
+    return { prePoints: unionPoints, postPoints: nextBackgroundPoints}
+  }
+
+  // ----------------------------------------------- //
+
+  private initializeBackground() {
+    
+    const points: Point[] = [this.data.nodes[0]]
+
+    const hullPoints = computeBackground(points)
+
+    const background = new Line({ points: () => hullPoints, fill: hsl(0, 80, 70), stroke: 'rgba(255,180,180,1)', lineWidth: 20, radius: 0, closed: true, zIndex: -1000, })
+
+    this.background = background
+    
+    this.add(background)
+  }
+
   private initializeNode(i: number) {
     const nodeData = this.data.nodes[i]
     const { x, y } = nodeData
     const activation = this.activations[i]
+    const imageSize = 400
 
     const nodeWrapper = new Node({key: nodeData.id.toString()})
 
-    const size = () => 240 + activation()*10
+    // const background = new Circle({
+    //   size: 640,
+    //   fill: 'rgba(255,60,60,.4)',
+    //   opacity: activation,
+    //   zIndex: -1000,
+    //   position: { x: x, y: y },
+    //   scale: activation,
+    //   filters: [blur(50)],
+    // })
+    // this.add(background)
 
+    const size = 240
     const border = new Line({
       points: () => [
-        { x: nodeData.x - (size())/2, y: nodeData.y -(size())/2 },
-        { x: nodeData.x + (size())/2, y: nodeData.y - (size())/2 },
-        { x: nodeData.x + (size())/2, y: nodeData.y + (size())/2 },
-        { x: nodeData.x - (size())/2, y: nodeData.y + (size())/2 },
+        { x: nodeData.x - (size + activation()*10)/2, y: nodeData.y -(size+activation()*10)/2 },
+        { x: nodeData.x + (size + activation()*10)/2, y: nodeData.y - (size+activation()*10)/2 },
+        { x: nodeData.x + (size + activation()*10)/2, y: nodeData.y + (size+activation()*10)/2 },
+        { x: nodeData.x - (size + activation()*10)/2, y: nodeData.y + (size+activation()*10)/2 },
       ],
       closed: true,
-      end: 0,
+      end: i === 0 ? 0 : 0,
       opacity: 0,
-      stroke: lineColor,
-      lineWidth: 7,
+      stroke: hsl(0, 60, 83),
+      lineWidth: 10,
+
       lineCap: "round",
-      radius: nodeData.type === 'circle' ? () => size()/2 : 15,
+      radius: nodeData.type === 'circle' ? size/2 : 15,
     })
     this.borders.push(border)
 
@@ -154,17 +236,21 @@ export class FlowChart extends Node {
       fill: 'white',
       fontFamily: 'Rubik',
       fontWeight: 400,
-      position: { x: 0, y: nodeData.type === 'circle' ? 160 : 95 },
-      opacity: 1,
+      position: { x: 0, y: nodeData.type === 'circle' ? 0+160 : 0+95 },
+      opacity: 0,
     })
+
+    const hue = 240
+    const saturation = 20
+    const lightness = 10
     
     const node = new Rect({
-      width: size,
-      height: size,
+      width: () => size + activation()*10,
+      height: () => size + activation()*10,
       fill: 'rgb(52,50,57)',
       position: { x: x, y: y },
       opacity: 0,
-      radius: nodeData.type === 'circle' ? () => size()/2 : 15,
+      radius: nodeData.type === 'circle' ? size/2 : 15,
       stroke: '#ffffff4d',
       shadowBlur: () => 50 * activation(),
       shadowColor: '#00000080',
@@ -172,7 +258,6 @@ export class FlowChart extends Node {
       shadowOffsetX: () => 20 * activation(),
       shadowOffsetY: () => 20 * activation(),
     })
-
     this.nodes.push(node)
     this.add(nodeWrapper)
     nodeWrapper.add(node)
@@ -197,7 +282,7 @@ export class FlowChart extends Node {
 
     if (nodeData.infos && nodeData.infos.length > 0) {
       const infosContainer = new Node({
-        position: () => ({ x: x + 200, y: y }),
+        position: { x: x + size/2 + 80, y: y },
       })
 
       const nodeLines: Line[] = []
@@ -216,7 +301,7 @@ export class FlowChart extends Node {
         })
         infosContainer.add(infoText)
 
-        const infoTextX = x + 200
+        const infoTextX = x + size/2 + 80
         const infoTextY = y + infoY
         
         const lineOffsetY = 20
@@ -225,9 +310,8 @@ export class FlowChart extends Node {
         const dx = infoTextX - x
         const dy = lineY - y
         const angle = Math.atan2(dy, dx)
-
         
-        const circleRadius = () => size() / 2 + activation()*30
+        const circleRadius = () => size / 2 + activation()*10
         const startX = () => x + circleRadius() * Math.cos(angle)
         const startY = () => y + circleRadius() * Math.sin(angle)
         
@@ -260,10 +344,14 @@ export class FlowChart extends Node {
   }
 
   public *activate(index: number, duration: number) {
-    const edgeData  = this.data.edges[index]
-    const edge = this.edges[index]
-    const targetNode = edgeData.targetId
-    const targetNodeIndex = this.data.nodes.findIndex(n => n.id === targetNode)
+    const id = this.data.edges[index].id
+    const edge = this.data.edges[index]
+    const joints = edge.joints || []
+    const points = edge.points || []
+    const animations: any[] = []
+    
+    const child = edge.targetId
+    const childIndex = this.data.nodes.findIndex(n => n.id === child)
     
     const startBorder = .0
     const dtBorder = 1
@@ -273,19 +361,30 @@ export class FlowChart extends Node {
     const dtLiftUp = .5
     const dtEdge = startLiftUp +.3
     
-    this.nodes[targetNodeIndex].opacity(1)
+    this.nodes[childIndex].opacity(1)
+
+    // joints.forEach(j => {
+    //   j.children?.forEach(child => {
+    //     const targetId = typeof child === 'number' ? child : this.data.nodes.find(n => n.name === child)?.id
+    //     const sourceId = j.id
+    //     const edgeIndex = this.data.edges.findIndex(e => e.sourceId === sourceId && e.targetId === targetId)
+    //     animations.push(delay(dtEdge*j.s,this.activate(edgeIndex, duration)))
+
+    //   })
+    // })
 
     yield* all(
-      tween(dtEdge, value => { edge.end(value)}),
-      edge?.opacity(1, .01),
-      delay(startBorder, tween(dtBorder, value => { this.borders[targetNodeIndex].end(value)})),
-      delay(startBorder, tween(.01, value => { this.borders[targetNodeIndex].opacity(value)})),
-      delay(startNode, tween(dtNode, value => { this.nodes[targetNodeIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
-      delay(startNode, tween(dtNode, value => { this.nodes[targetNodeIndex].children()[1]?.opacity(value)})),
-      delay(startNode, tween(dtNode, value => { this.images[targetNodeIndex]?.opacity(value)})),
-      delay(startLiftUp, this.activations[targetNodeIndex](1, dtLiftUp)),
-      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[targetNodeIndex].children()[1]?.scale(1+value*.1)})),
-      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[targetNodeIndex].children()[1]?.y(95+value*5)}))
+      tween(dtEdge, value => { this.edges[index].end(value)}),
+      this.edges[index]?.opacity(1, .01),
+      delay(startBorder, tween(dtBorder, value => { this.borders[childIndex].end(value)})),
+      delay(startBorder, tween(.01, value => { this.borders[childIndex].opacity(value)})),
+      delay(startNode, tween(dtNode, value => { this.nodes[childIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
+      delay(startNode, tween(dtNode, value => { this.nodes[childIndex].children()[1]?.opacity(value)})),
+      delay(startNode, tween(dtNode, value => { this.images[childIndex]?.opacity(value)})),
+      // delay(startNode, this.infos[childIndex]?.opacity(1, dtNode)),
+      delay(startLiftUp, this.activations[childIndex](1, dtLiftUp)),
+      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[childIndex].children()[1]?.scale(1+value*.1)})),
+      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[childIndex].children()[1]?.y(95+value*5)}))
     )
 
   }
