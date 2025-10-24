@@ -10,13 +10,13 @@ import { convexHull } from "./functions/convexHull"
 import { offsetPoints } from "./functions/offsetPoints"
 import { voronoiDiagram } from "./functions/voronoiDiagram"
 import { mergeCells } from "./functions/mergeVertices"
+import { FlowChartNode } from "./FlowChartNode"
 
 export const hsl = (color: number, saturation: number = 60, lightness: number = 60) => {
   return `hsl(${color}, ${saturation}%, ${lightness}%)`
 }
 
 const lineColor = hsl(0, 60, 83)
-
 
 interface Edge {
   id: string
@@ -47,42 +47,6 @@ interface Nodes {
 interface FlowChartProps extends NodeProps {
   data: { nodes: Nodes[], edges: Edge[], name: string }
 }
-
-const getShadowProps = (activation: () => number) => {
-  return { shadowBlur: () => 50 * activation(), shadowColor: '#00000080', clip: true, shadowOffsetX: () => 20 * activation(), shadowOffsetY: () => 20 * activation() }
-}
-
-const getSquarePoints = (size: () => number) => {
-  return [
-    { x:  - (size())/2, y:  - (size())/2 },
-    { x:  + (size())/2, y:  - (size())/2 },
-    { x:  + (size())/2, y:  + (size())/2 },
-    { x:  - (size())/2, y:  + (size())/2 },
-  ]
-}
-
-const getInfoLinePoints = (size: () => number, infoText: Txt) => {
-          
-  const lineOffsetY = 20
-  const position = infoText.position()
-  const lineY = position.y + lineOffsetY
-  const dx = position.x
-  const dy = lineY
-  const angle = Math.atan2(dy, dx)
-  
-  const circleRadius = () => size() / 2
-  const startX = () => circleRadius() * Math.cos(angle)
-  const startY = () => circleRadius() * Math.sin(angle)
-
-  const textWidth = infoText.width()
-  const points = [
-    { x: startX(), y: startY() },
-    { x: position.x, y: lineY },
-    { x: position.x + textWidth, y: lineY }
-  ]
-  return points
-}
-
 
 export class FlowChart extends Node {
 
@@ -126,60 +90,13 @@ export class FlowChart extends Node {
   }
 
   private initializeNode(i: number) {
-
-    const nodeData    = this.data.nodes[i]
-    const { x, y }    = nodeData
-    const a           = this.activations[i]
-    const size        = () => 240 + a()*10
-    const points      = getSquarePoints(size)
-    const shadowProps = getShadowProps(a)
+    const nodeData = this.data.nodes[i]
+    const flowChartNode = new FlowChartNode(this, nodeData, this.activations[i])
     
-    const node        = new Node({ x, y, key: nodeData.id.toString() })
-    const border      = new Line({ points, closed: true, end: 0, opacity: 0, stroke: lineColor, lineWidth: 7, lineCap: "round", radius: nodeData.type === 'circle' ? () => size()/2 : 15 })
-    const text        = new Txt({ text: nodeData.name, fontSize: 35, fill: 'white', fontFamily: 'Rubik', fontWeight: 400, position: { x: 0, y: nodeData.type === 'circle' ? 160 : 95 }, opacity: 1 })
-    const background  = new Rect({ width: size, height: size, fill: 'rgb(52,50,57)', opacity: 0, radius: nodeData.type === 'circle' ? () => size()/2 : 15, ...shadowProps })
-    
-    this.borders.push(border)
-    this.nodes.push(background)
-    this.add(node)
-    node.add(background)
-    node.add(border)
-    background.add(text)
-
-    if (nodeData.image) {
-      const image = new Img({ src: `./images/${nodeData.image}`, width: 210, scale: () => 1 + a()*.1/2, opacity: 0, position: { x: 0, y: 0 } })
-      background.add(image)
-      this.images.push(image)
-    } else {
-      this.images.push(null)
-    }
-
-    if (nodeData.infos?.length > 0) {
-      const infosContainer = new Node({ x: 200, y: 0 })
-
-      const nodeLines: Line[] = []
-      const dyInfo = 100
-
-      nodeData.infos.forEach((info, index) => {
-        
-        const infoY     = index * dyInfo - (nodeData.infos.length - 1) * dyInfo/2
-        const infoTextX = 200
-        const infoTextY = infoY
-        const position  = { x: infoTextX, y: infoTextY }
-        const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 1 })
-        const points    = getInfoLinePoints(size, infoText)
-        const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round" })
-        
-        node.add(polyline)
-        node.add(infoText)
-        nodeLines.push(polyline)
-      })
-
-      node.add(infosContainer)
-      this.infos.push(infosContainer)
-    } else {
-      this.infos.push(null)
-    }
+    this.borders.push(flowChartNode.border)
+    this.nodes.push(flowChartNode.background)
+    this.images.push(flowChartNode.image)
+    this.infos.push(flowChartNode.infos)
   }
 
   public *activate(index: number, duration: number) {
