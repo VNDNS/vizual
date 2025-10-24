@@ -48,50 +48,62 @@ interface FlowChartProps extends NodeProps {
   data: { nodes: Nodes[], edges: Edge[], name: string }
 }
 
+const getShadowProps = (activation: () => number) => {
+  return { shadowBlur: () => 50 * activation(), shadowColor: '#00000080', clip: true, shadowOffsetX: () => 20 * activation(), shadowOffsetY: () => 20 * activation() }
+}
+
+const getSquarePoints = (size: () => number) => {
+  return [
+    { x:  - (size())/2, y:  - (size())/2 },
+    { x:  + (size())/2, y:  - (size())/2 },
+    { x:  + (size())/2, y:  + (size())/2 },
+    { x:  - (size())/2, y:  + (size())/2 },
+  ]
+}
+
+const getInfoLinePoints = (size: () => number, infoText: Txt) => {
+          
+  const lineOffsetY = 20
+  const position = infoText.position()
+  const lineY = position.y + lineOffsetY
+  const dx = position.x
+  const dy = lineY
+  const angle = Math.atan2(dy, dx)
+  
+  const circleRadius = () => size() / 2
+  const startX = () => circleRadius() * Math.cos(angle)
+  const startY = () => circleRadius() * Math.sin(angle)
+
+  const textWidth = infoText.width()
+  const points = [
+    { x: startX(), y: startY() },
+    { x: position.x, y: lineY },
+    { x: position.x + textWidth, y: lineY }
+  ]
+  return points
+}
 
 
 export class FlowChart extends Node {
 
   private data: { nodes: Nodes[], edges: Edge[], name: string }
   private activations: SimpleSignal<number, this>[]
-  private edgeActivations: SimpleSignal<number, this>[]
-  private nodes: Rect[]
-  private borders: Line[]
-  private edges: Line[]
-  private images: Img[]
-  private infos: Node[]
-  private infoLines: Line[][]
-  private background: Line | null
-  private nextBackground: Line | null
-  private pathsActivation: any
-  private backgroundPaths: Node
+  private nodes: Rect[] = []
+  private borders: Line[] = []
+  private edges: Line[] = []
+  private images: Img[] = []
+  private infos: Node[] = []
 
   public constructor(props: FlowChartProps) {
     super({...props, key: props.data.name})
 
-
     this.data = props.data
-
-
-    this.background = null
-    this.nextBackground = null
-    this.nodes = []
-    this.pathsActivation = createSignal(0)
-    this.borders = []
-    this.backgroundPaths = new Node({key: 'backgroundPaths', opacity: backgroundPaths ? 1 : 0})
-    this.add(this.backgroundPaths)
-    this.edges = []
-    this.images = []
-    this.infos = []
-    this.infoLines = []
     this.initializeActivations()
-    //this.initializeBackground()
     this.initializeNodes()
   }
 
   private initializeActivations() {
     this.activations = this.data.nodes.map(() => createSignal(0))
-    this.edgeActivations = this.data.edges.map(() => createSignal(0))
   }
 
   private initializeNodes() {
@@ -107,155 +119,66 @@ export class FlowChart extends Node {
     const edgeData = this.data.edges[i]
     const { points } = edgeData
 
-    const edge = new Line({
-      points: () => points,
-      stroke: hsl(0,60,83),
-      lineWidth: 10,
-      lineCap: "round",
-      radius: 50,
-      zIndex: 1000,
-      opacity: 0,
-      key: edgeData.id,
-      end: 0,
-    })
+    const edge = new Line({ points, stroke: lineColor,lineWidth: 10, lineCap: "round", radius: 50, zIndex: 1000, opacity: 0, key: edgeData.id, end: 0 })
+    
     this.add(edge)  
     this.edges.push(edge)
   }
 
   private initializeNode(i: number) {
-    const nodeData = this.data.nodes[i]
-    const { x, y } = nodeData
-    const activation = this.activations[i]
 
-    const nodeWrapper = new Node({key: nodeData.id.toString()})
-
-    const size = () => 240 + activation()*10
-
-    const border = new Line({
-      points: () => [
-        { x: nodeData.x - (size())/2, y: nodeData.y -(size())/2 },
-        { x: nodeData.x + (size())/2, y: nodeData.y - (size())/2 },
-        { x: nodeData.x + (size())/2, y: nodeData.y + (size())/2 },
-        { x: nodeData.x - (size())/2, y: nodeData.y + (size())/2 },
-      ],
-      closed: true,
-      end: 0,
-      opacity: 0,
-      stroke: lineColor,
-      lineWidth: 7,
-      lineCap: "round",
-      radius: nodeData.type === 'circle' ? () => size()/2 : 15,
-    })
-    this.borders.push(border)
-
-    const text = new Txt({
-      text: nodeData.name,
-      fontSize: 35,
-      fill: 'white',
-      fontFamily: 'Rubik',
-      fontWeight: 400,
-      position: { x: 0, y: nodeData.type === 'circle' ? 160 : 95 },
-      opacity: 1,
-    })
+    const nodeData    = this.data.nodes[i]
+    const { x, y }    = nodeData
+    const a           = this.activations[i]
+    const size        = () => 240 + a()*10
+    const points      = getSquarePoints(size)
+    const shadowProps = getShadowProps(a)
     
-    const node = new Rect({
-      width: size,
-      height: size,
-      fill: 'rgb(52,50,57)',
-      position: { x: x, y: y },
-      opacity: 0,
-      radius: nodeData.type === 'circle' ? () => size()/2 : 15,
-      stroke: '#ffffff4d',
-      shadowBlur: () => 50 * activation(),
-      shadowColor: '#00000080',
-      clip: true,
-      shadowOffsetX: () => 20 * activation(),
-      shadowOffsetY: () => 20 * activation(),
-    })
-
-    this.nodes.push(node)
-    this.add(nodeWrapper)
-    nodeWrapper.add(node)
+    const node        = new Node({ x, y, key: nodeData.id.toString() })
+    const border      = new Line({ points, closed: true, end: 0, opacity: 0, stroke: lineColor, lineWidth: 7, lineCap: "round", radius: nodeData.type === 'circle' ? () => size()/2 : 15 })
+    const text        = new Txt({ text: nodeData.name, fontSize: 35, fill: 'white', fontFamily: 'Rubik', fontWeight: 400, position: { x: 0, y: nodeData.type === 'circle' ? 160 : 95 }, opacity: 1 })
+    const background  = new Rect({ width: size, height: size, fill: 'rgb(52,50,57)', opacity: 0, radius: nodeData.type === 'circle' ? () => size()/2 : 15, ...shadowProps })
+    
+    this.borders.push(border)
+    this.nodes.push(background)
+    this.add(node)
+    node.add(background)
+    node.add(border)
+    background.add(text)
 
     if (nodeData.image) {
-      const image = new Img({
-        src: `./images/${nodeData.image}`,
-        width: 210,
-        // height: 210,
-        scale: () => 1 + activation()*.1/2,
-        opacity: 0,
-        position: { x: 0, y: 0 },
-      })
-      node.add(image)
-      //nodeWrapper.add(image)
-      node.add(text)
+      const image = new Img({ src: `./images/${nodeData.image}`, width: 210, scale: () => 1 + a()*.1/2, opacity: 0, position: { x: 0, y: 0 } })
+      background.add(image)
       this.images.push(image)
     } else {
       this.images.push(null)
     }
-    nodeWrapper.add(border)
 
-    if (nodeData.infos && nodeData.infos.length > 0) {
-      const infosContainer = new Node({
-        position: () => ({ x: x + 200, y: y }),
-      })
+    if (nodeData.infos?.length > 0) {
+      const infosContainer = new Node({ x: 200, y: 0 })
 
       const nodeLines: Line[] = []
       const dyInfo = 100
+
       nodeData.infos.forEach((info, index) => {
-        const infoY = index * dyInfo - (nodeData.infos.length - 1) * dyInfo/2
-        const infoText = new Txt({
-          text: info.name,
-          fontSize: 30,
-          fill: 'white',
-          fontFamily: 'Rubik',
-          fontWeight: 400,
-          offset: [-1, 0],
-          position: { x: 0, y: infoY },
-          opacity: 1,
-        })
-        infosContainer.add(infoText)
-
-        const infoTextX = x + 200
-        const infoTextY = y + infoY
         
-        const lineOffsetY = 20
-        const lineY = infoTextY + lineOffsetY
+        const infoY     = index * dyInfo - (nodeData.infos.length - 1) * dyInfo/2
+        const infoTextX = 200
+        const infoTextY = infoY
+        const position  = { x: infoTextX, y: infoTextY }
+        const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 1 })
+        const points    = getInfoLinePoints(size, infoText)
+        const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round" })
         
-        const dx = infoTextX - x
-        const dy = lineY - y
-        const angle = Math.atan2(dy, dx)
-
-        
-        const circleRadius = () => size() / 2 + activation()*30
-        const startX = () => x + circleRadius() * Math.cos(angle)
-        const startY = () => y + circleRadius() * Math.sin(angle)
-        
-        const textWidth = infoText.width()
-        
-        const polyline = new Line({
-          points: () => [
-            { x: startX(), y: startY() },
-            { x: infoTextX, y: lineY },
-            { x: infoTextX + textWidth, y: lineY }
-          ],
-          stroke: hsl(0, 60, 83),
-          lineWidth: 5,
-          radius: 30,
-          lineCap: "round",
-          opacity: 1,
-        })
-        
-        nodeWrapper.add(polyline)
+        node.add(polyline)
+        node.add(infoText)
         nodeLines.push(polyline)
       })
 
-      nodeWrapper.add(infosContainer)
+      node.add(infosContainer)
       this.infos.push(infosContainer)
-      this.infoLines.push(nodeLines)
     } else {
       this.infos.push(null)
-      this.infoLines.push([])
     }
   }
 
