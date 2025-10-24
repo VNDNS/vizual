@@ -1,5 +1,5 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
-import { SimpleSignal } from "@motion-canvas/core"
+import { SimpleSignal, Color, all, delay, tween } from "@motion-canvas/core"
 import { textColor } from "../../../frontend/plugins/animation/constants"
 
 const hsl = (color: number, saturation: number = 60, lightness: number = 60) => {
@@ -169,5 +169,20 @@ export class FlowChartNode {
     } else {
       this.infos = null
     }
+  }
+
+  public *fadeIn(startBorder: number, dtBorder: number, startNode: number, dtNode: number, startLiftUp: number, dtLiftUp: number) {
+    this.background.opacity(1)
+    
+    yield* all(
+      delay(startBorder, tween(dtBorder, value => { this.border.end(value)})),
+      delay(startBorder, tween(.01, value => { this.border.opacity(value)})),
+      delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
+      delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
+      delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
+      delay(startLiftUp, this.activation(1, dtLiftUp)),
+      delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
+      delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)}))
+    )
   }
 }

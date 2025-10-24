@@ -57,6 +57,7 @@ export class FlowChart extends Node {
   private edges: Line[] = []
   private images: Img[] = []
   private infos: Node[] = []
+  private flowChartNodes: FlowChartNode[] = []
 
   public constructor(props: FlowChartProps) {
     super({...props, key: props.data.name})
@@ -93,6 +94,7 @@ export class FlowChart extends Node {
     const nodeData = this.data.nodes[i]
     const flowChartNode = new FlowChartNode(this, nodeData, this.activations[i])
     
+    this.flowChartNodes.push(flowChartNode)
     this.borders.push(flowChartNode.border)
     this.nodes.push(flowChartNode.background)
     this.images.push(flowChartNode.image)
@@ -113,19 +115,10 @@ export class FlowChart extends Node {
     const dtLiftUp = .5
     const dtEdge = startLiftUp +.3
     
-    this.nodes[targetNodeIndex].opacity(1)
-
     yield* all(
       tween(dtEdge, value => { edge.end(value)}),
       edge?.opacity(1, .01),
-      delay(startBorder, tween(dtBorder, value => { this.borders[targetNodeIndex].end(value)})),
-      delay(startBorder, tween(.01, value => { this.borders[targetNodeIndex].opacity(value)})),
-      delay(startNode, tween(dtNode, value => { this.nodes[targetNodeIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
-      delay(startNode, tween(dtNode, value => { this.nodes[targetNodeIndex].children()[1]?.opacity(value)})),
-      delay(startNode, tween(dtNode, value => { this.images[targetNodeIndex]?.opacity(value)})),
-      delay(startLiftUp, this.activations[targetNodeIndex](1, dtLiftUp)),
-      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[targetNodeIndex].children()[1]?.scale(1+value*.1)})),
-      delay(startLiftUp, tween(dtLiftUp, value => { this.nodes[targetNodeIndex].children()[1]?.y(95+value*5)}))
+      this.flowChartNodes[targetNodeIndex].fadeIn(startBorder, dtBorder, startNode, dtNode, startLiftUp, dtLiftUp)
     )
 
   }
