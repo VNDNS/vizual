@@ -1,53 +1,37 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
 import { SimpleSignal, Color, all, delay, tween, createSignal } from "@motion-canvas/core"
-import { textColor } from "../../../frontend/plugins/animation/constants"
 import { NodeConfig } from "./NodeConfig"
 import { FlowChart } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
 import { getSquarePoints } from "./functions/getSquarePoints"
 import { getInfoLinePoints } from "./functions/getInfoLinePoints"
-
-const hsl = (color: number, saturation: number = 60, lightness: number = 60) => {
-  return `hsl(${color}, ${saturation}%, ${lightness}%)`
-}
+import { linear } from "./linear"
+import { hsl } from "./hsl"
 
 const lineColor = hsl(0, 60, 83)
 
-const linear = (t0: number, dt: number, f: (value: number) => void) => {
-  return delay(t0, tween(dt, value => { f(value)}))
-}
-
-export class FlowChartNode {
+export class FlowChartNode extends Node {
   
   public border: Line
   public background: Rect
   public image: Img | null = null
   public infos: Node | null = null
 
-  private parent: FlowChart
-  private nodeData: NodeConfig
-  private activation: SimpleSignal<number, this>
-  private node: Node
-  private size: () => number
+  private config: NodeConfig
+  private activation: SimpleSignal<number, this> = createSignal(0)
+  private size: () => number = () => 240 + this.activation()*10
 
-  constructor( parent: FlowChart, nodeData: NodeConfig ) {
-    this.parent = parent
-    this.nodeData = nodeData
-    this.activation = createSignal(0)
-    this.size = () => 240 + this.activation()*10
+  constructor(flowchart: FlowChart, config: NodeConfig) {
+    super({ key: config.id.toString(), x: config.x, y: config.y })
+    flowchart.add(this)
+    
+    this.config     = config
 
-    this.initializeNode()
     this.initializeBackground()
     this.initializeBorder()
     this.initializeText()
     this.initializeImage()
     this.initializeInfos()
-  }
-
-  private initializeNode() {
-    const { x, y } = this.nodeData
-    this.node = new Node({ x, y, key: this.nodeData.id.toString() })
-    this.parent.add(this.node)
   }
 
   private initializeBackground() {
@@ -57,10 +41,10 @@ export class FlowChartNode {
       height: this.size, 
       fill: 'rgb(52,50,57)', 
       opacity: 0, 
-      radius: this.nodeData.type === 'circle' ? () => this.size()/2 : 15, 
+      radius: this.config.type === 'circle' ? () => this.size()/2 : 15, 
       ...shadowProps 
     })
-    this.node.add(this.background)
+    this.add(this.background)
   }
 
   private initializeBorder() {
@@ -73,29 +57,29 @@ export class FlowChartNode {
       stroke: lineColor, 
       lineWidth: 7, 
       lineCap: "round", 
-      radius: this.nodeData.type === 'circle' ? () => this.size()/2 : 15 
+      radius: this.config.type === 'circle' ? () => this.size()/2 : 15 
     })
-    this.node.add(this.border)
+    this.add(this.border)
   }
 
   private initializeText() {
     const text = new Txt({ 
-      text: this.nodeData.name, 
+      text: this.config.name, 
       fontSize: 35, 
       fill: 'white', 
       fontFamily: 'Rubik', 
       fontWeight: 400, 
-      position: { x: 0, y: this.nodeData.type === 'circle' ? 160 : 95 }, 
+      position: { x: 0, y: this.config.type === 'circle' ? 160 : 95 }, 
       opacity: 1 
     })
     this.background.add(text)
   }
 
   private initializeImage() {
-    if (!this.nodeData.image) return
+    if (!this.config.image) return
     
     this.image = new Img({ 
-      src: `./images/${this.nodeData.image}`, 
+      src: `./images/${this.config.image}`, 
       width: 210, 
       scale: () => 1 + this.activation()*.1/2, 
       opacity: 0, 
@@ -105,26 +89,21 @@ export class FlowChartNode {
   }
 
   private initializeInfos() {
-    if (!this.nodeData.infos?.length) return
+    if (!this.config.infos?.length) return
     
-    const infosContainer = new Node({ x: 200, y: 0 })
-    const dyInfo = 100
-
-    this.nodeData.infos.forEach((info, index) => {
-      const infoY = index * dyInfo - (this.nodeData.infos.length - 1) * dyInfo/2
+    this.config.infos.forEach((info, index) => {
+      const dyInfo    = 100
       const infoTextX = 200
+      const infoY     = index * dyInfo - (this.config.infos.length - 1) * dyInfo/2
       const infoTextY = infoY
-      const position = { x: infoTextX, y: infoTextY }
-      const infoText = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 1 })
-      const points = getInfoLinePoints(this.size, infoText)
-      const polyline = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round" })
+      const position  = { x: infoTextX, y: infoTextY }
+      const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 1 })
+      const points    = getInfoLinePoints(this.size, infoText)
+      const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round" })
       
-      this.node.add(polyline)
-      this.node.add(infoText)
+      this.add(polyline)
+      this.add(infoText)
     })
-
-    this.node.add(infosContainer)
-    this.infos = infosContainer
   }
 
   public *fadeIn() {
@@ -149,4 +128,3 @@ export class FlowChartNode {
     )
   }
 }
-

@@ -2,8 +2,8 @@ import { Node } from "@motion-canvas/2d"
 import { SimpleSignal, all, createSignal, sequence } from "@motion-canvas/core"
 import { FlowChartNode } from "./FlowChartNode"
 import { FlowChartEdge } from "./FlowChartEdge"
-import { FlowChartProps } from "./FlowChartProps"
-import { FlowChartConfig } from "./FlowChartConfig"
+import { FlowChartProps } from "./types/FlowChartProps"
+import { FlowChartConfig } from "./types/FlowChartConfig"
 
 export class FlowChart extends Node {
 
