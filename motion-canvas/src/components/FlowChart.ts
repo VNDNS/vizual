@@ -142,37 +142,6 @@ export class FlowChart extends Node {
     //this.backgroundPaths.removeChildren()
   }
 
-  public *deactivate(index: number, duration: number) {
-    const id = this.data.edges[index].id
-    const edge = this.data.edges[index]
-    const joints = edge.joints || []
-    const points = edge.points || []
-    const animations: any[] = []
-    const child = edge.targetId
-    const childIndex = this.data.nodes.findIndex(n => n.id === child)
-
-    const startBorder = .0
-    const dtBorder = 1
-    const startNode = startBorder + dtBorder
-    const dtNode = .5
-    const startLiftDown = startNode + dtNode - .2
-    const dtLiftDown = .5
-    const dtEdge = startLiftDown + .3
-
-    yield* all(
-      tween(dtEdge, value => { this.edges[index].start(value)}),
-      delay(dtEdge, this.edges[index].opacity(0, .01)),
-      delay(startBorder, tween(dtBorder, value => { this.borders[childIndex].start(value)})),
-      delay(startNode, tween(dtNode, value => { this.nodes[childIndex].fill(Color.lerp(new Color(hsl(0, 60, 38)), new Color('rgb(52,50,57)'), value))})),
-      delay(startNode, tween(dtNode, value => { this.images[childIndex]?.opacity(1 - value)})),
-      delay(startNode, this.infos[childIndex]?.opacity(0, dtNode)),
-      delay(startLiftDown, this.activations[childIndex](0, dtLiftDown)),
-      delay(startBorder+dtBorder, tween(.01, value => { this.borders[childIndex].opacity(1 - value)})),
-    )
-
-    this.nodes[childIndex].opacity(0)
-  }
-
   public *fadeIn(nodes: (string|number)[], duration: number) {
     const animations = []
     for(let i = 0; i < nodes.length; i++) {
