@@ -1,6 +1,6 @@
 
 export const getSquarePoints = (size: () => number) => {
-  return [
+  return () => [
     { x: -(size()) / 2, y: -(size()) / 2 },
     { x: +(size()) / 2, y: -(size()) / 2 },
     { x: +(size()) / 2, y: +(size()) / 2 },

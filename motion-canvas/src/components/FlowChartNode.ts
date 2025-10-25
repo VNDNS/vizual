@@ -1,5 +1,5 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
-import { SimpleSignal, Color, all, delay, tween, createSignal } from "@motion-canvas/core"
+import { SimpleSignal, Color, all, delay, tween, createSignal, sequence } from "@motion-canvas/core"
 import { NodeConfig } from "./NodeConfig"
 import { FlowChart } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
@@ -20,6 +20,9 @@ export class FlowChartNode extends Node {
   private config: NodeConfig
   private activation: SimpleSignal<number, this> = createSignal(0)
   private size: () => number = () => 240 + this.activation()*10
+  private infoLines: Line[] = []
+  private infoTexts: Txt[] = []
+  private text: Txt
 
   constructor(flowchart: FlowChart, config: NodeConfig) {
     super({ key: config.id.toString(), x: config.x, y: config.y })
@@ -57,7 +60,7 @@ export class FlowChartNode extends Node {
       stroke: lineColor, 
       lineWidth: 7, 
       lineCap: "round", 
-      radius: this.config.type === 'circle' ? () => this.size()/2 : 15 
+      radius: this.config.type === 'circle' ? () => this.size()/2-.001 : 15 
     })
     this.add(this.border)
   }
@@ -65,14 +68,15 @@ export class FlowChartNode extends Node {
   private initializeText() {
     const text = new Txt({ 
       text: this.config.name, 
-      fontSize: 35, 
+      fontSize: () => 32 * this.size()/240, 
       fill: 'white', 
       fontFamily: 'Rubik', 
       fontWeight: 400, 
-      position: { x: 0, y: this.config.type === 'circle' ? 160 : 95 }, 
-      opacity: 1 
+      position: () => ({ x: 0, y: this.config.type === 'circle' ? 160 : 90 * this.size()/240 }), 
+      opacity: 0 
     })
     this.background.add(text)
+    this.text = text
   }
 
   private initializeImage() {
@@ -97,12 +101,15 @@ export class FlowChartNode extends Node {
       const infoY     = index * dyInfo - (this.config.infos.length - 1) * dyInfo/2
       const infoTextY = infoY
       const position  = { x: infoTextX, y: infoTextY }
-      const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 1 })
+      const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 0 })
       const points    = getInfoLinePoints(this.size, infoText)
-      const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round" })
+      const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round", opacity: 0, end: 0 })
       
       this.add(polyline)
       this.add(infoText)
+      
+      this.infoLines.push(polyline)
+      this.infoTexts.push(infoText)
     })
   }
 
@@ -115,6 +122,16 @@ export class FlowChartNode extends Node {
     const dtNode = .5
     const startLiftUp = startNode + dtNode - .2
     const dtLiftUp = .5
+    const startInfos = startLiftUp + dtLiftUp
+    const dtInfos = .5
+    
+    const infoAnimations = this.infoLines.map((line, index) => {
+      return all(
+        linear(0, dtInfos, line.end),
+        linear(0, .01, line.opacity),
+        linear(0, dtInfos, this.infoTexts[index].opacity)
+      )
+    })
     
     yield* all(
       linear(startBorder, dtBorder, this.border.end),
@@ -122,9 +139,11 @@ export class FlowChartNode extends Node {
       delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
       delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
       delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
+      delay(startNode, tween(dtNode, value => { this.text.opacity(value)})),
       delay(startLiftUp, this.activation(1, dtLiftUp)),
       delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
-      delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)}))
+      delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
+      delay(startInfos, sequence(.2, ...infoAnimations))
     )
   }
 }
