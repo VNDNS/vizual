@@ -171,12 +171,20 @@ export class FlowChartNode {
     }
   }
 
-  public *fadeIn(startBorder: number, dtBorder: number, startNode: number, dtNode: number, startLiftUp: number, dtLiftUp: number) {
+  public *fadeIn() {
     this.background.opacity(1)
+
+    const startBorder = .0
+    const dtBorder = 1
+    const startNode = startBorder + dtBorder
+    const dtNode = .5
+    const startLiftUp = startNode + dtNode - .2
+    const dtLiftUp = .5
+    const dtEdge = startLiftUp +.3
     
     yield* all(
-      delay(startBorder, tween(dtBorder, value => { this.border.end(value)})),
-      delay(startBorder, tween(.01, value => { this.border.opacity(value)})),
+      linear(startBorder, dtBorder, this.border.end),
+      linear(startBorder, .01, this.border.opacity),
       delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
       delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
       delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
@@ -185,4 +193,8 @@ export class FlowChartNode {
       delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)}))
     )
   }
+}
+
+const linear = (t0: number, dt: number, f: (value: number) => void) => {
+  return delay(t0, tween(dt, value => { f(value)}))
 }

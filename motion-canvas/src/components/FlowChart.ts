@@ -1,4 +1,4 @@
-import { Rect, Txt, Node, Img, NodeProps, Line, Circle } from "@motion-canvas/2d"
+import { Rect, Txt, Node, Img, NodeProps, Line, Circle, NODE_NAME } from "@motion-canvas/2d"
 import { Color, SimpleSignal, all, createSignal, delay, sequence, tween } from "@motion-canvas/core"
 import { textColor } from "../../../frontend/plugins/animation/constants"
 import { Point } from "./functions/Point"
@@ -51,13 +51,9 @@ interface FlowChartProps extends NodeProps {
 export class FlowChart extends Node {
 
   private data: { nodes: Nodes[], edges: Edge[], name: string }
-  private activations: SimpleSignal<number, this>[]
-  private nodes: Rect[] = []
-  private borders: Line[] = []
-  private edges: Line[] = []
-  private images: Img[] = []
-  private infos: Node[] = []
-  private flowChartNodes: FlowChartNode[] = []
+  private activations: SimpleSignal<number, this>[] = []
+  private edges: Line[]   = []
+  private nodes: FlowChartNode[] = []
 
   public constructor(props: FlowChartProps) {
     super({...props, key: props.data.name})
@@ -65,6 +61,7 @@ export class FlowChart extends Node {
     this.data = props.data
     this.initializeActivations()
     this.initializeNodes()
+    this.initializeEdges()
   }
 
   private initializeActivations() {
@@ -72,11 +69,14 @@ export class FlowChart extends Node {
   }
 
   private initializeNodes() {
-    for (let i = 0; i < this.data.edges.length; i++) {
-      this.initializeEdge(i)
-    }
     for (let i = 0; i < this.data.nodes.length; i++) {
       this.initializeNode(i)
+    }
+  }
+
+  private initializeEdges() {
+    for (let i = 0; i < this.data.edges.length; i++) {
+      this.initializeEdge(i)
     }
   }
 
@@ -91,21 +91,13 @@ export class FlowChart extends Node {
   }
 
   private initializeNode(i: number) {
-    const nodeData = this.data.nodes[i]
-    const flowChartNode = new FlowChartNode(this, nodeData, this.activations[i])
-    
-    this.flowChartNodes.push(flowChartNode)
-    this.borders.push(flowChartNode.border)
-    this.nodes.push(flowChartNode.background)
-    this.images.push(flowChartNode.image)
-    this.infos.push(flowChartNode.infos)
+    const flowChartNode = new FlowChartNode(this, this.data.nodes[i], this.activations[i])
+    this.nodes.push(flowChartNode)
   }
 
-  public *activate(index: number, duration: number) {
-    const edgeData  = this.data.edges[index]
-    const edge = this.edges[index]
-    const targetNode = edgeData.targetId
-    const targetNodeIndex = this.data.nodes.findIndex(n => n.id === targetNode)
+  public *activate(nodeName: string, duration: number) {
+    const targetNode = this.data.nodes.find(n => n.name === nodeName)
+    let edgeAnimations: any = []
     
     const startBorder = .0
     const dtBorder = 1
@@ -115,45 +107,31 @@ export class FlowChart extends Node {
     const dtLiftUp = .5
     const dtEdge = startLiftUp +.3
     
-    yield* all(
-      tween(dtEdge, value => { edge.end(value)}),
-      edge?.opacity(1, .01),
-      this.flowChartNodes[targetNodeIndex].fadeIn(startBorder, dtBorder, startNode, dtNode, startLiftUp, dtLiftUp)
-    )
-
-  }
-
-  public *activateRoot(id: number, duration: number) {
-    //this.computeBackground(0)
-    //this.background.opacity(0)
-    //yield* this.nextBackground.opacity(1, 1)
-    const dt1 = .5
-    const node = this.data.nodes.find(n => n.id === id)
-    const nodeIndex = this.data.nodes.findIndex(n => n.id === id)
-    this.nodes[nodeIndex].opacity(1)
-    yield* all(
-      delay(.0, tween(dt1, value => { this.borders[nodeIndex].end(value)})),
-      delay(.0, tween(.01, value => { this.borders[nodeIndex].opacity(value)})),
-      delay(dt1, tween(dt1, value => { this.nodes[nodeIndex].fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
-      delay(dt1, tween(dt1, value => { this.images[nodeIndex]?.opacity(value)})),
-      //delay(dt1, this.infos[nodeIndex]?.opacity(1, dt1)),
-      delay(dt1, this.activations[nodeIndex](1, dt1)),
-    )
-    //this.backgroundPaths.removeChildren()
-  }
-
-  public *fadeIn(nodes: (string|number)[], duration: number) {
-    const animations = []
-    for(let i = 0; i < nodes.length; i++) {
-
-      const node = typeof nodes[i] === 'number' ? this.data.nodes.find(n => n.id === nodes[i]) : this.data.nodes.find(n => n.name === nodes[i])
-      if(node.parent) {
-        const edgeIndex = this.data.edges.findIndex(e => e.targetId === node?.id)
-        animations.push(this.activate(edgeIndex, 1))
-      } else {
-        animations.push(this.activateRoot(node?.id, 1))
-      }
+    if(targetNode.parent) {
+      const edgeIndex       = this.data.edges.findIndex(e => e.targetId === targetNode?.id)
+      const edge            = this.edges[edgeIndex]
+      edgeAnimations = [
+        tween(dtEdge, value => { edge.end(value)}),
+        edge?.opacity(1, .01),
+      ]
     }
+
+    const nodeIndex = this.data.nodes.findIndex(n => n.id === targetNode?.id)
+    
+    yield* all(
+      ...edgeAnimations,
+      this.nodes[nodeIndex].fadeIn()
+    )
+  }
+
+  public *fadeIn(nodeNames: (string)[], duration: number) {
+    
+    const animations = []
+    
+    for(let i = 0; i < nodeNames.length; i++) {
+      animations.push(this.activate(nodeNames[i], 1))
+    }
+
     yield* sequence(.3, ...animations)
   }
 } 
