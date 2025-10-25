@@ -1,6 +1,6 @@
 import { Img, initial, Line, Node, NodeProps, Rect, RectProps, signal, Txt } from "@motion-canvas/2d"
 import { all, Color, createSignal, delay, sequence, SimpleSignal, tween } from "@motion-canvas/core"
-import { hsl } from "./FlowChart";
+import { hsl } from "./hsl";
 
 export interface ContainerProps extends NodeProps {
   data: any

@@ -1,6 +1,6 @@
 import { Img, initial, Line, Node, NodeProps, Rect, signal, Txt } from "@motion-canvas/2d"
 import { all, createSignal, SimpleSignal, tween } from "@motion-canvas/core"
-import { hsl } from "./FlowChart";
+import { hsl } from "./hsl";
 import { offsetPolygon } from "./functions/offsetPolygon";
 
 export interface BackgroundProps extends NodeProps {
