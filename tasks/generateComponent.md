@@ -21,31 +21,31 @@ export interface TableProps extends NodeProps {
 
 To generate the component type follow these steps:
 
-1) Add component types to the component types array.
+[ ] 1) Add component types to the component types array.
 ./frontend/plugins/animation/maps/componentTypes.ts
 
-2) Create new directory for data files with the name of the component type.
+[ ] 2) Create new directory for data files with the name of the component type.
 ./server/data/<componentType>/
 
-3) Create a file with initial empty data.
+[ ] 3) Create a file with initial empty data.
 ./server/data/<componentType>/initialData.json
 
-4) Create a Component Configuration for that component type.
+[ ] 4) Create a Component Configuration for that component type.
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.tsx
 
-5) Integrate the component configuration to Sidebar.tsx.
+[ ] 5) Integrate the component configuration to Sidebar.tsx.
 For that you have to add a new entry to the sidebar options array (sidebarOptions).
 And within the div-element of class "sidebar-content" you have to add a new entry for the component configuration.
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
-6) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
+[ ] 6) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
 
 Here is a guide on the architecture of motion-canvas components:
 
 Our motion-canvas components implement an architecture that values readability and maintainability:
 
-6.1) Each component is a class that extends the Node class from motion-canvas.
-6.2) The class receives a props object of the following shape:
+- Each component is a class that extends the Node class from motion-canvas.
+- The class receives a props object of the following shape:
 
 export interface <ComponentName>Props extends NodeProps {
   data: <ComponentName>Config;
@@ -55,10 +55,10 @@ export interface <ComponentName>Props extends NodeProps {
 <ComponentName>Config usually holds array data which a user would not configure manually.
 Besides that, other props can also be used here.
 
-6.3) All types are defined in the types folder:
+- All types are defined in the types folder:
 ./motion-canvas/src/components/types
 
-6.4) Each motion-canvas component implements two types of methods.
+- Each motion-canvas component implements two types of methods.
 - initializer methods:
   These methods are called to initialize 'sub-components' They help indicating where each part of the component is constructed.
   The naming convention for these methods is 'initialize<SubComponentName>'.
@@ -68,4 +68,6 @@ Besides that, other props can also be used here.
 Please read motion-canvas/src/components/FlowChart.ts and its sub-classes (FlowChartNode, FlowChartEdge) to see an example.
 
 Please also follow the guidelines defined in ./code-style.md.
+
+Each finished task should be marked with a [x] in the task list.
 
