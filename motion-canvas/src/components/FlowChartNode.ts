@@ -1,6 +1,6 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
 import { SimpleSignal, Color, all, delay, tween, createSignal, sequence } from "@motion-canvas/core"
-import { NodeConfig } from "./NodeConfig"
+import { NodeConfig } from "./types/NodeConfig"
 import { FlowChart } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
 import { getSquarePoints } from "./functions/getSquarePoints"

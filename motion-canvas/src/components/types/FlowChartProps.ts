@@ -1,8 +1,6 @@
 import { NodeProps } from "@motion-canvas/2d";
-import { EdgeConfig } from "./EdgeConfig";
-import { NodeConfig } from "./NodeConfig";
-
+import { FlowChartConfig } from "./FlowChartConfig";
 
 export interface FlowChartProps extends NodeProps {
-  data: { nodes: NodeConfig[]; edges: EdgeConfig[]; name: string; };
+  data: FlowChartConfig;
 }

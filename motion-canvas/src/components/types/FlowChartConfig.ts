@@ -1,5 +1,5 @@
-import { EdgeConfig } from "./EdgeConfig";
 import { NodeConfig } from "./NodeConfig";
+import { EdgeConfig } from "./EdgeConfig";
 
 
 export interface FlowChartConfig {
