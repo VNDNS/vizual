@@ -1,12 +1,11 @@
 ## Task: Generate a new component type
 
-I want you to create a new component type called Worldmap.
-In motion-canvas/src/components/data/world.geojson you find world.geojson wihch contains the world map.
-Each country should be a polygon with some distinct color.
-The animations should include 'activate' and 'deactivate'.
-These animations fade in and out the world map.
-For improved performance the class should simplify the polygons using the Douglas-Peucker algorithm.
-The worldmap class implementing the motion-canvas component should import the world.geojson file from the data directory.
+Your task is to create the frontend code to configure the Table component.
+Two inputs allow to set the number of rows and columns in the table.
+One button should create random integers from 0 to 100 for each cell in the table,
+which is stored in component.configuration.data.
+
+Another button adds a fade-in animation to the scene.
 
 
 Please also follow the guidelines defined in ./code-style.md.
