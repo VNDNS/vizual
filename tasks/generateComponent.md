@@ -29,5 +29,3 @@ For that you have to add a new entry to the sidebar options array (sidebarOption
 And within the div-element of class "sidebar-content" you have to add a new entry for the component configuration.
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
-6) Create a Class for the component type for motion-canvas. The name should be the same as the component type but uppercased.
-./motion-canvas/src/components/<componentType>.ts

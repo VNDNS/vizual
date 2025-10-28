@@ -141,7 +141,7 @@ export const NodeConfiguration = () => {
       {/* <button onClick={onResetHighlight}>Reset Highlight</button> */}
       <button onClick={fadeInNodes}>Fade In Nodes</button>
       <div className="input-group">
-        <span>Info Value</span>
+        <span>Info</span>
         <input type="text" value={selectedInfo_?.name} onChange={(e) => handleSetInfoValue(e.target.value)} />
       </div>
       <button onClick={handleAddInfo}>Add Info</button>
