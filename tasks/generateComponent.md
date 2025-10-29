@@ -21,27 +21,29 @@ export interface TableProps extends NodeProps {
 
 To generate the component type follow these steps:
 
-[ ] 1) Add component types to the component types array.
+1) Add component types to the component types array.
 ./frontend/plugins/animation/maps/componentTypes.ts
 
-[ ] 2) Create new directory for data files with the name of the component type.
+2) Create new directory for data files with the name of the component type.
 ./server/data/<componentType>/
 
-[ ] 3) Create a file with initial empty data.
+3) Create a file with initial empty data.
 ./server/data/<componentType>/initialData.json
 
-[ ] 4) Create a Component Configuration for that component type.
-./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.tsx
+4) Create a Component Configuration for that component type.
+./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.
 
-[ ] 5) Add a new entry to the sidebar options array.
+5) For each animation, that is implemented in the component configuration, add a new entry to the component map: ./frontend/plugins/animation/maps/componentMap.ts
+
+6) Add a new entry to the sidebar options array.
 The format of the entry should be: '<name>-configuration'
 The name should be the same as the component type but lowercased.
 The array is located in: frontend/plugins/animation/components/arrangement/sidebarOptions.ts
 
-[ ] 6) Within the div-element of class "sidebar-content" you have to add a new entry for the component configuration:
+7) Within the div-element of class "sidebar-content" you have to add a new entry for the component configuration:
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
-[ ] 7) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
+8) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
 
 Here is a guide on the architecture of motion-canvas components:
 
@@ -71,5 +73,3 @@ Besides that, other props can also be used here.
 Please read motion-canvas/src/components/FlowChart.ts and its sub-classes (FlowChartNode, FlowChartEdge) to see an example.
 
 Please also follow the guidelines defined in ./code-style.md.
-
-After finishing a task please mark it with a [x] in the task list.
