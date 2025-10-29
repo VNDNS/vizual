@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import { useAnimation } from "../../../context"
-import { ComponentInput } from "../../animation/ComponentInput"
-import { ComponentAnimation } from "../../animation/ComponentAnimation"
+import { useAnimation } from "../../frontend/plugins/animation/context"
+import { ComponentInput } from "../ComponentInput"
+import { ComponentAnimation } from "../../frontend/plugins/animation/components/animation/ComponentAnimation"
 
 export const LargeNumberConfiguration = () => {
 

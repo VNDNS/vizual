@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react"
-import { useAnimation } from "../../../context"
-import { ComponentInput } from "../../animation/ComponentInput"
-import { ComponentAnimation } from "../../animation/ComponentAnimation"
-import { FileSelection } from "../../common/FileSelection"
-import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
+import { useAnimation } from "../../frontend/plugins/animation/context"
+import { ComponentInput } from "../ComponentInput"
+import { ComponentAnimation } from "../../frontend/plugins/animation/components/animation/ComponentAnimation"
+import { FileSelection } from "../../frontend/plugins/animation/components/common/FileSelection"
+import { useAnimationHooks } from "../../frontend/plugins/animation/hooks/useAnimationHooks"
 
-export const RadarChartsConfiguration = () => {
+export const LinePlotConfiguration = () => {
 
   const { setComponents, components } = useAnimation()
   const { getSelectedComponent }      = useAnimationHooks()
 
   const component = getSelectedComponent()
 
-  const [maxValue, setMaxValue] = useState(10)
-  const [data, setData]         = useState([])
-
+  const [data, setData]     = useState([])
 
   const x = component?.configuration?.x
   const setX = (value: number) => {
@@ -52,28 +50,26 @@ export const RadarChartsConfiguration = () => {
 
   useEffect(() => {
     if (component) {
-      (component.configuration as any).maxValue = maxValue
       component.configuration.data = data
       setComponents([...components])
     }
-  }, [maxValue, data, x, y])
+  }, [data])
 
   return (
-  <div className="bar-chart-configuration">
+  <div className="line-plot-configuration">
     <div className="component-configuration-header">
-      <span>Radar Charts</span>
+      <span>Line Plot</span>
     </div>
     <div className="inputs">
-      <FileSelection onDataChange={setData} directory="radarCharts" />
-      <ComponentInput label="Max Value" value={maxValue ?? 0} onChange={setMaxValue} />
-      <ComponentInput label="X"         value={x ?? 0}        onChange={setX} />
-      <ComponentInput label="Y"         value={y ?? 0}        onChange={setY} />
-      <ComponentInput label="Width"     value={width ?? 0}    onChange={setWidth} />
-      <ComponentInput label="Height"    value={height ?? 0}   onChange={setHeight} />
+      <FileSelection onDataChange={setData} directory="linePlot" />
+      <ComponentInput label="Width" value={width ?? 0} onChange={setWidth} />
+      <ComponentInput label="Height" value={height ?? 0} onChange={setHeight} />
+      <ComponentInput label="x" value={x ?? 0} onChange={setX} />
+      <ComponentInput label="y" value={y ?? 0} onChange={setY} />
     </div>
     <div className="animations">
-      <ComponentAnimation label="activate"   type="radarCharts" method="activate" />
-      <ComponentAnimation label="deactivate" type="radarCharts" method="deactivate" />
+      <ComponentAnimation label="activate"   type="linePlot" method="activate" />
+      <ComponentAnimation label="deactivate" type="linePlot" method="deactivate" />
     </div>
   </div>
   )

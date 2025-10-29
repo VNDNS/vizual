@@ -1,8 +1,8 @@
 import { useAnimation } from "@context/context"
-import { id } from "../../../../../common/id"
+import { id } from "../../../../../../common/id"
 import { useEffect, useState } from "react"
-import { FileDisplay } from "../../../common/components/FileDisplay"
-import { getJson } from "../../../common/requests/get-json"
+import { FileDisplay } from "../../../../common/components/FileDisplay"
+import { getJson } from "../../../../common/requests/get-json"
 
 export const PanelConfiguration = () => {
 
@@ -108,7 +108,6 @@ export const PanelConfiguration = () => {
       <button onClick={() => addFadeOutAnimation()}>Add fade out animation</button>
       <button onClick={() => addNextAnimation()}>Add next animation</button>
       <span>current index: {currentIndex}</span>
-      current file: {data}
     </>
   )
 }

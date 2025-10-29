@@ -1,23 +1,13 @@
-import { ExportToCurrentDataButton } from '../../common/components/ExportToCurrentDataButton';
 import { useSetCurrentPlugin } from '../../common/hooks/useSetCurrentPlugin';
 import { Screen } from '../components/arrangement/Screen';
 import { ModeSelection } from '../components/common/ModeSelection';
 import { ResetButton } from '../components/common/ResetButton';
-import { NodeConfiguration } from '../components/arrangement/NodeConfiguration';
 import { useAnimation } from '../context';
-import { ArrangeRadiallyButton } from '../components/arrangement/ArrangeRadiallyButton';
 import { Components } from '../components/common/Components';
-import { EdgeConfiguration } from '../components/arrangement/EdgeConfiguration';
-import { CameraConfiguration } from '@context/components/arrangement/CameraConfiguration';
 import { TimelineContainer } from '@context/components/arrangement/TimelineContainer';
 import { ComponentSelection } from '@context/components/animation/ComponentSelection';
-import { AnimationConfiguration } from '@context/components/arrangement/AnimationConfiguration';
 import { Switch } from '../../common/components/Switch';
-import { useAnimationHooks } from '@context/hooks/useAnimationHooks';
-import { PanelConfiguration } from '@context/components/arrangement/PanelConfiguration';
-import { BackgroundConfiguration } from '@context/components/arrangement/BackgroundConfiguration';
 import { processAudio } from '../requests/processAudio';
-import { JointConfiguration } from '@context/components/arrangement/JointConfiguration';
 import { FileDisplay } from '../../common/components/FileDisplay';
 import { useState } from 'react';
 import { ExportScene } from '../components/arrangement/ExportScene';
@@ -28,28 +18,9 @@ import { Sidebar } from '@context/components/arrangement/Sidebar';
 
 export const ArrangementLayout = () => {
 
-  const { selectedNode, selectedEdge, cameraIsSelected, showTimeline, selectedComponent, selectedMethod, showCameraPath, setShowCameraPath, showPanelConfiguration, setShowPanelConfiguration, setSelectedComponent, setSelectedNode, setSelectedEdge, setSelectedMethod, showBackgroundConfiguration, setShowBackgroundConfiguration, audioClips, showJointConfiguration, setShowJointConfiguration, setComponents, setAnimation, setPanelData, setAudioClips, setShowTimeline, mode, setMode, showSidebar, setShowSidebar, showCamera, setShowCamera, debug, setDebug  } = useAnimation()
-  const { getSelectedComponent } = useAnimationHooks()
-
-  const component = getSelectedComponent()
+  const { showTimeline, showCameraPath, setShowCameraPath, audioClips, setComponents, setAnimation, setPanelData, setAudioClips, setShowTimeline, mode, setMode, showSidebar, setShowSidebar, showCamera, setShowCamera, debug, setDebug  } = useAnimation()
 
   useSetCurrentPlugin('arrangement');
-
-  const handleShowPanelConfiguration = () => {
-    setSelectedComponent(null)
-    setSelectedNode(null)
-    setSelectedEdge(null)
-    setSelectedMethod(null)
-    setShowPanelConfiguration(!showPanelConfiguration)
-  }
-
-  const handleShowBackgroundConfiguration = () => {
-    setSelectedComponent(null)
-    setSelectedNode(null)
-    setSelectedEdge(null)
-    setSelectedMethod(null)
-    setShowBackgroundConfiguration(!showBackgroundConfiguration)
-  }
 
   const [sceneFile, setSceneFile] = useState<string>('')
 

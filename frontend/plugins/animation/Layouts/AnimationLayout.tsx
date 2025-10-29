@@ -1,7 +1,7 @@
 import { ExportToCurrentDataButton } from '../../common/components/ExportToCurrentDataButton';
 import { useSetCurrentPlugin } from '../../common/hooks/useSetCurrentPlugin';
-import { MethodConfiguration } from '../components/animation/MethodConfiguration';
-import { MethodSelection } from '../components/animation/MethodSelection';
+import { MethodConfiguration } from '../../../../archive/MethodConfiguration';
+import { MethodSelection } from '../../../../archive/MethodSelection';
 import { TimelineList } from '../components/animation/TimelineList';
 import { ResetButton } from '../components/common/ResetButton';
 import { ComponentSelection } from '../components/animation/ComponentSelection';

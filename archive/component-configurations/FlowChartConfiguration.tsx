@@ -1,8 +1,8 @@
-import { ComponentAnimation } from "../../animation/ComponentAnimation"
-import { FileSelection } from "../../common/FileSelection"
-import { useAnimation } from "../../../context"
-import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
-import { ComponentInput } from "../../animation/ComponentInput"
+import { ComponentAnimation } from "../../frontend/plugins/animation/components/animation/ComponentAnimation"
+import { FileSelection } from "../../frontend/plugins/animation/components/common/FileSelection"
+import { useAnimation } from "../../frontend/plugins/animation/context"
+import { useAnimationHooks } from "../../frontend/plugins/animation/hooks/useAnimationHooks"
+import { ComponentInput } from "../ComponentInput"
 
 export const FlowChartConfiguration = () => {
 

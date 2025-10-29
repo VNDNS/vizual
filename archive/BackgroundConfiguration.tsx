@@ -1,7 +1,7 @@
 import { useAnimation } from "@context/context"
 import { useAnimationHooks } from "@context/hooks/useAnimationHooks"
-import { copy } from "../../../../../common/copy"
-import { id } from "../../../../../common/id"
+import { copy } from "../common/copy"
+import { id } from "../common/id"
 import { useState } from "react"
 
 export const BackgroundConfiguration = () => {

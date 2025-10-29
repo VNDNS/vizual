@@ -1,6 +1,6 @@
 import { useAnimation } from "@context/context"
-import { MethodConfiguration } from "../animation/MethodConfiguration"
-import { MethodSelection } from "../animation/MethodSelection"
+import { MethodConfiguration } from "./MethodConfiguration"
+import { MethodSelection } from "./MethodSelection"
 
 export const AnimationConfiguration = () => {
 

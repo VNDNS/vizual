@@ -8,7 +8,7 @@ import { PieChartConfiguration } from "./component-configurations/PieChartConfig
 import { RadarChartsConfiguration } from "./component-configurations/RadarChartsConfigurations"
 import { TimeLineConfiguration } from "./component-configurations/TimeLineConfiguration"
 import { BackgroundConfiguration } from "./component-configurations/BackgroundConfiguration"
-import { ComponentUI } from "../../../../../types/ComponentUI"
+import { ComponentUI } from "../types/ComponentUI"
 
 export const MethodSelection = () => {
 

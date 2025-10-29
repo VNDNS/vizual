@@ -1,9 +1,9 @@
 import { useAnimation } from "@context/context"
 import { useAnimationHooks } from "@context/hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
-import { id } from "../../../../../common/id"
-import { FileDisplay } from "../../../common/components/FileDisplay"
-import { ArrayConfiguration } from "../common/ArrayConfiguration"
+import { id } from "../../../../../../common/id"
+import { FileDisplay } from "../../../../common/components/FileDisplay"
+import { ArrayConfiguration } from "../../common/ArrayConfiguration"
 
 export const ContainerConfiguration = () => {
 
@@ -94,28 +94,23 @@ export const ContainerConfiguration = () => {
 
   return (
     <>
-      { (
-        <>
-          
-            <div> {selectedComponent?.name} </div>
-          <div className="input-group">
-            <span>Rows</span>
-            <input type="number" value={selectedComponent?.configuration?.data?.rows} onChange={(e) => handleSetRows(e.target.value)} />
-          </div>
-          <div className="input-group">
-            <span>Item Name</span>
-            <input type="text" value={selectedItem_?.name} onChange={(e) => handleSetName(e.target.value)} />
-          </div>
-          <div className="input-group">
-            <span>Parent</span>
-            <input type="text" value={getParentName(selectedComponent?.configuration?.parent)} onChange={(e) => handleSetParent(e.target.value)} />
-          </div>
-          <button onClick={handleAddItem}>Add Item</button>
-          <button onClick={fadeInNodes}>Fade in</button>
-          <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
-          <ArrayConfiguration options={selectedComponent?.configuration?.data?.items} setValue={handleSetSelectedItem} value={selectedItem} onDelete={handleDeleteItem} />
-        </>
-      )}
+      <div> {selectedComponent?.name} </div>
+      <div className="input-group">
+        <span>Rows</span>
+        <input type="number" value={selectedComponent?.configuration?.data?.rows} onChange={(e) => handleSetRows(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <span>Item Name</span>
+        <input type="text" value={selectedItem_?.name} onChange={(e) => handleSetName(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <span>Parent</span>
+        <input type="text" value={getParentName(selectedComponent?.configuration?.parent)} onChange={(e) => handleSetParent(e.target.value)} />
+      </div>
+      <button onClick={handleAddItem}>Add Item</button>
+      <button onClick={fadeInNodes}>Fade in</button>
+      <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
+      <ArrayConfiguration options={selectedComponent?.configuration?.data?.items} setValue={handleSetSelectedItem} value={selectedItem} onDelete={handleDeleteItem} />
     </>
   )
 }

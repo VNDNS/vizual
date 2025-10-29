@@ -1,13 +1,12 @@
 import { useAnimation } from "@context/context"
 import { ModeSelection } from "../common/ModeSelection"
-import { NodeConfiguration } from "./NodeConfiguration"
-import { EdgeConfiguration } from "./EdgeConfiguration"
-import { AnimationConfiguration } from "./AnimationConfiguration"
-import { CameraConfiguration } from "./CameraConfiguration"
-import { BackgroundConfiguration } from "./BackgroundConfiguration"
-import { PanelConfiguration } from "./PanelConfiguration"
-import { ContainerConfiguration } from "./ContainerConfiguration"
+import { NodeConfiguration } from "./component-configurations/NodeConfiguration"
+import { EdgeConfiguration } from "./component-configurations/EdgeConfiguration"
+import { AnimationConfiguration } from "../../../../../archive/AnimationConfiguration"
+import { CameraConfiguration } from "./component-configurations/CameraConfiguration"
+import { PanelConfiguration } from "./component-configurations/PanelConfiguration"
 import { sidebarOptions } from "./sidebarOptions"
+import { ContainerConfiguration } from "./component-configurations/ContainerConfiguration"
 
 export const Sidebar = () => {
 
@@ -24,7 +23,6 @@ export const Sidebar = () => {
         {sidebarMode === 'camera-configuration'     && <CameraConfiguration />}
         {sidebarMode === 'animation-configuration'  && <AnimationConfiguration />}
         {sidebarMode === 'panel-configuration'      && <PanelConfiguration />}
-        {sidebarMode === 'background-configuration' && <BackgroundConfiguration />}
       </div>
     </div>
   )

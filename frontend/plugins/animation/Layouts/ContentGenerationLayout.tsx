@@ -1,6 +1,6 @@
 import { useAnimation } from '../context';
 import { useSetCurrentPlugin } from '../../common/hooks/useSetCurrentPlugin';
-import { FlowChartControls } from '../components/arrangement/FlowChartControls';
+import { FlowChartControls } from '../../../../archive/FlowChartControls';
 
 export const ContentGenerationLayout = () => {
   const {

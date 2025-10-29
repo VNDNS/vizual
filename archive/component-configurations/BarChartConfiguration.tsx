@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
-import { useAnimation } from "../../../context"
-import { ComponentInput } from "../../animation/ComponentInput"
-import { ComponentAnimation } from "../../animation/ComponentAnimation"
-import { FileSelection } from "../../common/FileSelection"
-import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
-import { GenericDataConfiguration } from "../../../../../../types/ComponentConfiguration"
+import { useAnimation } from "../../frontend/plugins/animation/context"
+import { ComponentInput } from "../ComponentInput"
+import { ComponentAnimation } from "../../frontend/plugins/animation/components/animation/ComponentAnimation"
+import { FileSelection } from "../../frontend/plugins/animation/components/common/FileSelection"
+import { useAnimationHooks } from "../../frontend/plugins/animation/hooks/useAnimationHooks"
+import { GenericDataConfiguration } from "../../types/ComponentConfiguration"
 
 export const BarChartConfiguration = () => {
 

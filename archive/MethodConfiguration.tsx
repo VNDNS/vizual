@@ -1,4 +1,4 @@
-import { useAnimation } from "../../context"
+import { useAnimation } from "../frontend/plugins/animation/context"
 
 export const MethodConfiguration = () => {
 

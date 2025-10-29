@@ -1,12 +1,12 @@
-import { FileDisplay } from "../../../common/components/FileDisplay"
-import { useAnimation } from "../../context"
-import { useAnimationHooks } from "../../hooks/useAnimationHooks"
+import { FileDisplay } from "../../../../common/components/FileDisplay"
+import { useAnimation } from "../../../context"
+import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
-import { OptionSelection } from "../common/OptionSelection"
-import { ArrayConfiguration } from "../common/ArrayConfiguration"
+import { OptionSelection } from "../../common/OptionSelection"
+import { ArrayConfiguration } from "../../common/ArrayConfiguration"
 import { useComputeEdges } from "@context/hooks/useComputeEdges"
 import { FlowChartNode } from "@type/FlowChartTypes"
-import { id } from "../../../../../common/id"
+import { id } from "../../../../../../common/id"
 
 export const NodeConfiguration = () => {
   const { setComponents, components, setAnimation, animation } = useAnimation()
@@ -124,8 +124,6 @@ export const NodeConfiguration = () => {
 
   return (
     <>
-      { (
-        <>
       <div className="input-group">
         <span>Name</span>
         <input type="text" value={selectedNode?.name} onChange={(e) => handleSetName(e.target.value)} />
@@ -143,8 +141,6 @@ export const NodeConfiguration = () => {
       </div>
       <button onClick={handleAddInfo}>Add Info</button>
       <ArrayConfiguration options={selectedNode?.infos} setValue={handleSetSelectedInfo} value={selectedInfo} onDelete={handleDeleteInfo} />
-        </>
-      )}
     </>
   )
 }

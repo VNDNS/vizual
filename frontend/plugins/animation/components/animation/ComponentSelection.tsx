@@ -23,17 +23,12 @@ export const ComponentSelection = () => {
     const fullPath = '/home/viktor/code/vizual/server/data/' + fileType + '/' + files[0]
     const data = await getJson(fullPath)
 
-    //const hasWidthAndHeight = ['barChart', 'linePlot', 'timeLine', 'radarCharts', 'item', 'container'].includes(fileType)
-
     const component: ComponentUI = {
       type: fileType,
       configuration: {
         data: data,
         x: 0,
         y: 0, 
-        // width: hasWidthAndHeight ? 240 : undefined, 
-        // height: hasWidthAndHeight ? 240 : undefined, 
-        // size: hasWidthAndHeight ? undefined : 240
         width: 240,
         height: 240,
       },

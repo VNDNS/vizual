@@ -1,11 +1,11 @@
-import { useAnimation } from "../../context"
-import { useAnimationHooks } from "../../hooks/useAnimationHooks"
-import { id } from "../../../../../common/id"
-import { copy } from "../../../../../common/copy"
+import { useAnimation } from "../../../context"
+import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
+import { id } from "../../../../../../common/id"
+import { copy } from "../../../../../../common/copy"
 import { useComputeEdges } from "@context/hooks/useComputeEdges"
-import { FlowChartConfiguration, FlowChartEdge, EdgeSide } from "../../../../../types/FlowChartTypes"
-import { ComponentUI } from "../../../../../types/ComponentUI"
-import { OptionSelection } from "../common/OptionSelection"
+import { FlowChartConfiguration, FlowChartEdge, EdgeSide } from "../../../../../../types/FlowChartTypes"
+import { ComponentUI } from "../../../../../../types/ComponentUI"
+import { OptionSelection } from "../../common/OptionSelection"
 
 export const EdgeConfiguration = () => {
 
@@ -117,7 +117,6 @@ export const EdgeConfiguration = () => {
         <label>c1: {Number(currentEdge?.c1 ?? 10).toFixed(2)}</label>
         <input type="range" min={0.1} max={500} step={0.1} value={currentEdge?.c1 ?? 10} onChange={(e) => configureC1(parseFloat(e.target.value))} />
       </div>
-
     </>
   )
 }
