@@ -8,24 +8,25 @@
           "columns": 4,
           "data": [
             [
-              "",
-              "",
-              "",
-              ""
+              6,
+              62,
+              9,
+              81
             ],
             [
-              "",
-              "",
-              "",
-              ""
+              65,
+              6,
+              58,
+              29
             ],
             [
-              "",
-              "",
-              "",
-              ""
+              78,
+              53,
+              82,
+              79
             ]
-          ]
+          ],
+          "colorScheme": "blue"
         },
         "x": 0,
         "y": 0,
@@ -38,7 +39,17 @@
       "name": "table0"
     }
   ],
-  "animation": [],
+  "animation": [
+    {
+      "component": "table0",
+      "method": "fadeIn",
+      "duration": 1,
+      "start": 0,
+      "inputs": {},
+      "track": 0,
+      "id": "p9u5me4rrglhrkjxdlihu"
+    }
+  ],
   "tracks": 1,
   "panel": [],
   "audio": [

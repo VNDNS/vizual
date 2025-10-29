@@ -58,7 +58,7 @@ export const TableConfiguration = () => {
     if(selectedComponent) {
       const rows = selectedComponent.configuration.data.rows || 3
       const columns = selectedComponent.configuration.data.columns || 3
-      const newData = []
+      const newData: (string | number)[][] = []
       for(let i = 0; i < rows; i++) {
         newData.push([])
         for(let j = 0; j < columns; j++) {
@@ -66,6 +66,13 @@ export const TableConfiguration = () => {
         }
       }
       selectedComponent.configuration.data.data = newData
+      setComponents([...components])
+    }
+  }
+
+  const handleSetColorScheme = (value: string) => {
+    if(selectedComponent) {
+      selectedComponent.configuration.data.colorScheme = value
       setComponents([...components])
     }
   }
@@ -89,6 +96,16 @@ export const TableConfiguration = () => {
       <div className="input-group">
         <span>Columns</span>
         <input type="number" value={selectedComponent?.configuration?.data?.columns} onChange={(e) => handleSetColumns(e.target.value)} />
+      </div>
+      <div className="input-group">
+        <span>Color Scheme</span>
+        <select value={selectedComponent?.configuration?.data?.colorScheme || 'gray'} onChange={(e) => handleSetColorScheme(e.target.value)}>
+          <option value="gray">Gray</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="purple">Purple</option>
+          <option value="orange">Orange</option>
+        </select>
       </div>
       <button onClick={handleGenerateRandomData}>Generate Random Data</button>
       <button onClick={fadeInTable}>Fade In</button>

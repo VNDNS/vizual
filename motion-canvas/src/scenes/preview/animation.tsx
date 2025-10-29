@@ -22,4 +22,5 @@ export default makeScene2D(function* (view) {
   camera.add(table0)
 
 
+  yield* table0.fadeIn(1)
 })
