@@ -1,25 +1,15 @@
-## Task: Generate a new animation component
+## Task: Generate/Edit an animation component
 
-Your task is to create a new component to display a table in a scene.
-It should take an m x n array of strings or number as data.
-Two inputs allow to set the number of rows and columns in the table.
-One button should create random integers from 0 to 100 for each cell in the table,
-which is stored in component.configuration.data.
-It then displays the data in a table with m rows and n columns.
-Visually it should look like a spreadsheet.
-A fade-in animation fades all cells in with a slight delay between them.
-Another button adds a fade-in animation to the scene.
+#### Task description
 
-The TableProps type should look something like this:
-export interface TableProps extends NodeProps {
-  data: (string | number)[][];
-  name: string;
-  x?: number;
-  y?: number;
-}
+Please edit the component implementations in the following way:
+The motion canvas component should not use outlines for the cells.
+Instead it should alternate between two similar colors, which allow to distinguish the cells.
+Please also add a selection for a couple of predefined colors to choose from.
 
 
-To generate the component type follow these steps:
+
+For an animation component these points have to be implemented:
 
 1) Add component types to the component types array.
 ./frontend/plugins/animation/maps/componentTypes.ts
@@ -32,6 +22,7 @@ To generate the component type follow these steps:
 
 4) Create a Component Configuration for that component type.
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.
+No need to create a Headline. This is taken care of in the Sidebar.tsx file.
 
 5) For each required input, that we need to configure the component, we should implement a component input like this:
 

@@ -1,35 +1,41 @@
 {
   "components": [
     {
-      "type": "container",
+      "type": "table",
       "configuration": {
         "data": {
           "rows": 3,
-          "items": [
-            {
-              "name": "Item 0",
-              "id": "5cdsm6645672jfudeh9swq"
-            },
-            {
-              "name": "Item 1",
-              "id": "xuz7kgvkh3jmvjt99ew09b"
-            },
-            {
-              "name": "Item 2",
-              "id": "n43b31rq9i8so9bfx6h78"
-            }
-          ],
-          "parent": "1"
+          "columns": 4,
+          "data": [
+            [
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
         },
-        "x": -11.25,
-        "y": 5,
-        "width": 960,
-        "height": 60
+        "x": 0,
+        "y": 0,
+        "width": 240,
+        "height": 240
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "ldl76qztjqrqak2c5m2ja",
-      "name": "container0"
+      "id": "6djzoqjfng8xshctmvo53",
+      "name": "table0"
     }
   ],
   "animation": [],
@@ -40,37 +46,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "fj5fsl4x4uvceda1w254kd"
+      "id": "5hte4su9r8f6ljyd9tha05"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "njcap2xst1qc7w3bcb3"
+      "id": "p32es9m7erc2ic4cw54xrq"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "kh3b500u1bb1zktukay1l"
+      "id": "yrrqm4xt929xlxni2ymc"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "2vpey5the3mt0wh2ugp0q"
+      "id": "mjvi5klb4v8edfrdkjx4l"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "9asfovaitweyvxvxozh7vm"
+      "id": "are2ff4t94t2pzpikq2tmu"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "be1hjw01fdji6imrc7w7rm"
+      "id": "1gfhazmco0gl1vzqjlaqm"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { id } from "../../../../../common/id"
-import { useAnimation } from "../../context"
+import { useAnimation } from "@context/context"
+import { id } from "../../../../../../common/id"
 
 export const CameraConfiguration = () => {
 

@@ -38,5 +38,8 @@ export const componentMap: any = {
     activate: { index: 0 },
     deactivate: { index: 0 },
   },
+  table: {
+    fadeIn: { },
+  },
 
 };

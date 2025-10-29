@@ -3,5 +3,6 @@ export const sidebarOptions = [
   'edge-configuration',
   'camera-configuration',
   'panel-configuration',
-  'container-configuration'
+  'container-configuration',
+  'table-configuration'
 ];
