@@ -6,12 +6,15 @@ import animationData    from './json/animation.json';
 import { Camera }       from '../../components/Camera';
 import { Panel }        from '../../components/Panel';
 import { Highlighter }  from '../../components/Highlighter';
+import { Table } from '../../components/Table'
 import { FlowChart } from '../../components/FlowChart'
 
 export default makeScene2D(function* (view) {
   
-  const flowChart0 = new FlowChart(animationData.components[0].configuration)
-  const components = [flowChart0]
+  const table0 = new Table(animationData.components[0].configuration)
+  const table1 = new Table(animationData.components[1].configuration)
+  const flowChart2 = new FlowChart(animationData.components[2].configuration)
+  const components = [table0, table1, flowChart2]
 
   const camera = new Camera({})
   const panel = new Panel({data: animationData.panel})
@@ -19,10 +22,12 @@ export default makeScene2D(function* (view) {
   view.add(camera)
   view.add(panel)
   view.add(highlighter)
-  camera.add(flowChart0)
+  camera.add(table0)
+  camera.add(table1)
+  camera.add(flowChart2)
 
 
-  yield* flowChart0.fadeIn(['Node 1','Node 2','Node 3'],2.4166666666666665)
-
-  yield* flowChart0.fadeIn(['Node 4'],1.8166666666666667)
+  yield* table0.fadeIn(1)
+  yield* waitFor(2)
+  yield* table1.fadeIn(1)
 })

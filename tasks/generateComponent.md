@@ -33,12 +33,15 @@ To generate the component type follow these steps:
 [ ] 4) Create a Component Configuration for that component type.
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.tsx
 
-[ ] 5) Integrate the component configuration to Sidebar.tsx.
-For that you have to add a new entry to the sidebar options array (sidebarOptions).
-And within the div-element of class "sidebar-content" you have to add a new entry for the component configuration.
+[ ] 5) Add a new entry to the sidebar options array.
+The format of the entry should be: '<name>-configuration'
+The name should be the same as the component type but lowercased.
+The array is located in: frontend/plugins/animation/components/arrangement/sidebarOptions.ts
+
+[ ] 6) Within the div-element of class "sidebar-content" you have to add a new entry for the component configuration:
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
-[ ] 6) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
+[ ] 7) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
 
 Here is a guide on the architecture of motion-canvas components:
 
@@ -69,5 +72,4 @@ Please read motion-canvas/src/components/FlowChart.ts and its sub-classes (FlowC
 
 Please also follow the guidelines defined in ./code-style.md.
 
-Each finished task should be marked with a [x] in the task list.
-
+After finishing a task please mark it with a [x] in the task list.

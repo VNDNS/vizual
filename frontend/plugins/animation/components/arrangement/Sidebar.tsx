@@ -7,15 +7,7 @@ import { CameraConfiguration } from "./CameraConfiguration"
 import { BackgroundConfiguration } from "./BackgroundConfiguration"
 import { PanelConfiguration } from "./PanelConfiguration"
 import { ContainerConfiguration } from "./ContainerConfiguration"
-
-const sidebarOptions = [
-  'node-configuration', 
-  'edge-configuration', 
-  'camera-configuration', 
-  'panel-configuration', 
-  'background-configuration',
-  'container-configuration'
-]
+import { sidebarOptions } from "./sidebarOptions"
 
 export const Sidebar = () => {
 

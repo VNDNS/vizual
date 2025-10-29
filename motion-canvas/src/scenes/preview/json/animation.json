@@ -1,153 +1,126 @@
 {
   "components": [
     {
+      "type": "table",
+      "configuration": {
+        "data": [
+          [
+            60,
+            13,
+            28,
+            5,
+            79
+          ],
+          [
+            7,
+            40,
+            56,
+            73,
+            32
+          ],
+          [
+            18,
+            12,
+            36,
+            92,
+            43
+          ],
+          [
+            2,
+            81,
+            92,
+            81,
+            17
+          ],
+          [
+            37,
+            10,
+            98,
+            59,
+            0
+          ]
+        ],
+        "x": -360,
+        "y": 0,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
+      "color": "hsl(0,   40%, 45%)",
+      "id": "dl3vskhcfielhq2b8qbpx",
+      "name": "table0"
+    },
+    {
+      "type": "table",
+      "configuration": {
+        "data": [
+          [
+            78,
+            96,
+            32,
+            44,
+            55
+          ],
+          [
+            19,
+            32,
+            2,
+            71,
+            21
+          ],
+          [
+            90,
+            18,
+            31,
+            27,
+            79
+          ],
+          [
+            6,
+            52,
+            45,
+            87,
+            69
+          ],
+          [
+            44,
+            97,
+            33,
+            53,
+            51
+          ]
+        ],
+        "x": 300,
+        "y": 0,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
+      "color": "hsl(60,  40%, 45%)",
+      "id": "motk0f498l7pdf9e96po9a",
+      "name": "table1"
+    },
+    {
       "type": "flowChart",
       "configuration": {
         "data": {
           "nodes": [
             {
-              "id": 304700,
-              "children": [
-                686668
-              ],
-              "x": -540,
-              "y": -300,
+              "id": 348810,
+              "children": [],
+              "x": -120,
+              "y": -240,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "5z02bgk13z8wmqvtxy4hcd",
-              "type": "circle",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "uruf3ie7ttnxifk0flizak"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "bz2d6dvau4dgmz83r0jvsn"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "e3zt07g7ngr98r4uzuplt"
-                }
-              ]
-            },
-            {
-              "id": 457995,
-              "children": [],
-              "x": 540,
-              "y": -300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 2",
-              "componentId": "5z02bgk13z8wmqvtxy4hcd",
-              "type": "circle",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "360vavtwqn4u8mjt0q254"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "iyx8i59qb6xr6y7akrmr"
-                }
-              ]
-            },
-            {
-              "id": 353764,
-              "children": [],
-              "x": 0,
-              "y": -300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 3",
-              "componentId": "5z02bgk13z8wmqvtxy4hcd",
-              "type": "circle",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "nf5vz8j80gc2afkoqyqxda"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "mtjvpa64gwkroh8h2hh09"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "f32yuley2iow5mdzjwee5"
-                },
-                {
-                  "name": "Info 3",
-                  "id": "c8o4pju06mkem34rfrqfbf"
-                }
-              ]
-            },
-            {
-              "id": 686668,
-              "parent": 304700,
-              "children": [],
-              "x": -120,
-              "y": 300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 4",
-              "componentId": "5z02bgk13z8wmqvtxy4hcd",
+              "componentId": "k80vyx9js4c69sv6ttvjm8",
               "type": "square"
             }
           ],
-          "edges": [
-            {
-              "id": "304700-686668",
-              "x1": -540,
-              "y1": -140,
-              "x2": -120,
-              "y2": 140,
-              "sourceId": 304700,
-              "targetId": 686668,
-              "endSide": "top",
-              "startSide": "bottom",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -540,
-                  "y": -140
-                },
-                {
-                  "x": -540,
-                  "y": -70
-                },
-                {
-                  "x": -470,
-                  "y": 0
-                },
-                {
-                  "x": -190,
-                  "y": 0
-                },
-                {
-                  "x": -120,
-                  "y": 70
-                },
-                {
-                  "x": -120,
-                  "y": 140
-                }
-              ]
-            }
-          ],
+          "edges": [],
           "containerNodes": [],
           "name": "flowChart"
         },
@@ -157,39 +130,29 @@
         "height": 240
       },
       "data": null,
-      "color": "hsl(0,   40%, 45%)",
-      "id": "5z02bgk13z8wmqvtxy4hcd",
-      "name": "flowChart0"
+      "color": "hsl(120, 40%, 45%)",
+      "id": "k80vyx9js4c69sv6ttvjm8",
+      "name": "flowChart2"
     }
   ],
   "animation": [
     {
-      "component": "flowChart0",
+      "component": "table0",
       "method": "fadeIn",
-      "duration": 2.4166666666666665,
+      "duration": 1,
       "start": 0,
-      "inputs": {
-        "nodes": [
-          "Node 1",
-          "Node 2",
-          "Node 3"
-        ]
-      },
+      "inputs": {},
       "track": 0,
-      "id": "w9nez4sarunlqisv4462r"
+      "id": "whuvd0tzb6ugqq28d8ozr"
     },
     {
-      "component": "flowChart0",
+      "component": "table1",
       "method": "fadeIn",
-      "duration": 1.8166666666666667,
-      "start": 2.4166666666666665,
-      "inputs": {
-        "nodes": [
-          "Node 4"
-        ]
-      },
+      "duration": 1,
+      "start": 3,
+      "inputs": {},
       "track": 0,
-      "id": "qyts1v2pw3kxk8hb7b4foi"
+      "id": "9mzf25rd6c7btekyswbcu"
     }
   ],
   "tracks": 1,
@@ -199,37 +162,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "w0o9uq8d7yc41b8anhzkl"
+      "id": "51h6rdl192omgm29qfr9uj"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "rlb0fk4ykubyg5k1rtshyo"
+      "id": "qx9ae7400uybv5grkc94f"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "z3qytclxs399rxpw4yhdwu"
+      "id": "zhxzy7zlrk8hb4px1koau"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "bu6v5mm6xco68kt4c5gcz8"
+      "id": "2mll1k7y85vfaie5dhftfg"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "0v0y9163noznhqhcgr3ije"
+      "id": "ilnqnlxyn6rfdbqilsa0m4"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "tu749yo5lgokd4o9nm4f"
+      "id": "k9wkm7wuncbnpa6qgo36x"
     }
   ]
 }
