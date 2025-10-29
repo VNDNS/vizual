@@ -10,14 +10,15 @@
   padding-left: 10px;
   font-size: 14px;
   
-  input {
+  input, select {
     width: 100%;
+    outline: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    outline: none;
   }
 
   span {
     width: 150px;
   }
+
 }

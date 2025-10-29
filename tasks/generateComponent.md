@@ -2,11 +2,24 @@
 
 #### Task description
 
-Please edit the component implementations in the following way:
-The motion canvas component should not use outlines for the cells.
-Instead it should alternate between two similar colors, which allow to distinguish the cells.
-Please also add a selection for a couple of predefined colors to choose from.
+Create a new animation component called Clock.
+It should display an analog clock with a second hand, a minute hand, and an hour hand.
 
+The ClockProps type should look something like this:
+export interface ClockProps extends NodeProps {
+  data: ClockConfig;
+  ...other props;
+}
+
+ClockConfig should look like this:
+export interface ClockConfig {
+  seconds: number;
+  minutes: number;
+  hours: number;
+}[]
+
+One button should fade in the clock.
+Another button should add an animation where the hands move to the times in the clock config one after the other.
 
 
 For an animation component these points have to be implemented:
