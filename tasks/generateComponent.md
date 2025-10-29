@@ -33,28 +33,28 @@ To generate the component type follow these steps:
 4) Create a Component Configuration for that component type.
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.
 
-Inputs should be implemented like this:
+5) For each required input, that we need to configure the component, we should implement a component input like this:
 
 <div className="input-group">
   <span>{label}</span>
   <input type="text" value={value} onChange={(e) => onChange(e.target.value)} />
 </div>
 
-For animations, a button should be implemented like this:
+6) For each animation, that is implemented in the component configuration, we should implement a ComponentAnimation like this:
 <ComponentAnimation label="fadeIn" type="table" method="fadeIn" />
 
 
-5) For each animation, that is implemented in the component configuration, add a new entry to the component map: ./frontend/plugins/animation/maps/componentMap.ts. Note, that here a field for duration should not be added, because it is taken care of at some other place in the code.
+7) For each animation, that is implemented in the component configuration, add a new entry to the component map: ./frontend/plugins/animation/maps/componentMap.ts. Note, that here a field for duration should not be added, because it is taken care of at some other place in the code.
 
-6) Add a new entry to the sidebar options array.
+8) Add a new entry to the sidebar options array.
 The format of the entry should be: '<name>-configuration'
 The name should be the same as the component type but lowercased.
 The array is located in: frontend/plugins/animation/components/arrangement/sidebarOptions.ts
 
-7) Within the div-element of class "sidebar-content" you have to add a new entry for the component configuration:
+9) Within the div-element of class "sidebar-content" you have to add a new entry for the component configuration:
 ./frontend/plugins/animation/components/arrangement/Sidebar.tsx
 
-8) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
+10) Create a new component type for motion-canvas. The name should be the same as the component type but uppercased.
 
 Here is a guide on the architecture of motion-canvas components:
 
