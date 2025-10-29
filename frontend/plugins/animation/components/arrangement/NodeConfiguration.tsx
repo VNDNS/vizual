@@ -136,9 +136,6 @@ export const NodeConfiguration = () => {
       </div>
       <button onClick={handleDeleteNode}>Delete</button>
       <button onClick={handleAddNode}>Add Node</button>
-      {/* <button onClick={onActivateRoot}>Activate root</button> */}
-      {/* <button onClick={onHighlight}>Highlight Node</button> */}
-      {/* <button onClick={onResetHighlight}>Reset Highlight</button> */}
       <button onClick={fadeInNodes}>Fade In Nodes</button>
       <div className="input-group">
         <span>Info</span>

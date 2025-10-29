@@ -17,12 +17,11 @@ export const ComponentSelection = () => {
 
   const addComponent = async () => {
 
-    const hasData = ['largeNumber', 'item'].includes(fileType)
-    const files = hasData ? [] : await getDirectory(fileType)
+    const files = await getDirectory(fileType)
     const name   = fileType + components.length
     const color  = componentUIColors[components.length % componentUIColors.length]
     const fullPath = '/home/viktor/code/vizual/server/data/' + fileType + '/' + files[0]
-    const data = hasData ? null : await getJson(fullPath)
+    const data = await getJson(fullPath)
 
     //const hasWidthAndHeight = ['barChart', 'linePlot', 'timeLine', 'radarCharts', 'item', 'container'].includes(fileType)
 

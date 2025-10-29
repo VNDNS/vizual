@@ -19,6 +19,6 @@ export const ComponentAnimation = ({ label, type, method }: { label: string, typ
   }
   
   return (
-    <span className="component-configuration-animation" onClick={() => addAnimation(type, component?.name || '', method)}>{label}</span>
+    <button className="component-configuration-animation" onClick={() => addAnimation(type, component?.name || '', method)}>{label}</button>
   )
 }

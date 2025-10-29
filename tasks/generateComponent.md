@@ -33,7 +33,18 @@ To generate the component type follow these steps:
 4) Create a Component Configuration for that component type.
 ./frontend/plugins/animation/components/animation/component-configurations/<componentType>Configuration.
 
-5) For each animation, that is implemented in the component configuration, add a new entry to the component map: ./frontend/plugins/animation/maps/componentMap.ts
+Inputs should be implemented like this:
+
+<div className="input-group">
+  <span>{label}</span>
+  <input type="text" value={value} onChange={(e) => onChange(e.target.value)} />
+</div>
+
+For animations, a button should be implemented like this:
+<ComponentAnimation label="fadeIn" type="table" method="fadeIn" />
+
+
+5) For each animation, that is implemented in the component configuration, add a new entry to the component map: ./frontend/plugins/animation/maps/componentMap.ts. Note, that here a field for duration should not be added, because it is taken care of at some other place in the code.
 
 6) Add a new entry to the sidebar options array.
 The format of the entry should be: '<name>-configuration'
