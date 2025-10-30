@@ -14,4 +14,5 @@ export interface NodeConfig {
   infos?: { name: string; id: string; }[];
   width?: number;
   height?: number;
+  color?: string;
 }

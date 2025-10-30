@@ -6,252 +6,240 @@
         "data": {
           "nodes": [
             {
-              "id": 992522,
+              "id": 34752,
               "children": [
-                908645,
-                91959
+                604613
               ],
-              "x": -720,
-              "y": 0,
+              "x": -540,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "1jvxqffptzjl6gazwg7qg",
-              "type": "square",
+              "componentId": "osj9w6wcql9i0saecvjrpb",
+              "type": "circle",
               "width": 240,
-              "height": 240
+              "height": 240,
+              "color": "hsl(0, 70%, 50%)",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "efuz6d0xt4e6p55i8wrrw2"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "26rd6irfvsgai7yqn2fwve"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "5zmta9j26d6uln51ppzkx"
+                }
+              ]
             },
             {
-              "id": 908645,
+              "id": 361169,
               "children": [
-                235853
+                604613
               ],
-              "x": -180,
-              "y": -180,
+              "x": 0,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
-              "name": "Hi",
-              "componentId": "1jvxqffptzjl6gazwg7qg",
-              "type": "text",
-              "width": 360,
-              "height": 120,
-              "parent": 992522
+              "name": "Node 2",
+              "componentId": "osj9w6wcql9i0saecvjrpb",
+              "type": "circle",
+              "width": 240,
+              "height": 240,
+              "color": "hsl(0, 70%, 50%)",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "24iyuwmg7fgusplg0llj48"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "c7gvaajrehger3h3iveikk"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "kciwotcizin2bj09yh3ikj"
+                }
+              ]
             },
             {
-              "id": 91959,
+              "id": 320576,
               "children": [
-                235853
+                604613
               ],
-              "x": -180,
-              "y": 180,
+              "x": 540,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "1jvxqffptzjl6gazwg7qg",
-              "type": "square",
+              "componentId": "osj9w6wcql9i0saecvjrpb",
+              "type": "circle",
               "width": 240,
               "height": 240,
-              "parent": 992522
+              "color": "hsl(0, 70%, 50%)",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "p1cf5t1g78egij8m64g1s5"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "vo3g51ujbb8wlfk4nr9p8c"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "s50gwtetbxyl8kkj52m2s"
+                }
+              ]
             },
             {
-              "id": 235853,
+              "id": 604613,
               "children": [],
-              "x": 360,
-              "y": 0,
+              "x": 0,
+              "y": 180,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
-              "name": "Node 4",
-              "componentId": "1jvxqffptzjl6gazwg7qg",
-              "type": "square",
+              "name": "nvidia",
+              "componentId": "osj9w6wcql9i0saecvjrpb",
+              "type": "text",
               "width": 240,
               "height": 240,
+              "color": "hsl(0, 70%, 50%)",
               "parents": [
-                908645,
-                91959
+                34752,
+                361169,
+                320576
               ],
               "infos": [
                 {
                   "name": "Info 0",
-                  "id": "4z5co4nsccxxauga09owr"
+                  "id": "rlsncaq0jesis12pq3uvu"
                 },
                 {
                   "name": "Info 1",
-                  "id": "pah0rei3muzo506trrwcc"
+                  "id": "ksufkm8d6fpneq0rp6kzdl"
                 },
                 {
                   "name": "Info 2",
-                  "id": "p0x9wmj1n0pachnvujut2r"
+                  "id": "xpgbwrgttyqj0lu9qvxsi"
                 }
-              ],
-              "image": "nvidia.png"
+              ]
             }
           ],
           "edges": [
             {
-              "id": "992522-908645",
-              "x1": -560,
-              "y1": -40,
-              "x2": -400,
-              "y2": -180,
-              "sourceId": 992522,
-              "targetId": 908645,
-              "endSide": "left",
-              "startSide": "right",
+              "id": "34752-604613",
+              "x1": -540,
+              "y1": -140,
+              "x2": -60,
+              "y2": 20,
+              "sourceId": 34752,
+              "targetId": 604613,
+              "endSide": "top",
+              "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -560,
-                  "y": -40
-                },
-                {
-                  "x": -520,
-                  "y": -40
-                },
-                {
-                  "x": -480,
-                  "y": -80
-                },
-                {
-                  "x": -480,
+                  "x": -540,
                   "y": -140
                 },
                 {
-                  "x": -440,
-                  "y": -180
+                  "x": -540,
+                  "y": -100
                 },
                 {
-                  "x": -400,
-                  "y": -180
+                  "x": -500,
+                  "y": -60
+                },
+                {
+                  "x": -100,
+                  "y": -60
+                },
+                {
+                  "x": -60,
+                  "y": -20
+                },
+                {
+                  "x": -60,
+                  "y": 20
                 }
               ]
             },
             {
-              "id": "992522-91959",
-              "x1": -560,
-              "y1": 40,
-              "x2": -340,
-              "y2": 180,
-              "sourceId": 992522,
-              "targetId": 91959,
-              "endSide": "left",
-              "startSide": "right",
+              "id": "361169-604613",
+              "x1": 0,
+              "y1": -140,
+              "x2": 0,
+              "y2": 20,
+              "sourceId": 361169,
+              "targetId": 604613,
+              "endSide": "top",
+              "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -560,
-                  "y": 40
-                },
-                {
-                  "x": -505,
-                  "y": 40
-                },
-                {
-                  "x": -450,
-                  "y": 95
-                },
-                {
-                  "x": -450,
-                  "y": 125
-                },
-                {
-                  "x": -395,
-                  "y": 180
-                },
-                {
-                  "x": -340,
-                  "y": 180
-                }
-              ]
-            },
-            {
-              "id": "908645-235853",
-              "x1": 40,
-              "y1": -180,
-              "x2": 200,
-              "y2": -40,
-              "sourceId": 908645,
-              "targetId": 235853,
-              "endSide": "left",
-              "startSide": "right",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": 40,
-                  "y": -180
-                },
-                {
-                  "x": 80,
-                  "y": -180
-                },
-                {
-                  "x": 120,
+                  "x": 0,
                   "y": -140
                 },
                 {
-                  "x": 120,
-                  "y": -80
-                },
-                {
-                  "x": 160,
-                  "y": -40
-                },
-                {
-                  "x": 200,
-                  "y": -40
+                  "x": 0,
+                  "y": 20
                 }
               ]
             },
             {
-              "id": "91959-235853",
-              "x1": -20,
-              "y1": 180,
-              "x2": 200,
-              "y2": 40,
-              "sourceId": 91959,
-              "targetId": 235853,
-              "endSide": "left",
-              "startSide": "right",
+              "id": "320576-604613",
+              "x1": 540,
+              "y1": -140,
+              "x2": 60,
+              "y2": 20,
+              "sourceId": 320576,
+              "targetId": 604613,
+              "endSide": "top",
+              "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -20,
-                  "y": 180
+                  "x": 540,
+                  "y": -140
                 },
                 {
-                  "x": 35,
-                  "y": 180
+                  "x": 540,
+                  "y": -100
                 },
                 {
-                  "x": 90,
-                  "y": 125
+                  "x": 500,
+                  "y": -60
                 },
                 {
-                  "x": 90,
-                  "y": 95
+                  "x": 100,
+                  "y": -60
                 },
                 {
-                  "x": 145,
-                  "y": 40
+                  "x": 60,
+                  "y": -20
                 },
                 {
-                  "x": 200,
-                  "y": 40
+                  "x": 60,
+                  "y": 20
                 }
               ]
             }
@@ -266,7 +254,7 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "1jvxqffptzjl6gazwg7qg",
+      "id": "osj9w6wcql9i0saecvjrpb",
       "name": "flowChart0"
     }
   ],
@@ -274,45 +262,70 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 1.8166666666666667,
+      "duration": 2.4166666666666665,
       "start": 0,
       "inputs": {
         "nodes": [
-          "Node 1"
-        ]
-      },
-      "track": 0,
-      "id": "onzybe3ryridk0ffqmx48"
-    },
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 2.1166666666666667,
-      "start": 1.8,
-      "inputs": {
-        "nodes": [
-          "Hi",
+          "Node 1",
+          "Node 2",
           "Node 3"
         ]
       },
       "track": 0,
-      "id": "v9nqvft73jlqfkh5bdgh4r"
+      "id": "bzrhlpaumvmpgii57llp"
     },
     {
       "component": "flowChart0",
       "method": "fadeIn",
       "duration": 1.8166666666666667,
-      "start": 3.9333333333333336,
+      "start": 2.4166666666666665,
       "inputs": {
         "nodes": [
-          "Node 4"
+          "nvidia"
         ]
       },
       "track": 0,
-      "id": "uoknhf97oijc744rd0jzur"
+      "id": "csj1uemcc7iytrzix0ozvb"
     }
   ],
   "tracks": 1,
   "panel": [],
-  "audio": []
+  "audio": [
+    {
+      "name": "A Link to the Past.wav",
+      "duration": 14.65,
+      "start": 0,
+      "id": "a61kzjsbwnboiw8axqupe"
+    },
+    {
+      "name": "NES.wav",
+      "duration": 13.2,
+      "start": 14.65,
+      "id": "39gfhysgg85kvh60n3knm"
+    },
+    {
+      "name": "Nintendo.wav",
+      "duration": 11.65,
+      "start": 27.85,
+      "id": "49ctorgocqcuw635i3n15"
+    },
+    {
+      "name": "SNES.wav",
+      "duration": 9.95,
+      "start": 39.5,
+      "id": "r8l75oo1dk9kpt6h9qutgl"
+    },
+    {
+      "name": "The Legend of Zelda.wav",
+      "duration": 15.1,
+      "start": 49.45,
+      "id": "gu7tjy70u56gkrvu2zy1ml"
+    },
+    {
+      "name": "Zelda II: The Adventure of Link.wav",
+      "duration": 14.3,
+      "start": 64.55,
+      "id": "9ljtyfeq1bkjslg63nhef"
+    }
+  ]
 }

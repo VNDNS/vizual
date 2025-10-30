@@ -1,15 +1,61 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface ColorPickerProps {
+  value?: string
   onChange: (color: string) => void
 }
 
-export const ColorPicker = ({ onChange }: ColorPickerProps) => {
-  const [hue, setHue] = useState(0)
-  const [saturation, setSaturation] = useState(50)
-  const [lightness, setLightness] = useState(50)
+const parseHsl = (hslString: string): { h: number; s: number; l: number } => {
+  const match = hslString.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/)
+  if (match) {
+    return {
+      h: Number(match[1]),
+      s: Number(match[2]),
+      l: Number(match[3])
+    }
+  }
+  return { h: 0, s: 70, l: 50 }
+}
+
+export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
+  const defaultColor = value || 'hsl(0, 70%, 50%)'
+  const initial = parseHsl(defaultColor)
+  const [hue, setHue] = useState(initial.h)
+  const [saturation, setSaturation] = useState(initial.s)
+  const [lightness, setLightness] = useState(initial.l)
 
   const hues = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
+
+  const findClosestHue = (targetHue: number): number => {
+    let closest = hues[0]
+    let minDiff = Math.abs(targetHue - hues[0])
+    
+    for (const presetHue of hues) {
+      const diff = Math.min(
+        Math.abs(targetHue - presetHue),
+        Math.abs(targetHue - presetHue + 360),
+        Math.abs(targetHue - presetHue - 360)
+      )
+      if (diff < minDiff) {
+        minDiff = diff
+        closest = presetHue
+      }
+    }
+    
+    return closest
+  }
+
+  const [selectedHueBox, setSelectedHueBox] = useState(findClosestHue(initial.h))
+
+  useEffect(() => {
+    if (value) {
+      const parsed = parseHsl(value)
+      setHue(parsed.h)
+      setSaturation(parsed.s)
+      setLightness(parsed.l)
+      setSelectedHueBox(findClosestHue(parsed.h))
+    }
+  }, [value])
 
   const getColorString = (h: number, s: number, l: number) => {
     return `hsl(${h}, ${s}%, ${l}%)`
@@ -17,6 +63,7 @@ export const ColorPicker = ({ onChange }: ColorPickerProps) => {
 
   const handleHueChange = (h: number) => {
     setHue(h)
+    setSelectedHueBox(h)
     onChange(getColorString(h, saturation, lightness))
   }
 
@@ -26,8 +73,9 @@ export const ColorPicker = ({ onChange }: ColorPickerProps) => {
   }
 
   const handleLightnessChange = (l: number) => {
-    setLightness(l)
-    onChange(getColorString(hue, saturation, l))
+    const newLightness = l
+    setLightness(newLightness)
+    onChange(getColorString(hue, saturation, newLightness))
   }
 
   return (
@@ -36,7 +84,7 @@ export const ColorPicker = ({ onChange }: ColorPickerProps) => {
         {hues.map((h) => (
           <div
             key={h}
-            className={`color-picker-hue-box ${hue === h ? 'selected' : ''}`}
+            className={`color-picker-hue-box ${selectedHueBox === h ? 'selected' : ''}`}
             style={{ backgroundColor: getColorString(h, saturation, lightness) }}
             onClick={() => handleHueChange(h)}
           />

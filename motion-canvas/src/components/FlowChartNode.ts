@@ -41,6 +41,9 @@ export class FlowChartNode extends Node {
     if (this.text) {
       this.text.text(this.config.name)
     }
+    if (this.config.color && this.background) {
+      this.background.fill(this.config.color)
+    }
   }
 
   private initializeBackground() {
@@ -209,7 +212,7 @@ export class FlowChartNode extends Node {
       yield* all(
         linear(startBorder, dtBorder, this.border.end),
         linear(startBorder, .01, this.border.opacity),
-        delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(hsl(0, 60, 38)), value))})),
+        delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(this.config.color || 'rgb(52,50,57)'), value))})),
         delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
         delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
         delay(startNode, tween(dtNode, value => { this.text.opacity(value)})),

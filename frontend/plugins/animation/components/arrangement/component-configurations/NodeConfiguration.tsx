@@ -1,4 +1,5 @@
 import { FileDisplay } from "../../../../common/components/FileDisplay"
+import { ColorPicker } from "../../../../common/components/ColorPicker"
 import { useAnimation } from "../../../context"
 import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
 import { useEffect, useState } from "react"
@@ -55,6 +56,11 @@ export const NodeConfiguration = () => {
     computeEdges()
   }
 
+  const handleSetColor = (color: string) => {
+    selectedNode.color = color
+    setComponents([...components])
+  }
+
   const handleDeleteNode = () => {
     const nodes = getNodes()
     if (selectedNode.parent) {
@@ -103,7 +109,8 @@ export const NodeConfiguration = () => {
       componentId: selectedComponent_.id,
       type: 'square',
       width: 240,
-      height: 240
+      height: 240,
+      color: 'hsl(0, 70%, 50%)'
     }
 
     if (selectedNodes_.length > 1) {
@@ -183,6 +190,7 @@ export const NodeConfiguration = () => {
         <span>Height</span>
         <input type="number" step={60} value={selectedNode?.height ?? 240} onChange={(e) => handleSetHeight(Number(e.target.value))} />
       </div>
+      <ColorPicker value={selectedNode?.color || 'hsl(0, 70%, 50%)'} onChange={handleSetColor} />
       <button onClick={handleDeleteNode}>Delete</button>
       <button onClick={handleAddNode}>Add Node</button>
       <button onClick={fadeInNodes}>Fade In Nodes</button>

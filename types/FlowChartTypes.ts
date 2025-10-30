@@ -21,6 +21,7 @@ export interface FlowChartNode {
   image?: string
   width?: number
   height?: number
+  color?: string
 }
 
 export interface EdgeJoint {
