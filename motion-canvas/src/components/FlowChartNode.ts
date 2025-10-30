@@ -123,14 +123,43 @@ export class FlowChartNode extends Node {
       const infoTextY = infoY
       const position  = { x: infoTextX, y: infoTextY }
       const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 0 })
-      const getRadius = () => Math.min(this.width(), this.height()) / 2
       const lineOffsetY = 20
       const lineY = position.y + lineOffsetY
       const dx = position.x
       const dy = lineY
       const angle = Math.atan2(dy, dx)
-      const startX = () => getRadius() * Math.cos(angle)
-      const startY = () => getRadius() * Math.sin(angle)
+      
+      const getStartPosition = () => {
+        if (this.config.type === 'circle') {
+          const getRadius = () => Math.min(this.width(), this.height()) / 2
+          return {
+            x: getRadius() * Math.cos(angle),
+            y: getRadius() * Math.sin(angle)
+          }
+        } else {
+          const halfWidth = this.width() / 2
+          const halfHeight = this.height() / 2
+          const absDx = Math.abs(dx)
+          const absDy = Math.abs(dy)
+          
+          if (absDx > absDy) {
+            const ratio = halfWidth / absDx
+            return {
+              x: dx > 0 ? halfWidth : -halfWidth,
+              y: dy * ratio
+            }
+          } else {
+            const ratio = halfHeight / absDy
+            return {
+              x: dx * ratio,
+              y: dy > 0 ? halfHeight : -halfHeight
+            }
+          }
+        }
+      }
+      
+      const startX = () => getStartPosition().x
+      const startY = () => getStartPosition().y
       const textWidth = infoText.width()
       const points = () => [
         { x: startX(), y: startY() },
