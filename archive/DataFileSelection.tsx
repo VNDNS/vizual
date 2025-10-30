@@ -33,7 +33,7 @@ export const DataFileSelection = () => {
     
     if (currentDataFile) {
       console.log('currentDataFile', currentDataFile)
-      const fullPath = '/home/viktor/code/vizual/server/data/' + 'flowChart' + '/' + currentDataFile
+      const fullPath = 'server/data/' + 'flowChart' + '/' + currentDataFile
       getJson(fullPath).then(data => {
         setCurrentData(data)
       })

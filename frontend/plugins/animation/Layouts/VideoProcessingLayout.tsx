@@ -34,7 +34,7 @@ export const VideoProcessingLayout = () => {
         
         if (files && files.length > 0) {
           const firstFile = files[0]
-          const fullPath = `/home/viktor/code/vizual/server/data/video-analysis/${firstFile}`
+          const fullPath = `server/data/video-analysis/${firstFile}`
           const analysisData = await getJson(fullPath)
           setVideoAnalysisData(analysisData)
           console.log('Loaded analysis data:', analysisData)

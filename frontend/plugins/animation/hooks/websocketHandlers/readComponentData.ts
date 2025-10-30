@@ -14,7 +14,7 @@ export const readComponentData = async (componentName: string | undefined) => {
   if (!files || files.length === 0) {
     return { data: null, hasLayout }
   }
-  const fullPath = `/home/viktor/code/vizual/server/data/${componentName}/${files[0]}`
+  const fullPath = `server/data/${componentName}/${files[0]}`
   const data = await getJson(fullPath)
   return { data, hasLayout }
 }

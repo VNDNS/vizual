@@ -35,7 +35,7 @@ export const FileSelection = ({ onDataChange, directory }: FileSelectionProps) =
     // }
     if (!!currentDataFile) {
       console.log('hello', currentDataFile)
-      const fullPath = '/home/viktor/code/vizual/server/data/' + directory + '/' + currentDataFile
+      const fullPath = 'server/data/' + directory + '/' + currentDataFile
       console.log('fullPath', fullPath)
       getJson(fullPath).then(data => {
         onDataChange(data)

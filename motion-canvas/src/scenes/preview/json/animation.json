@@ -290,42 +290,5 @@
   ],
   "tracks": 1,
   "panel": [],
-  "audio": [
-    {
-      "name": "A Link to the Past.wav",
-      "duration": 14.65,
-      "start": 0,
-      "id": "a61kzjsbwnboiw8axqupe"
-    },
-    {
-      "name": "NES.wav",
-      "duration": 13.2,
-      "start": 14.65,
-      "id": "39gfhysgg85kvh60n3knm"
-    },
-    {
-      "name": "Nintendo.wav",
-      "duration": 11.65,
-      "start": 27.85,
-      "id": "49ctorgocqcuw635i3n15"
-    },
-    {
-      "name": "SNES.wav",
-      "duration": 9.95,
-      "start": 39.5,
-      "id": "r8l75oo1dk9kpt6h9qutgl"
-    },
-    {
-      "name": "The Legend of Zelda.wav",
-      "duration": 15.1,
-      "start": 49.45,
-      "id": "gu7tjy70u56gkrvu2zy1ml"
-    },
-    {
-      "name": "Zelda II: The Adventure of Link.wav",
-      "duration": 14.3,
-      "start": 64.55,
-      "id": "9ljtyfeq1bkjslg63nhef"
-    }
-  ]
+  "audio": []
 }

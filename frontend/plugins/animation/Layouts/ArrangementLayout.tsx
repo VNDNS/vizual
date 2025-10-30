@@ -25,7 +25,7 @@ export const ArrangementLayout = () => {
   const [sceneFile, setSceneFile] = useState<string>('')
 
   const onSelectSceneFile = (file: string) => {
-    const fullPath = '/home/viktor/code/vizual/motion-canvas/src/animations/' + file
+    const fullPath = 'motion-canvas/src/animations/' + file
     getJson(fullPath).then(data => {
       setComponents(data.components)
       setAnimation(data.animation)

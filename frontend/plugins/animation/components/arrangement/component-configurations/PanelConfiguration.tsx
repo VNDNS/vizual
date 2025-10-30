@@ -91,7 +91,7 @@ export const PanelConfiguration = () => {
 
   const handleSetData = (data: string) => {
     setData(data)
-    const fullPath = '/home/viktor/code/vizual/server/data/panel/' + data
+    const fullPath = 'server/data/panel/' + data
     getJson(fullPath).then(data => {
       setPanelData(data)
     })

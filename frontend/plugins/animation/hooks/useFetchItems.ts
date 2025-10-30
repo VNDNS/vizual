@@ -8,7 +8,7 @@ export const useFetchItems = () => {
   useEffect(() => {
     const fetchItems = async () => {
       if (!selectedDataFile) return;
-      const scene = await getJson(`/home/viktor/code/vizual/motion-canvas/src/animations/${selectedDataFile}`);
+      const scene = await getJson(`motion-canvas/src/animations/${selectedDataFile}`);
       const nodes = scene.components.flatMap((component: any) => component.configuration.data.nodes);
       setItems(nodes);
     };

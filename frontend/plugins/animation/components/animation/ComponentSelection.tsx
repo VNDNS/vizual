@@ -20,7 +20,7 @@ export const ComponentSelection = () => {
     const files = await getDirectory(fileType)
     const name   = fileType + components.length
     const color  = componentUIColors[components.length % componentUIColors.length]
-    const fullPath = '/home/viktor/code/vizual/server/data/' + fileType + '/' + files[0]
+    const fullPath = 'server/data/' + fileType + '/' + files[0]
     const data = await getJson(fullPath)
 
     const component: ComponentUI = {

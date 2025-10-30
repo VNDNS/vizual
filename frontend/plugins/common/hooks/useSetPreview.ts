@@ -18,7 +18,7 @@ export const useSetPreview = () => {
   
   useEffect(() => {
 
-    const fullPath = '/home/viktor/code/vizual/motion-canvas/src/scenes/preview/json/animation.json'
+    const fullPath = 'motion-canvas/src/scenes/preview/json/animation.json'
     getJson(fullPath).then(data => {
       data.components.forEach((component: any) => {
         if (component.id === selectedComponent) {

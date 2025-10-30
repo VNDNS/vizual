@@ -1,7 +1,14 @@
 import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const root = path.resolve(__dirname, '../..')
 
 export const readContainer = (containerName: string) => {
-  const fileContent = fs.readFileSync(`/home/viktor/code/vizual/motion-canvas/src/scenes/preview/json/animation.json`, 'utf-8')
+  const filePath = path.resolve(root, 'motion-canvas/src/scenes/preview/json/animation.json')
+  const fileContent = fs.readFileSync(filePath, 'utf-8')
   const animation =  JSON.parse(fileContent)
   const components = animation.components
   const container = components.find((component: any) => component.name === containerName)

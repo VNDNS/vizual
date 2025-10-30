@@ -4,36 +4,36 @@ import { fileURLToPath } from 'url'
 export const sceneName = 'example'
 export const port      = 3009
 
-const root         = '/home/viktor/code/vizual'
-const mc           = `${root}/motion-canvas/src`
-const server       = `${root}/server`
-const frontend     = `${root}/frontend`
-const endpoints    = `${server}/endpoints`
-const plugins      = `${frontend}/plugins`
-const scenes       = `${mc}/scenes`
-const plots        = `${mc}/plots`
-const latex        = `${mc}/latex`
-const animations   = `${mc}/animations`
-const projectFile  = `${mc}/project.ts`
-const shapes       = `${mc}/shapesV3`
-const shapeConfigs = `${server}/builder/shape-configs`
-const images       = `${server}/images`
-const inputImages  = `${images}/input`
-const outputImages = `${images}/output`
-const paddedImages = `${images}/padded`
-
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+const root         = path.resolve(__dirname, '..')
+const mc           = path.resolve(root, 'motion-canvas/src')
+const server       = path.resolve(root, 'server')
+const frontend     = path.resolve(root, 'frontend')
+const endpoints    = path.resolve(server, 'endpoints')
+const plugins      = path.resolve(frontend, 'plugins')
+const scenes       = path.resolve(mc, 'scenes')
+const plots        = path.resolve(mc, 'plots')
+const latex        = path.resolve(mc, 'latex')
+const animations   = path.resolve(mc, 'animations')
+const projectFile  = path.resolve(mc, 'project.ts')
+const shapes       = path.resolve(mc, 'shapesV3')
+const shapeConfigs = path.resolve(server, 'builder/shape-configs')
+const images       = path.resolve(server, 'images')
+const inputImages  = path.resolve(images, 'input')
+const outputImages = path.resolve(images, 'output')
+const paddedImages = path.resolve(images, 'padded')
 
 // computed constants
-export const sceneFile    = (fileName: string) => `${scenes}/${fileName}.tsx`
-export const latexFile    = (fileName: string) => `${latex}/${fileName}.json`
-export const plotFile     = (fileName: string) => `${plots}/${fileName}.json`
-export const previewScene = (plugin: string)   => `${scenes}/preview/${plugin}.tsx`
-export const previewFile  = ()   => `${scenes}/preview/json/animation.json`
-export const dataPath     = (dataType: string) => `${server}/data/${dataType}`
+export const sceneFile    = (fileName: string) => path.resolve(scenes, `${fileName}.tsx`)
+export const latexFile    = (fileName: string) => path.resolve(latex, `${fileName}.json`)
+export const plotFile     = (fileName: string) => path.resolve(plots, `${fileName}.json`)
+export const previewScene = (plugin: string)   => path.resolve(scenes, 'preview', `${plugin}.tsx`)
+export const previewFile  = ()   => path.resolve(scenes, 'preview/json/animation.json')
+export const dataPath     = (dataType: string) => path.resolve(server, 'data', dataType)
 
 export const paths = {
+  root,
   sceneFile,
   latexFile,
   latexDir: path.resolve(__dirname, 'motion-canvas/src/latex/'),

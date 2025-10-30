@@ -1,6 +1,11 @@
 import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const JSON_FILE_PATH = '/home/viktor/code/vizual/server/data/text/text.json'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const root = path.resolve(__dirname, '../..')
+const JSON_FILE_PATH = path.resolve(root, 'server/data/text/text.json')
 
 export const writeScript = async (text: string, node: string | undefined) => {
   let data: Array<{text: string, node: string | undefined}> = []
