@@ -5,7 +5,8 @@ export interface NodeConfig {
   x: number;
   y: number;
   year: number;
-  parent: number | string;
+  parent?: number | string;
+  parents?: (number | string)[];
   children: (number | string)[];
   image?: string;
   type: 'square' | 'circle';

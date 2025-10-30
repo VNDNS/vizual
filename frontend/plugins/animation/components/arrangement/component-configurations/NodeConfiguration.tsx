@@ -45,22 +45,43 @@ export const NodeConfiguration = () => {
 
   const handleDeleteNode = () => {
     const nodes = getNodes()
-    const parent = nodes.find((node: any) => node.id === selectedNode.parent)
-    if (parent) {
-      parent.children = parent.children.filter((child: any) => child !== selectedNode.id)
+    if (selectedNode.parent) {
+      const parent = nodes.find((node: any) => node.id === selectedNode.parent)
+      if (parent) {
+        parent.children = parent.children.filter((child: any) => child !== selectedNode.id)
+      }
+    }
+    if (Array.isArray(selectedNode.parents)) {
+      selectedNode.parents.forEach((parentId: any) => {
+        const parent = nodes.find((node: any) => node.id === parentId)
+        if (parent) {
+          parent.children = parent.children.filter((child: any) => child !== selectedNode.id)
+        }
+      })
     }
     nodes.splice(nodes.indexOf(selectedNode), 1)
     setComponents([...components])
   }
 
   const handleAddNode = () => {
+    const selectedNodes_ = getSelectedNodes()
+    const newNodeId = Math.floor(Math.random() * 1000000)
+    
+    let newNodeX = (selectedNode?.x ?? 0) + 300
+    let newNodeY = selectedNode?.y ?? 0
+    
+    if (selectedNodes_.length > 1) {
+      const avgX = selectedNodes_.reduce((sum, n) => sum + (n.x ?? 0), 0) / selectedNodes_.length
+      const avgY = selectedNodes_.reduce((sum, n) => sum + (n.y ?? 0), 0) / selectedNodes_.length
+      newNodeX = avgX + 300
+      newNodeY = avgY
+    }
 
     const node: any = {
-      id: Math.floor(Math.random() * 1000000),
-      parent: selectedNode?.id,
+      id: newNodeId,
       children: [],
-      x: (selectedNode?.x ?? 0) + 300,
-      y: selectedNode?.y ?? 0,
+      x: newNodeX,
+      y: newNodeY,
       year: 0,
       startSide: 'right',
       endSide: 'left',
@@ -71,7 +92,15 @@ export const NodeConfiguration = () => {
       type: 'square'
     }
 
-    selectedNode?.children.push(node.id)
+    if (selectedNodes_.length > 1) {
+      node.parents = selectedNodes_.map(n => n.id)
+      selectedNodes_.forEach((selectedNode_) => {
+        selectedNode_.children.push(newNodeId)
+      })
+    } else if (selectedNode) {
+      node.parent = selectedNode.id
+      selectedNode.children.push(newNodeId)
+    }
     
     const newNodes = [...nodes, node]
     selectedComponent_.configuration.data.nodes = newNodes

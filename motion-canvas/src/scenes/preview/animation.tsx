@@ -6,12 +6,12 @@ import animationData    from './json/animation.json';
 import { Camera }       from '../../components/Camera';
 import { Panel }        from '../../components/Panel';
 import { Highlighter }  from '../../components/Highlighter';
-import { Clock } from '../../components/Clock'
+import { FlowChart } from '../../components/FlowChart'
 
 export default makeScene2D(function* (view) {
   
-  const clock0 = new Clock(animationData.components[0].configuration)
-  const components = [clock0]
+  const flowChart0 = new FlowChart(animationData.components[0].configuration)
+  const components = [flowChart0]
 
   const camera = new Camera({})
   const panel = new Panel({data: animationData.panel})
@@ -19,10 +19,14 @@ export default makeScene2D(function* (view) {
   view.add(camera)
   view.add(panel)
   view.add(highlighter)
-  camera.add(clock0)
+  camera.add(flowChart0)
 
 
-  yield* clock0.fadeIn(1)
+  yield* flowChart0.fadeIn(['Node 1'],1.8166666666666667)
 
-  yield* clock0.animateHands(6)
+  yield* flowChart0.fadeIn(['Node 2','Node 3'],2.1166666666666667)
+
+  yield* flowChart0.fadeIn(['Node 4'],1.8166666666666667)
+
+  yield* flowChart0.fadeIn(['Node 5'],1.8166666666666667)
 })

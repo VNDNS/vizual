@@ -2,24 +2,10 @@
 
 #### Task description
 
-Create a new animation component called Clock.
-It should display an analog clock with a second hand, a minute hand, and an hour hand.
-
-The ClockProps type should look something like this:
-export interface ClockProps extends NodeProps {
-  data: ClockConfig;
-  ...other props;
-}
-
-ClockConfig should look like this:
-export interface ClockConfig {
-  seconds: number;
-  minutes: number;
-  hours: number;
-}[]
-
-One button should fade in the clock.
-Another button should add an animation where the hands move to the times in the clock config one after the other.
+Edit the Flowchart component.
+Currently nodes can only have one parent.
+I want them to be able to have multiple parents.
+When a node with multiple parents fades in, all edges from all parents should fade in at once.
 
 
 For an animation component these points have to be implemented:

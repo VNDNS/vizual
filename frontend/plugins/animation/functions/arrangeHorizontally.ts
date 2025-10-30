@@ -2,7 +2,7 @@ const dx = 60 * 20
 const dy = 60 * 5
 
 export const arrangeHorizontally = (nodes: any[]) => {
-  const root = nodes.find((r) => r.parent === undefined)
+  const root = nodes.find((r) => r.parent === undefined && (!r.parents || r.parents.length === 0))
   if (!root) { return nodes }
 
   const idMap = new Map(nodes.map((r) => [r.id, r]))

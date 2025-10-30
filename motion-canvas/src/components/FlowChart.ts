@@ -37,11 +37,15 @@ export class FlowChart extends Node {
   public *activate(nodeName: string, duration: number) {
 
     const targetNode = this.config.nodes.find(n => n.name === nodeName)
-    const edgeIndex = this.config.edges.findIndex(e => e.targetId === targetNode?.id)
     const nodeIndex = this.config.nodes.findIndex(n => n.id === targetNode?.id)
+    const edgeIndices = this.config.edges
+      .map((e, index) => e.targetId === targetNode?.id ? index : -1)
+      .filter(index => index !== -1)
+    
+    const edgeAnimations = edgeIndices.map(index => this.edges[index]?.fadeIn())
     
     yield* all(
-      this.edges[edgeIndex]?.fadeIn(),
+      ...edgeAnimations,
       this.nodes[nodeIndex].fadeIn()
     )
   }

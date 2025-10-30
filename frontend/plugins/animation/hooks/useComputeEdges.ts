@@ -1,7 +1,7 @@
 import { useAnimation } from "@context/context";
 import { buildIdMap } from "./utils/buildNodeMaps";
 import { buildComponentEdges, buildInitialEdges } from "./utils/buildInitialEdges";
-import { groupEdgesBySourceAndSide } from "./utils/groupEdgesBySourceAndSide";
+import { groupEdgesBySourceAndSide, groupEdgesByTargetAndSide } from "./utils/groupEdgesBySourceAndSide";
 import { distributeEdgesOnSameSide } from "./utils/distributeEdgesOnSameSide";
 import { computeIntermediatePoints } from "./utils/computeIntermediatePoints";
 import { addStartAndEndPoints } from "./utils/addStartAndEndPoints";
@@ -33,8 +33,9 @@ export const useComputeEdges = () => {
     const existingEdges  = flowChart?.configuration.data.edges || [];
     let edges            = buildInitialEdges(nodes, idMap, existingEdges);
     edges                = buildComponentEdges(components, idMap, edges);
-    const groupMap       = groupEdgesBySourceAndSide(edges, idMap);
-    edges                = distributeEdgesOnSameSide(edges, groupMap);
+    const sourceGroupMap = groupEdgesBySourceAndSide(edges, idMap);
+    const targetGroupMap = groupEdgesByTargetAndSide(edges, idMap);
+    edges                = distributeEdgesOnSameSide(edges, sourceGroupMap, targetGroupMap);
     edges                = getIntermediatePoints(edges);
     edges                = getEdgesWithStartAndEndPoints(edges);
     edges                = chamferPoints(edges);

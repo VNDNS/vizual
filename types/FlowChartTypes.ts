@@ -9,6 +9,7 @@ export interface FlowChartNode {
   y: number
   year: number
   parent?: number
+  parents?: number[]
   children: number[]
   text?: string
   group?: string

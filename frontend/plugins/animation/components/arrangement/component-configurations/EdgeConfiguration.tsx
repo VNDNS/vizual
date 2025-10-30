@@ -17,7 +17,7 @@ export const EdgeConfiguration = () => {
 
   const selectedNode = getSelectedNode()
   const selectedNodeId = selectedNode?.id
-  const parentNodeId = selectedNode?.parent
+  const parentNodeId = selectedNode?.parent || (Array.isArray(selectedNode?.parents) && selectedNode.parents.length > 0 ? selectedNode.parents[0] : undefined)
 
   const config = component?.configuration as FlowChartConfiguration | undefined
   const selectedEdge = config?.data.edges.find((e: FlowChartEdge) => e.sourceId === parentNodeId && e.targetId === selectedNodeId)?.id
