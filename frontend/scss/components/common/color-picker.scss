@@ -1,0 +1,26 @@
+@use '../../variables' as *;
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-2;
+
+  .color-picker-hue-boxes {
+    display: flex;
+    gap: $gap-1;
+    flex-wrap: wrap;
+  }
+
+  .color-picker-hue-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: 1px solid $border-color;
+    
+    &.selected {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+}

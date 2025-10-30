@@ -3,11 +3,8 @@
 #### Task description
 
 Edit the Flowchart component.
-Flowchart nodes can have info texts attached to them.
-Currently they assume the node to be a circle. 
-Lets apply logic to take into account if the node is of type circle, or other.
-if other, it should assume the node to be a square.
-in that case the starting positions of the info lines should be calculated differently.
+In NodeConfiguration.tsx, we want the color picker component to be displayed for the node color.
+the color should then be displayed in the motion-canvas component.
 
 
 For an animation component these points have to be implemented:

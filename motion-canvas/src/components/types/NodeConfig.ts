@@ -9,7 +9,7 @@ export interface NodeConfig {
   parents?: (number | string)[];
   children: (number | string)[];
   image?: string;
-  type: 'square' | 'circle' | 'text';
+  type: 'square' | 'circle' | 'text' | 'logo';
   componentId: number;
   infos?: { name: string; id: string; }[];
   width?: number;

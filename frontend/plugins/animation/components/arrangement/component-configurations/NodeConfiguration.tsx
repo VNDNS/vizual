@@ -173,7 +173,7 @@ export const NodeConfiguration = () => {
       </div>
       <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
       <div className="node-type-selection">
-        <OptionSelection label="Node Type" options={['square', 'circle', 'text']} setValue={handleSetNodeType} value={selectedNode?.type || ''} />
+        <OptionSelection label="Node Type" options={['square', 'circle', 'text', 'logo']} setValue={handleSetNodeType} value={selectedNode?.type || ''} />
       </div>
       <div className="input-group">
         <span>Width</span>
