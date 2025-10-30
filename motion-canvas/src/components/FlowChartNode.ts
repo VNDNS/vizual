@@ -3,8 +3,6 @@ import { SimpleSignal, Color, all, delay, tween, createSignal, sequence } from "
 import { NodeConfig } from "./types/NodeConfig"
 import { FlowChart } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
-import { getSquarePoints } from "./functions/getSquarePoints"
-import { getInfoLinePoints } from "./functions/getInfoLinePoints"
 import { linear } from "./linear"
 import { hsl } from "./hsl"
 
@@ -19,7 +17,8 @@ export class FlowChartNode extends Node {
 
   private config: NodeConfig
   private activation: SimpleSignal<number, this> = createSignal(0)
-  private size: () => number = () => 240 + this.activation()*10
+  private width: () => number = () => (this.config.width ?? 240) + this.activation()*10
+  private height: () => number = () => (this.config.height ?? 240) + this.activation()*10
   private infoLines: Line[] = []
   private infoTexts: Txt[] = []
   private text: Txt
@@ -37,21 +36,33 @@ export class FlowChartNode extends Node {
     this.initializeInfos()
   }
 
+  public updateConfig(newConfig: NodeConfig) {
+    this.config = newConfig
+    if (this.text) {
+      this.text.text(this.config.name)
+    }
+  }
+
   private initializeBackground() {
     const shadowProps = getShadowProps(this.activation)
     this.background = new Rect({ 
-      width: this.size, 
-      height: this.size, 
+      width: this.width, 
+      height: this.height, 
       fill: 'rgb(52,50,57)', 
       opacity: 0, 
-      radius: this.config.type === 'circle' ? () => this.size()/2 : 15, 
+      radius: this.config.type === 'circle' ? () => Math.min(this.width(), this.height())/2 : 15, 
       ...shadowProps 
     })
     this.add(this.background)
   }
 
   private initializeBorder() {
-    const points = getSquarePoints(this.size)
+    const points = () => [
+      { x: -this.width() / 2, y: -this.height() / 2 },
+      { x: +this.width() / 2, y: -this.height() / 2 },
+      { x: +this.width() / 2, y: +this.height() / 2 },
+      { x: -this.width() / 2, y: +this.height() / 2 },
+    ]
     this.border = new Line({ 
       points, 
       closed: true, 
@@ -60,19 +71,29 @@ export class FlowChartNode extends Node {
       stroke: lineColor, 
       lineWidth: 7, 
       lineCap: "round", 
-      radius: this.config.type === 'circle' ? () => this.size()/2-.001 : 15 
+      radius: this.config.type === 'circle' ? () => Math.min(this.width(), this.height())/2-.001 : 15 
     })
     this.add(this.border)
   }
 
   private initializeText() {
+    const baseSize = this.config.width ?? 240
+    const getPosition = () => {
+      if (this.config.type === 'text') {
+        return { x: 0, y: 0 }
+      } else if (this.config.type === 'circle') {
+        return { x: 0, y: 160 }
+      } else {
+        return { x: 0, y: 90 * this.height()/baseSize }
+      }
+    }
     const text = new Txt({ 
       text: this.config.name, 
-      fontSize: () => 32 * this.size()/240, 
+      fontSize: () => 32 * this.width()/baseSize, 
       fill: 'white', 
       fontFamily: 'Rubik', 
       fontWeight: 400, 
-      position: () => ({ x: 0, y: this.config.type === 'circle' ? 160 : 90 * this.size()/240 }), 
+      position: getPosition,
       opacity: 0 
     })
     this.background.add(text)
@@ -102,7 +123,20 @@ export class FlowChartNode extends Node {
       const infoTextY = infoY
       const position  = { x: infoTextX, y: infoTextY }
       const infoText  = new Txt({ text: info.name, fontSize: 30, fill: 'white', fontFamily: 'Rubik', offset: [-1, 0], position, opacity: 0 })
-      const points    = getInfoLinePoints(this.size, infoText)
+      const getRadius = () => Math.min(this.width(), this.height()) / 2
+      const lineOffsetY = 20
+      const lineY = position.y + lineOffsetY
+      const dx = position.x
+      const dy = lineY
+      const angle = Math.atan2(dy, dx)
+      const startX = () => getRadius() * Math.cos(angle)
+      const startY = () => getRadius() * Math.sin(angle)
+      const textWidth = infoText.width()
+      const points = () => [
+        { x: startX(), y: startY() },
+        { x: position.x, y: lineY },
+        { x: position.x + textWidth, y: lineY }
+      ]
       const polyline  = new Line({ points, stroke: lineColor, lineWidth: 5, radius: 30, lineCap: "round", opacity: 0, end: 0 })
       
       this.add(polyline)

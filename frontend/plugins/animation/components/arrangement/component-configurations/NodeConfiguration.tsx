@@ -43,6 +43,18 @@ export const NodeConfiguration = () => {
     setComponents([...components])
   }
 
+  const handleSetWidth = (value: number) => {
+    selectedNode.width = value
+    setComponents([...components])
+    computeEdges()
+  }
+
+  const handleSetHeight = (value: number) => {
+    selectedNode.height = value
+    setComponents([...components])
+    computeEdges()
+  }
+
   const handleDeleteNode = () => {
     const nodes = getNodes()
     if (selectedNode.parent) {
@@ -89,7 +101,9 @@ export const NodeConfiguration = () => {
       suggestedChildren: [],
       name: `Node ${nodes.length + 1}`,
       componentId: selectedComponent_.id,
-      type: 'square'
+      type: 'square',
+      width: 240,
+      height: 240
     }
 
     if (selectedNodes_.length > 1) {
@@ -159,7 +173,15 @@ export const NodeConfiguration = () => {
       </div>
       <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
       <div className="node-type-selection">
-        <OptionSelection label="Node Type" options={['square', 'circle']} setValue={handleSetNodeType} value={selectedNode?.type || ''} />
+        <OptionSelection label="Node Type" options={['square', 'circle', 'text']} setValue={handleSetNodeType} value={selectedNode?.type || ''} />
+      </div>
+      <div className="input-group">
+        <span>Width</span>
+        <input type="number" step={60} value={selectedNode?.width ?? 240} onChange={(e) => handleSetWidth(Number(e.target.value))} />
+      </div>
+      <div className="input-group">
+        <span>Height</span>
+        <input type="number" step={60} value={selectedNode?.height ?? 240} onChange={(e) => handleSetHeight(Number(e.target.value))} />
       </div>
       <button onClick={handleDeleteNode}>Delete</button>
       <button onClick={handleAddNode}>Add Node</button>

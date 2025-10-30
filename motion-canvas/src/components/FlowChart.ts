@@ -20,6 +20,13 @@ export class FlowChart extends Node {
     this.initializeEdges()
   }
 
+  public updateConfig(newConfig: FlowChartConfig) {
+    this.config = newConfig
+    for (let i = 0; i < Math.min(this.nodes.length, this.config.nodes.length); i++) {
+      this.nodes[i].updateConfig(this.config.nodes[i])
+    }
+  }
+
   private initializeNodes() {
     for (let i = 0; i < this.config.nodes.length; i++) {
       const flowChartNode = new FlowChartNode(this, this.config.nodes[i])
@@ -36,10 +43,15 @@ export class FlowChart extends Node {
 
   public *activate(nodeName: string, duration: number) {
 
-    const targetNode = this.config.nodes.find(n => n.name === nodeName)
-    const nodeIndex = this.config.nodes.findIndex(n => n.id === targetNode?.id)
+    const nodeIndex = this.config.nodes.findIndex(n => n.name === nodeName)
+    
+    if (nodeIndex === -1 || !this.nodes[nodeIndex]) {
+      return
+    }
+    
+    const targetNode = this.config.nodes[nodeIndex]
     const edgeIndices = this.config.edges
-      .map((e, index) => e.targetId === targetNode?.id ? index : -1)
+      .map((e, index) => e.targetId === targetNode.id ? index : -1)
       .filter(index => index !== -1)
     
     const edgeAnimations = edgeIndices.map(index => this.edges[index]?.fadeIn())

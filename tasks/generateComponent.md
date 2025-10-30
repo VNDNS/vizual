@@ -3,9 +3,9 @@
 #### Task description
 
 Edit the Flowchart component.
-Currently nodes can only have one parent.
-I want them to be able to have multiple parents.
-When a node with multiple parents fades in, all edges from all parents should fade in at once.
+Right now flowchart nodes have a fixed size.
+I want the width and height of a node to be configurable in the node configuration inside the sidebar.
+Make sure, that the edges are updated accordingly.
 
 
 For an animation component these points have to be implemented:
