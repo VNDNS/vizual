@@ -9,6 +9,4 @@ export const componentTypes = [
   'flowChart',
   'background',
   'container',
-  'table',
-  'clock',
 ]

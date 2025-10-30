@@ -1,11 +1,13 @@
-## Task: Generate/Edit an animation component
-
 #### Task description
 
-Edit the Flowchart component.
-In NodeConfiguration.tsx, we want the color picker component to be displayed for the node color.
-the color should then be displayed in the motion-canvas component.
+_______________________________________________________________________
 
+We have two components implemented which should be removed.
+Please remove the following components:
+- Table
+- Clock
+
+_______________________________________________________________________
 
 For an animation component these points have to be implemented:
 

@@ -7,8 +7,6 @@ import { CameraConfiguration } from "./component-configurations/CameraConfigurat
 import { PanelConfiguration } from "./component-configurations/PanelConfiguration"
 import { sidebarOptions } from "./sidebarOptions"
 import { ContainerConfiguration } from "./component-configurations/ContainerConfiguration"
-import { TableConfiguration } from "./component-configurations/TableConfiguration"
-import { ClockConfiguration } from "./component-configurations/ClockConfiguration"
 
 export const Sidebar = () => {
 
@@ -25,8 +23,6 @@ export const Sidebar = () => {
         {sidebarMode === 'camera-configuration'     && <CameraConfiguration />}
         {sidebarMode === 'animation-configuration'  && <AnimationConfiguration />}
         {sidebarMode === 'panel-configuration'      && <PanelConfiguration />}
-        {sidebarMode === 'table-configuration'      && <TableConfiguration />}
-        {sidebarMode === 'clock-configuration'      && <ClockConfiguration />}
       </div>
     </div>
   )
