@@ -38,9 +38,9 @@
               "suggestedChildren": [],
               "name": "Hi",
               "componentId": "1jvxqffptzjl6gazwg7qg",
-              "type": "square",
-              "width": 240,
-              "height": 240,
+              "type": "text",
+              "width": 360,
+              "height": 120,
               "parent": 992522
             },
             {
@@ -80,6 +80,20 @@
               "parents": [
                 908645,
                 91959
+              ],
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "4z5co4nsccxxauga09owr"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "pah0rei3muzo506trrwcc"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "p0x9wmj1n0pachnvujut2r"
+                }
               ]
             }
           ],
@@ -88,7 +102,7 @@
               "id": "992522-908645",
               "x1": -560,
               "y1": -40,
-              "x2": -340,
+              "x2": -400,
               "y2": -180,
               "sourceId": 992522,
               "targetId": 908645,
@@ -102,23 +116,23 @@
                   "y": -40
                 },
                 {
-                  "x": -505,
+                  "x": -520,
                   "y": -40
                 },
                 {
-                  "x": -450,
-                  "y": -95
+                  "x": -480,
+                  "y": -80
                 },
                 {
-                  "x": -450,
-                  "y": -125
+                  "x": -480,
+                  "y": -140
                 },
                 {
-                  "x": -395,
+                  "x": -440,
                   "y": -180
                 },
                 {
-                  "x": -340,
+                  "x": -400,
                   "y": -180
                 }
               ]
@@ -164,7 +178,7 @@
             },
             {
               "id": "908645-235853",
-              "x1": -20,
+              "x1": 40,
               "y1": -180,
               "x2": 200,
               "y2": -40,
@@ -176,23 +190,23 @@
               "c1": 500,
               "points": [
                 {
-                  "x": -20,
+                  "x": 40,
                   "y": -180
                 },
                 {
-                  "x": 35,
+                  "x": 80,
                   "y": -180
                 },
                 {
-                  "x": 90,
-                  "y": -125
+                  "x": 120,
+                  "y": -140
                 },
                 {
-                  "x": 90,
-                  "y": -95
+                  "x": 120,
+                  "y": -80
                 },
                 {
-                  "x": 145,
+                  "x": 160,
                   "y": -40
                 },
                 {
@@ -273,15 +287,15 @@
       "component": "flowChart0",
       "method": "fadeIn",
       "duration": 2.1166666666666667,
-      "start": 1.8166666666666667,
+      "start": 1.8,
       "inputs": {
         "nodes": [
-          "Hello",
+          "Hi",
           "Node 3"
         ]
       },
       "track": 0,
-      "id": "d5scu5kudxuzbxggi8lr8"
+      "id": "v9nqvft73jlqfkh5bdgh4r"
     },
     {
       "component": "flowChart0",
