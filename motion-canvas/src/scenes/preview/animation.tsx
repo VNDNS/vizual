@@ -6,12 +6,12 @@ import animationData    from './json/animation.json';
 import { Camera }       from '../../components/Camera';
 import { Panel }        from '../../components/Panel';
 import { Highlighter }  from '../../components/Highlighter';
-import { Table } from '../../components/Table'
+import { Clock } from '../../components/Clock'
 
 export default makeScene2D(function* (view) {
   
-  const table0 = new Table(animationData.components[0].configuration)
-  const components = [table0]
+  const clock0 = new Clock(animationData.components[0].configuration)
+  const components = [clock0]
 
   const camera = new Camera({})
   const panel = new Panel({data: animationData.panel})
@@ -19,8 +19,10 @@ export default makeScene2D(function* (view) {
   view.add(camera)
   view.add(panel)
   view.add(highlighter)
-  camera.add(table0)
+  camera.add(clock0)
 
 
-  yield* table0.fadeIn(1)
+  yield* clock0.fadeIn(1)
+
+  yield* clock0.animateHands(6)
 })

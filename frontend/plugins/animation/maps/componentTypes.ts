@@ -10,4 +10,5 @@ export const componentTypes = [
   'background',
   'container',
   'table',
+  'clock',
 ]

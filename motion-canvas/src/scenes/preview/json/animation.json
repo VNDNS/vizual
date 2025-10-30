@@ -1,32 +1,26 @@
 {
   "components": [
     {
-      "type": "table",
+      "type": "clock",
       "configuration": {
         "data": {
-          "rows": 3,
-          "columns": 4,
-          "data": [
-            [
-              6,
-              62,
-              9,
-              81
-            ],
-            [
-              65,
-              6,
-              58,
-              29
-            ],
-            [
-              78,
-              53,
-              82,
-              79
-            ]
-          ],
-          "colorScheme": "orange"
+          "times": [
+            {
+              "hours": 3,
+              "minutes": 16,
+              "seconds": 6
+            },
+            {
+              "hours": 8,
+              "minutes": 45,
+              "seconds": 8
+            },
+            {
+              "hours": 6,
+              "minutes": 22,
+              "seconds": 9
+            }
+          ]
         },
         "x": 0,
         "y": 0,
@@ -35,19 +29,28 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "6djzoqjfng8xshctmvo53",
-      "name": "table0"
+      "id": "k32iyzfemj8dtnxv3g8",
+      "name": "clock0"
     }
   ],
   "animation": [
     {
-      "component": "table0",
+      "component": "clock0",
       "method": "fadeIn",
       "duration": 1,
       "start": 0,
       "inputs": {},
       "track": 0,
-      "id": "p9u5me4rrglhrkjxdlihu"
+      "id": "65sdtw301tlfpkyvyp62t7"
+    },
+    {
+      "component": "clock0",
+      "method": "animateHands",
+      "duration": 6,
+      "start": 1,
+      "inputs": {},
+      "track": 0,
+      "id": "cca8fs41shggn30yj7xq99"
     }
   ],
   "tracks": 1,
@@ -57,37 +60,37 @@
       "name": "A Link to the Past.wav",
       "duration": 14.65,
       "start": 0,
-      "id": "5hte4su9r8f6ljyd9tha05"
+      "id": "9xbjctuzvu743nselnu0gq"
     },
     {
       "name": "NES.wav",
       "duration": 13.2,
       "start": 14.65,
-      "id": "p32es9m7erc2ic4cw54xrq"
+      "id": "b0nof86bjeo0fhp3v6ke7b7"
     },
     {
       "name": "Nintendo.wav",
       "duration": 11.65,
       "start": 27.85,
-      "id": "yrrqm4xt929xlxni2ymc"
+      "id": "ccqzx9zce7p3xu9sfi813"
     },
     {
       "name": "SNES.wav",
       "duration": 9.95,
       "start": 39.5,
-      "id": "mjvi5klb4v8edfrdkjx4l"
+      "id": "t10tn6p5p58zx6hpovy0im"
     },
     {
       "name": "The Legend of Zelda.wav",
       "duration": 15.1,
       "start": 49.45,
-      "id": "are2ff4t94t2pzpikq2tmu"
+      "id": "63ceuclhyva5k5od71k1n2"
     },
     {
       "name": "Zelda II: The Adventure of Link.wav",
       "duration": 14.3,
       "start": 64.55,
-      "id": "1gfhazmco0gl1vzqjlaqm"
+      "id": "sknmde88q9cvk958uyvtl"
     }
   ]
 }

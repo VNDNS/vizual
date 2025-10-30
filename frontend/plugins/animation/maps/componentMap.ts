@@ -41,5 +41,9 @@ export const componentMap: any = {
   table: {
     fadeIn: { },
   },
+  clock: {
+    fadeIn: { },
+    animateHands: { },
+  },
 
 };
