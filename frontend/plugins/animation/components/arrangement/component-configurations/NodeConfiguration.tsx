@@ -132,7 +132,10 @@ export const NodeConfiguration = () => {
   const fadeInNodes = () => {
     const selectedNodes_ = getSelectedNodes()
     const selectedComponent_ = getSelectedComponent()
-    const duration = (selectedNodes_.length-1) * .3 + 109/60
+    const summedTimeInfos = selectedNodes_.map(node => node.infos?.length ? node.infos.length - 1 : 0).reduce((sum, timeInfo) => sum + timeInfo, 0)
+    console.log(summedTimeInfos)
+    const duration = (selectedNodes_.length-1) * .3 + 109/60 + summedTimeInfos * .2 + 30/60 * selectedNodes_.length
+    console.log(duration, summedTimeInfos)
     const lastAnimation = animation.at(-1)
     const start = (lastAnimation?.start ?? 0) + (lastAnimation?.duration ?? 0)
     const newAnimation = { component: selectedComponent_?.name || '', method: 'fadeIn', duration: duration, start: start, inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, track: 0, id: id() }

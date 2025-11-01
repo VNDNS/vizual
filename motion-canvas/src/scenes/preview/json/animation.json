@@ -6,11 +6,12 @@
         "data": {
           "nodes": [
             {
-              "id": 34752,
+              "id": 391140,
               "children": [
-                604613
+                477355,
+                558914
               ],
-              "x": -540,
+              "x": -360,
               "y": -300,
               "year": 0,
               "startSide": "right",
@@ -18,228 +19,126 @@
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "osj9w6wcql9i0saecvjrpb",
-              "type": "circle",
+              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
+              "type": "text",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "efuz6d0xt4e6p55i8wrrw2"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "26rd6irfvsgai7yqn2fwve"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "5zmta9j26d6uln51ppzkx"
-                }
-              ]
+              "infos": []
             },
             {
-              "id": 361169,
-              "children": [
-                604613
-              ],
-              "x": 0,
-              "y": -300,
+              "id": 477355,
+              "children": [],
+              "x": -720,
+              "y": 300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "osj9w6wcql9i0saecvjrpb",
-              "type": "circle",
+              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
+              "type": "square",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "24iyuwmg7fgusplg0llj48"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "c7gvaajrehger3h3iveikk"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "kciwotcizin2bj09yh3ikj"
-                }
-              ]
+              "parent": 391140
             },
             {
-              "id": 320576,
-              "children": [
-                604613
-              ],
-              "x": 540,
-              "y": -300,
+              "id": 558914,
+              "children": [],
+              "x": -180,
+              "y": 300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "osj9w6wcql9i0saecvjrpb",
-              "type": "circle",
+              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
+              "type": "square",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "p1cf5t1g78egij8m64g1s5"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "vo3g51ujbb8wlfk4nr9p8c"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "s50gwtetbxyl8kkj52m2s"
-                }
-              ]
-            },
-            {
-              "id": 604613,
-              "children": [],
-              "x": 0,
-              "y": 180,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "nvidia",
-              "componentId": "osj9w6wcql9i0saecvjrpb",
-              "type": "text",
-              "width": 240,
-              "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "parents": [
-                34752,
-                361169,
-                320576
-              ],
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "rlsncaq0jesis12pq3uvu"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "ksufkm8d6fpneq0rp6kzdl"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "xpgbwrgttyqj0lu9qvxsi"
-                }
-              ]
+              "parent": 391140
             }
           ],
           "edges": [
             {
-              "id": "34752-604613",
-              "x1": -540,
+              "id": "391140-477355",
+              "x1": -400,
               "y1": -140,
-              "x2": -60,
-              "y2": 20,
-              "sourceId": 34752,
-              "targetId": 604613,
+              "x2": -720,
+              "y2": 140,
+              "sourceId": 391140,
+              "targetId": 477355,
               "endSide": "top",
               "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -540,
+                  "x": -400,
                   "y": -140
                 },
                 {
-                  "x": -540,
-                  "y": -100
+                  "x": -400,
+                  "y": -70
                 },
                 {
-                  "x": -500,
-                  "y": -60
+                  "x": -470,
+                  "y": 0
                 },
                 {
-                  "x": -100,
-                  "y": -60
+                  "x": -650,
+                  "y": 0
                 },
                 {
-                  "x": -60,
-                  "y": -20
+                  "x": -720,
+                  "y": 70
                 },
                 {
-                  "x": -60,
-                  "y": 20
+                  "x": -720,
+                  "y": 140
                 }
               ]
             },
             {
-              "id": "361169-604613",
-              "x1": 0,
+              "id": "391140-558914",
+              "x1": -320,
               "y1": -140,
-              "x2": 0,
-              "y2": 20,
-              "sourceId": 361169,
-              "targetId": 604613,
+              "x2": -180,
+              "y2": 140,
+              "sourceId": 391140,
+              "targetId": 558914,
               "endSide": "top",
               "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": 0,
+                  "x": -320,
                   "y": -140
                 },
                 {
-                  "x": 0,
-                  "y": 20
-                }
-              ]
-            },
-            {
-              "id": "320576-604613",
-              "x1": 540,
-              "y1": -140,
-              "x2": 60,
-              "y2": 20,
-              "sourceId": 320576,
-              "targetId": 604613,
-              "endSide": "top",
-              "startSide": "bottom",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": 540,
-                  "y": -140
+                  "x": -320,
+                  "y": -70
                 },
                 {
-                  "x": 540,
-                  "y": -100
+                  "x": -250,
+                  "y": 0
                 },
                 {
-                  "x": 500,
-                  "y": -60
+                  "x": -250,
+                  "y": 0
                 },
                 {
-                  "x": 100,
-                  "y": -60
+                  "x": -180,
+                  "y": 70
                 },
                 {
-                  "x": 60,
-                  "y": -20
-                },
-                {
-                  "x": 60,
-                  "y": 20
+                  "x": -180,
+                  "y": 140
                 }
               ]
             }
@@ -254,7 +153,7 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "osj9w6wcql9i0saecvjrpb",
+      "id": "sbz5h0zilm9mcnv3yxc8fj",
       "name": "flowChart0"
     }
   ],
@@ -262,30 +161,15 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 2.4166666666666665,
+      "duration": 2.3166666666666664,
       "start": 0,
       "inputs": {
         "nodes": [
-          "Node 1",
-          "Node 2",
-          "Node 3"
+          "Node 1"
         ]
       },
       "track": 0,
-      "id": "bzrhlpaumvmpgii57llp"
-    },
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 1.8166666666666667,
-      "start": 2.4166666666666665,
-      "inputs": {
-        "nodes": [
-          "nvidia"
-        ]
-      },
-      "track": 0,
-      "id": "csj1uemcc7iytrzix0ozvb"
+      "id": "goqq8k76qswtz8aomg850p"
     }
   ],
   "tracks": 1,

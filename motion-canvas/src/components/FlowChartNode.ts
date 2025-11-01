@@ -1,5 +1,5 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
-import { SimpleSignal, Color, all, delay, tween, createSignal, sequence } from "@motion-canvas/core"
+import { SimpleSignal, Color, all, delay, tween, createSignal, sequence, ThreadGenerator } from "@motion-canvas/core"
 import { NodeConfig } from "./types/NodeConfig"
 import { FlowChart } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
@@ -7,6 +7,12 @@ import { linear } from "./linear"
 import { hsl } from "./hsl"
 
 const lineColor = hsl(0, 60, 83)
+
+const all_ = (clips: { animation: ThreadGenerator, duration: number }[]) => {
+  const duration = Math.max(...clips.map(clip => clip.duration))
+  const animation = all(...clips.map(clip => clip.animation))
+  return { animation, duration }
+}
 
 export class FlowChartNode extends Node {
   
@@ -201,26 +207,38 @@ export class FlowChartNode extends Node {
       const startInfos = startLiftUp + dtLiftUp
       const dtInfos = .5
       
-      const infoAnimations = this.infoLines.map((line, index) => {
-        return all(
-          linear(0, dtInfos, line.end),
-          linear(0, .01, line.opacity),
-          linear(0, dtInfos, this.infoTexts[index].opacity)
-        )
-      })
+      // const infoAnimations = this.infoLines.map((line, index) => {
+      //   return all(
+      //     linear(0, dtInfos, line.end),
+      //     linear(0, .01, line.opacity),
+      //     linear(0, dtInfos, this.infoTexts[index].opacity)
+      //   )
+      // })
       
-      yield* all(
-        linear(startBorder, dtBorder, this.border.end),
-        linear(startBorder, .01, this.border.opacity),
-        delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(this.config.color || 'rgb(52,50,57)'), value))})),
-        delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
-        delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
-        delay(startNode, tween(dtNode, value => { this.text.opacity(value)})),
-        delay(startLiftUp, this.activation(1, dtLiftUp)),
-        delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
-        delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
-        delay(startInfos, sequence(.2, ...infoAnimations))
-      )
+      // yield* all(
+      //   linear(startBorder, dtBorder, this.border.end),
+      //   linear(startBorder, .01, this.border.opacity),
+      //   delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(this.config.color || 'rgb(52,50,57)'), value))})),
+      //   delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
+      //   delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
+      //   delay(startNode, tween(dtNode, value => { this.text.opacity(value)})),
+      //   delay(startLiftUp, this.activation(1, dtLiftUp)),
+      //   delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
+      //   delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
+      //   delay(startInfos, sequence(.2, ...infoAnimations))
+      // )
+
+      const color1 = new Color('rgb(52,50,57)')
+      const color2 = new Color(this.config.color)
+
+      const backgroundClip = { animation: tween(dtNode, value => { this.background.fill(Color.lerp(color1, color2, value))}), duration: dtNode }
+      const textClip = { animation: tween(dtNode, value => { this.text.opacity(value)}), duration: dtNode }
+
+      const clips = all_([backgroundClip, textClip])
+
+      console.log(clips.duration)
+
+      yield* clips.animation
     }
   }
 }

@@ -22,7 +22,5 @@ export default makeScene2D(function* (view) {
   camera.add(flowChart0)
 
 
-  yield* flowChart0.fadeIn(['Node 1','Node 2','Node 3'],2.4166666666666665)
-
-  yield* flowChart0.fadeIn(['nvidia'],1.8166666666666667)
+  yield* flowChart0.fadeIn(['Node 1'],2.3166666666666664)
 })

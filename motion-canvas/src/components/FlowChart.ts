@@ -63,6 +63,8 @@ export class FlowChart extends Node {
   }
 
   public *fadeIn(nodeNames: (string)[], duration: number) {
+
+    console.log(nodeNames)
     
     const animations = []
     
