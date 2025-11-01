@@ -8,10 +8,43 @@ import { hsl } from "./hsl"
 
 const lineColor = hsl(0, 60, 83)
 
-const all_ = (clips: { animation: ThreadGenerator, duration: number }[]) => {
+type AnimationClip = { animation: ThreadGenerator, duration: number }
+
+const all_ = (clips: AnimationClip[]) => {
   const duration = Math.max(...clips.map(clip => clip.duration))
   const animation = all(...clips.map(clip => clip.animation))
   return { animation, duration }
+}
+
+const delay_ = (startTime: number, clip: AnimationClip): AnimationClip => {
+  return {
+    animation: delay(startTime, clip.animation),
+    duration: startTime + clip.duration
+  }
+}
+
+const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
+  const totalDuration = clips.reduce((sum, clip, index) => {
+    return sum + clip.duration + (index < clips.length - 1 ? spacing : 0)
+  }, 0)
+  return {
+    animation: sequence(spacing, ...clips.map(clip => clip.animation)),
+    duration: totalDuration
+  }
+}
+
+const tween_ = (duration: number, callback: (value: number) => void): AnimationClip => {
+  return {
+    animation: tween(duration, callback),
+    duration
+  }
+}
+
+const linear_ = (startTime: number, duration: number, callback: (value: number) => void): AnimationClip => {
+  return {
+    animation: linear(startTime, duration, callback),
+    duration: startTime + duration
+  }
 }
 
 export class FlowChartNode extends Node {
@@ -189,12 +222,14 @@ export class FlowChartNode extends Node {
     })
   }
 
-  public *fadeIn() {
+  public fadeIn(): AnimationClip {
     if (this.config.type === 'logo') {
       const startNode = 0
       const dtNode = .5
       
-      yield* delay(startNode, tween(dtNode, value => { this.image?.opacity(value)}))
+      const logoClip = delay_(startNode, tween_(dtNode, value => { this.image?.opacity(value)}))
+      
+      return logoClip
     } else {
       this.background.opacity(1)
 
@@ -207,38 +242,31 @@ export class FlowChartNode extends Node {
       const startInfos = startLiftUp + dtLiftUp
       const dtInfos = .5
       
-      // const infoAnimations = this.infoLines.map((line, index) => {
-      //   return all(
-      //     linear(0, dtInfos, line.end),
-      //     linear(0, .01, line.opacity),
-      //     linear(0, dtInfos, this.infoTexts[index].opacity)
-      //   )
-      // })
-      
-      // yield* all(
-      //   linear(startBorder, dtBorder, this.border.end),
-      //   linear(startBorder, .01, this.border.opacity),
-      //   delay(startNode, tween(dtNode, value => { this.background.fill(Color.lerp(new Color('rgb(52,50,57)'), new Color(this.config.color || 'rgb(52,50,57)'), value))})),
-      //   delay(startNode, tween(dtNode, value => { this.background.children()[1]?.opacity(value)})),
-      //   delay(startNode, tween(dtNode, value => { this.image?.opacity(value)})),
-      //   delay(startNode, tween(dtNode, value => { this.text.opacity(value)})),
-      //   delay(startLiftUp, this.activation(1, dtLiftUp)),
-      //   delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
-      //   delay(startLiftUp, tween(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
-      //   delay(startInfos, sequence(.2, ...infoAnimations))
-      // )
-
       const color1 = new Color('rgb(52,50,57)')
-      const color2 = new Color(this.config.color)
+      const color2 = new Color(this.config.color || 'rgb(52,50,57)')
 
-      const backgroundClip = { animation: tween(dtNode, value => { this.background.fill(Color.lerp(color1, color2, value))}), duration: dtNode }
-      const textClip = { animation: tween(dtNode, value => { this.text.opacity(value)}), duration: dtNode }
+      const infoAnimations = this.infoLines.map((line, index) => {
+        return all_([
+          linear_(0, dtInfos, value => line.end(value)),
+          linear_(0, .01, value => line.opacity(value)),
+          linear_(0, dtInfos, value => this.infoTexts[index].opacity(value))
+        ])
+      })
 
-      const clips = all_([backgroundClip, textClip])
+      const allClips = all_([
+        linear_(startBorder, dtBorder, value => this.border.end(value)),
+        linear_(startBorder, .01, value => this.border.opacity(value)),
+        delay_(startNode, tween_(dtNode, value => { this.background.fill(Color.lerp(color1, color2, value))})),
+        delay_(startNode, tween_(dtNode, value => { this.background.children()[1]?.opacity(value)})),
+        delay_(startNode, tween_(dtNode, value => { this.image?.opacity(value)})),
+        delay_(startNode, tween_(dtNode, value => { this.text.opacity(value)})),
+        delay_(startLiftUp, tween_(dtLiftUp, value => { this.activation(value)})),
+        delay_(startLiftUp, tween_(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
+        delay_(startLiftUp, tween_(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
+        delay_(startInfos, sequence_(.2, infoAnimations))
+      ])
 
-      console.log(clips.duration)
-
-      yield* clips.animation
+      return allClips
     }
   }
 }

@@ -15,5 +15,5 @@ export const defaultTemplate = (animations: any, i: number) => {
   const component  = animation.component;
   const methodName = animation.method;
 
-  return `  yield* ${component}.${methodName}(${args})`;
+  return `  clips.push(${component}.${methodName}(${args}))`;
 };

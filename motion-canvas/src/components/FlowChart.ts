@@ -1,9 +1,27 @@
 import { Node } from "@motion-canvas/2d"
-import { SimpleSignal, all, createSignal, sequence } from "@motion-canvas/core"
+import { SimpleSignal, all, createSignal, sequence, ThreadGenerator } from "@motion-canvas/core"
 import { FlowChartNode } from "./FlowChartNode"
 import { FlowChartEdge } from "./FlowChartEdge"
 import { FlowChartProps } from "./types/FlowChartProps"
 import { FlowChartConfig } from "./types/FlowChartConfig"
+
+type AnimationClip = { animation: ThreadGenerator, duration: number }
+
+const all_ = (clips: AnimationClip[]) => {
+  const duration = Math.max(...clips.map(clip => clip.duration))
+  const animation = all(...clips.map(clip => clip.animation))
+  return { animation, duration }
+}
+
+const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
+  const totalDuration = clips.reduce((sum, clip, index) => {
+    return sum + clip.duration + (index < clips.length - 1 ? spacing : 0)
+  }, 0)
+  return {
+    animation: sequence(spacing, ...clips.map(clip => clip.animation)),
+    duration: totalDuration
+  }
+}
 
 export class FlowChart extends Node {
 
@@ -54,24 +72,60 @@ export class FlowChart extends Node {
       .map((e, index) => e.targetId === targetNode.id ? index : -1)
       .filter(index => index !== -1)
     
-    const edgeAnimations = edgeIndices.map(index => this.edges[index]?.fadeIn())
+    const edgeClips: AnimationClip[] = []
+    for (const index of edgeIndices) {
+      const edge = this.edges[index]
+      if (edge) {
+        edgeClips.push(edge.fadeIn())
+      }
+    }
     
-    yield* all(
-      ...edgeAnimations,
-      this.nodes[nodeIndex].fadeIn()
-    )
+    const nodeClip = this.nodes[nodeIndex].fadeIn()
+    const activateClip = all_([
+      ...edgeClips,
+      nodeClip
+    ])
+    
+    yield* activateClip.animation
   }
 
-  public *fadeIn(nodeNames: (string)[], duration: number) {
+  public fadeIn(nodeNames: (string)[], duration: number) {
 
-    console.log(nodeNames)
     
-    const animations = []
+    const activateClips: AnimationClip[] = []
     
     for(let i = 0; i < nodeNames.length; i++) {
-      animations.push(this.activate(nodeNames[i], 1))
+      const nodeName = nodeNames[i]
+      const nodeIndex = this.config.nodes.findIndex(n => n.name === nodeName)
+      
+      if (nodeIndex === -1 || !this.nodes[nodeIndex]) {
+        continue
+      }
+      
+      const targetNode = this.config.nodes[nodeIndex]
+      const edgeIndices = this.config.edges
+        .map((e, index) => e.targetId === targetNode.id ? index : -1)
+        .filter(index => index !== -1)
+      
+      const edgeClips: AnimationClip[] = []
+      for (const index of edgeIndices) {
+        const edge = this.edges[index]
+        if (edge) {
+          edgeClips.push(edge.fadeIn())
+        }
+      }
+      
+      const nodeClip = this.nodes[nodeIndex].fadeIn()
+      const activateClip = all_([
+        ...edgeClips,
+        nodeClip
+      ])
+      
+      activateClips.push(activateClip)
     }
 
-    yield* sequence(.3, ...animations)
+    const fadeInClip = sequence_(.3, activateClips)
+
+    return fadeInClip
   }
 } 

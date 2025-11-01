@@ -5,6 +5,7 @@ export function generateInstantiations(components: any[]) {
 
   const componentNames = components.map((component) => component.name)
   const componentsLine = `  const components = [${componentNames.join(', ')}]`
+  const clipsLine = `  const clips = []`
 
 
   const lines = components.map((component: any, i: number) => {
@@ -16,5 +17,5 @@ export function generateInstantiations(components: any[]) {
     return line
   })
 
-  return [...lines, componentsLine].join('\n')
+  return [...lines, componentsLine, clipsLine].join('\n')
 }
