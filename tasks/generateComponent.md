@@ -2,11 +2,10 @@
 
 _______________________________________________________________________
 
-We have two components implemented which should be removed.
-Please remove the following components:
-- Table
-- Clock
-
+when an animation scene is created like in motion-canvas/src/scenes/preview/animation.tsx
+motion-canvas knows the total duration of the animation in frames.
+your task is to find out, if i can get access to the duration of each individual animation.
+One approach could be to intercept the process, take an animation, run it, and count the frames.
 _______________________________________________________________________
 
 For an animation component these points have to be implemented:
