@@ -7,16 +7,17 @@ import { FlowChartConfig } from "./types/FlowChartConfig"
 
 type AnimationClip = { animation: ThreadGenerator, duration: number }
 
-const all_ = (clips: AnimationClip[]) => {
+export const all_ = (clips: AnimationClip[]) => {
   const duration = Math.max(...clips.map(clip => clip.duration))
   const animation = all(...clips.map(clip => clip.animation))
   return { animation, duration }
 }
 
-const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
-  const totalDuration = clips.reduce((sum, clip, index) => {
-    return sum + clip.duration + (index < clips.length - 1 ? spacing : 0)
-  }, 0)
+export const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
+
+  const endings = clips.map((clip: any, index: number) => clip.duration + spacing * index)
+  const totalDuration = Math.max(...endings)
+
   return {
     animation: sequence(spacing, ...clips.map(clip => clip.animation)),
     duration: totalDuration

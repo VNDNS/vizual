@@ -43,7 +43,7 @@ export interface AnimationContextType {
   selectedComponent: string | null
   setSelectedComponent: (id: string | null) => void
   animation: AnimationUI[]
-  setAnimation: (animation: AnimationUI[]) => void
+  setAnimation: (animation: AnimationUI[] | ((prev: AnimationUI[]) => AnimationUI[])) => void
   selectedMethod: AnimationUI | null
   setSelectedMethod: (method: AnimationUI | null) => void
   selectedTimeline: number

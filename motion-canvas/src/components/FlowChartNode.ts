@@ -1,51 +1,16 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
-import { SimpleSignal, Color, all, delay, tween, createSignal, sequence, ThreadGenerator } from "@motion-canvas/core"
+import { SimpleSignal, Color, createSignal, sequence } from "@motion-canvas/core"
 import { NodeConfig } from "./types/NodeConfig"
-import { FlowChart } from "./FlowChart"
+import { FlowChart, sequence_ } from "./FlowChart"
 import { getShadowProps } from "./functions/getShadowProps"
-import { linear } from "./linear"
 import { hsl } from "./hsl"
+import { all } from "./all"
+import { AnimationClip } from "./AnimationClip"
+import { delay_ } from "./delay_"
+import { tween_ } from "./tween_"
+import { linear_ } from "./linear_"
 
 const lineColor = hsl(0, 60, 83)
-
-type AnimationClip = { animation: ThreadGenerator, duration: number }
-
-const all_ = (clips: AnimationClip[]) => {
-  const duration = Math.max(...clips.map(clip => clip.duration))
-  const animation = all(...clips.map(clip => clip.animation))
-  return { animation, duration }
-}
-
-const delay_ = (startTime: number, clip: AnimationClip): AnimationClip => {
-  return {
-    animation: delay(startTime, clip.animation),
-    duration: startTime + clip.duration
-  }
-}
-
-const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
-  const totalDuration = clips.reduce((sum, clip, index) => {
-    return sum + clip.duration + (index < clips.length - 1 ? spacing : 0)
-  }, 0)
-  return {
-    animation: sequence(spacing, ...clips.map(clip => clip.animation)),
-    duration: totalDuration
-  }
-}
-
-const tween_ = (duration: number, callback: (value: number) => void): AnimationClip => {
-  return {
-    animation: tween(duration, callback),
-    duration
-  }
-}
-
-const linear_ = (startTime: number, duration: number, callback: (value: number) => void): AnimationClip => {
-  return {
-    animation: linear(startTime, duration, callback),
-    duration: startTime + duration
-  }
-}
 
 export class FlowChartNode extends Node {
   
@@ -246,14 +211,14 @@ export class FlowChartNode extends Node {
       const color2 = new Color(this.config.color || 'rgb(52,50,57)')
 
       const infoAnimations = this.infoLines.map((line, index) => {
-        return all_([
+        return all([
           linear_(0, dtInfos, value => line.end(value)),
           linear_(0, .01, value => line.opacity(value)),
           linear_(0, dtInfos, value => this.infoTexts[index].opacity(value))
         ])
       })
 
-      const allClips = all_([
+      const allClips = all([
         linear_(startBorder, dtBorder, value => this.border.end(value)),
         linear_(startBorder, .01, value => this.border.opacity(value)),
         delay_(startNode, tween_(dtNode, value => { this.background.fill(Color.lerp(color1, color2, value))})),

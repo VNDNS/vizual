@@ -8,11 +8,11 @@
             {
               "id": 391140,
               "children": [
-                477355,
-                558914
+                642869,
+                492593
               ],
-              "x": -360,
-              "y": -300,
+              "x": -480,
+              "y": -240,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -27,10 +27,10 @@
               "infos": []
             },
             {
-              "id": 477355,
+              "id": 642869,
               "children": [],
-              "x": -660,
-              "y": 300,
+              "x": 420,
+              "y": -180,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -42,13 +42,27 @@
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "parent": 391140
+              "parent": 391140,
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "srl8jafd93k8na0jh4gk84"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "j2xflfvf9t9pfela9bheb8"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "56glknwddkxd886vjp28vt"
+                }
+              ]
             },
             {
-              "id": 558914,
+              "id": 492593,
               "children": [],
-              "x": -60,
-              "y": 300,
+              "x": 180,
+              "y": 180,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -65,80 +79,80 @@
           ],
           "edges": [
             {
-              "id": "391140-477355",
-              "x1": -400,
-              "y1": -140,
-              "x2": -660,
-              "y2": 140,
+              "id": "391140-642869",
+              "x1": -320,
+              "y1": -280,
+              "x2": 260,
+              "y2": -180,
               "sourceId": 391140,
-              "targetId": 477355,
-              "endSide": "top",
-              "startSide": "bottom",
+              "targetId": 642869,
+              "endSide": "left",
+              "startSide": "right",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -400,
-                  "y": -140
+                  "x": -320,
+                  "y": -280
                 },
                 {
-                  "x": -400,
-                  "y": -70
+                  "x": -80,
+                  "y": -280
                 },
                 {
-                  "x": -470,
-                  "y": 0
+                  "x": -30,
+                  "y": -230
                 },
                 {
-                  "x": -590,
-                  "y": 0
+                  "x": -30,
+                  "y": -230
                 },
                 {
-                  "x": -660,
-                  "y": 70
+                  "x": 20,
+                  "y": -180
                 },
                 {
-                  "x": -660,
-                  "y": 140
+                  "x": 260,
+                  "y": -180
                 }
               ]
             },
             {
-              "id": "391140-558914",
+              "id": "391140-492593",
               "x1": -320,
-              "y1": -140,
-              "x2": -60,
-              "y2": 140,
+              "y1": -200,
+              "x2": 20,
+              "y2": 180,
               "sourceId": 391140,
-              "targetId": 558914,
-              "endSide": "top",
-              "startSide": "bottom",
+              "targetId": 492593,
+              "endSide": "left",
+              "startSide": "right",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
                   "x": -320,
-                  "y": -140
+                  "y": -200
                 },
                 {
-                  "x": -320,
-                  "y": -70
+                  "x": -235,
+                  "y": -200
                 },
                 {
-                  "x": -250,
-                  "y": 0
+                  "x": -150,
+                  "y": -115
                 },
                 {
-                  "x": -130,
-                  "y": 0
+                  "x": -150,
+                  "y": 95
                 },
                 {
-                  "x": -60,
-                  "y": 70
+                  "x": -65,
+                  "y": 180
                 },
                 {
-                  "x": -60,
-                  "y": 140
+                  "x": 20,
+                  "y": 180
                 }
               ]
             }
@@ -161,7 +175,7 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 2.3166666666666664,
+      "duration": 1.8,
       "start": 0,
       "inputs": {
         "nodes": [
@@ -169,21 +183,20 @@
         ]
       },
       "track": 0,
-      "id": "goqq8k76qswtz8aomg850p"
+      "id": "almwanbgjvm4insorn16jc"
     },
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 3.1166666666666667,
-      "start": 3.4,
+      "duration": 2.7,
+      "start": 1.8,
       "inputs": {
         "nodes": [
-          "Node 2",
-          "Node 3"
+          "Node 2"
         ]
       },
       "track": 0,
-      "id": "lo87w2txdwjoez4pyar4g"
+      "id": "yvmpwz00easaall6bmyitb"
     }
   ],
   "tracks": 1,

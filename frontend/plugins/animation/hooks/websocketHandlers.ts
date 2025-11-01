@@ -7,6 +7,7 @@ import { handleAddComponent } from './websocketHandlers/handleAddComponent'
 import { handleFocusOnSelection } from './websocketHandlers/handleFocusOnSelection'
 import { handleFadeInNodes } from './websocketHandlers/handleFadeInNodes'
 import { handleAssignImageToNode } from './websocketHandlers/handleAssignImageToNode'
+import { handleDurations } from './websocketHandlers/handleDurations'
 
 
 export const handlerMap: Record<string, Handler> = {
@@ -17,7 +18,8 @@ export const handlerMap: Record<string, Handler> = {
   addComponent: handleAddComponent,
   focusOnSelection: handleFocusOnSelection,
   fadeInNodes: handleFadeInNodes,
-  assignImageToNode: handleAssignImageToNode
+  assignImageToNode: handleAssignImageToNode,
+  durations: handleDurations
 }
 
 

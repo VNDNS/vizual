@@ -138,7 +138,7 @@ export const NodeConfiguration = () => {
     console.log(duration, summedTimeInfos)
     const lastAnimation = animation.at(-1)
     const start = (lastAnimation?.start ?? 0) + (lastAnimation?.duration ?? 0)
-    const newAnimation = { component: selectedComponent_?.name || '', method: 'fadeIn', duration: duration, start: start, inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, track: 0, id: id() }
+    const newAnimation = { component: selectedComponent_?.name || '', method: 'fadeIn', duration: 1, start: start, inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, track: 0, id: id() }
     setAnimation([...animation, newAnimation])
   }
 

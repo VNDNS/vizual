@@ -1,28 +1,13 @@
 import {makePlugin} from '@motion-canvas/core';
-
-let ws: WebSocket
-
-const connect = () => {
-  ws = new WebSocket('ws://localhost:4000')
-  ws.addEventListener('close', () => {
-    setTimeout(connect, 1000)
-  })
-}
-
-connect()
-
+import { sendMessage } from './websocket';
 
 export default makePlugin({
   name: 'motion-canvas-plugin-example',
   player(player) {
     player.onFrameChanged.subscribe(() => {
       const payload = player.status.frame.toString()
-      if (ws.readyState === WebSocket.OPEN) {
-        ws.send(JSON.stringify({type: 'frame', payload}))
-      } else {
-        if (ws.readyState !== WebSocket.CONNECTING) connect()
-        ws.addEventListener('open', () => ws.send(JSON.stringify({type: 'frame', payload})), { once: true })
-      }
+      const message = JSON.stringify({type: 'frame', payload})
+      sendMessage(message)
     });
   },
   project(project) {

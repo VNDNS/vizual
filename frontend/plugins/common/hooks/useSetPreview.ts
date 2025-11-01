@@ -14,7 +14,7 @@ export const useSetPreview = () => {
     const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips}
     setPreview('animation', scene)
     
-  }, [animation, components, panelData, audioClips])
+  }, [components, panelData, audioClips])
   
   useEffect(() => {
 

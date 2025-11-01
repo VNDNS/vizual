@@ -24,9 +24,9 @@ export default makeScene2D(function* (view) {
   camera.add(flowChart0)
 
 
-  clips.push(flowChart0.fadeIn(['Node 1'],2.3166666666666664))
-  clips.push({animation: waitFor(1.08), duration: 1.08})
-  clips.push(flowChart0.fadeIn(['Node 2','Node 3'],3.1166666666666667))
+  clips.push(flowChart0.fadeIn(['Node 1'],1.8))
+
+  clips.push(flowChart0.fadeIn(['Node 2'],2.7))
 
   sendDurations(clips)
 

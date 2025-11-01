@@ -15,6 +15,14 @@ import { getJson } from '../../common/requests/get-json';
 import { ArrangeHorizontallyButton } from '@context/components/arrangement/ArrangeHorizontallyButton';
 import { pages } from '@context/constants';
 import { Sidebar } from '@context/components/arrangement/Sidebar';
+import { setPreview } from '../../common/requests/set-preview';
+
+const updateAnimation = () => {
+  const { animation, components, panelData, audioClips } = useAnimation()
+  const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips}
+  setPreview('animation', scene)
+    
+}
 
 export const ArrangementLayout = () => {
 
@@ -47,6 +55,7 @@ export const ArrangementLayout = () => {
         <FileDisplay directoryKey="animation" state={sceneFile} setState={onSelectSceneFile} />
         <ArrangeHorizontallyButton />
         <button onClick={() =>processAudio(audioClips)}>Update Audio</button>
+        <button onClick={() =>updateAnimation()}>Update Animation</button>
         <Switch value={showTimeline} setValue={setShowTimeline} text="Show Timeline" />
         <Switch value={showCameraPath} setValue={setShowCameraPath} text="Show Camera Path" />
         <Switch value={showSidebar} setValue={setShowSidebar} text="Show Sidebar" />
