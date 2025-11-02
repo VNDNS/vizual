@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 
+
+const SATURATION = 70
+const LIGHTNESS = 50
+
 interface ColorPickerProps {
   value?: string
   onChange: (color: string) => void
@@ -25,6 +29,7 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
   const [lightness, setLightness] = useState(initial.l)
 
   const hues = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
+  const greyShades = [0, 25, 50, 75, 100]
 
   const findClosestHue = (targetHue: number): number => {
     let closest = hues[0]
@@ -46,6 +51,7 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
   }
 
   const [selectedHueBox, setSelectedHueBox] = useState(findClosestHue(initial.h))
+  const [selectedGreyShade, setSelectedGreyShade] = useState<number | null>(null)
 
   useEffect(() => {
     if (value) {
@@ -53,7 +59,16 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
       setHue(parsed.h)
       setSaturation(parsed.s)
       setLightness(parsed.l)
-      setSelectedHueBox(findClosestHue(parsed.h))
+      if (parsed.s === 0) {
+        const closestGrey = greyShades.reduce((prev, curr) =>
+          Math.abs(curr - parsed.l) < Math.abs(prev - parsed.l) ? curr : prev
+        )
+        setSelectedGreyShade(closestGrey)
+        setSelectedHueBox(-1)
+      } else {
+        setSelectedGreyShade(null)
+        setSelectedHueBox(findClosestHue(parsed.h))
+      }
     }
   }, [value])
 
@@ -64,22 +79,57 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
   const handleHueChange = (h: number) => {
     setHue(h)
     setSelectedHueBox(h)
+    setSelectedGreyShade(null)
     onChange(getColorString(h, saturation, lightness))
+  }
+
+  const handleGreyShadeChange = (l: number) => {
+    setSelectedGreyShade(l)
+    setSelectedHueBox(-1)
+    setSaturation(0)
+    setLightness(l)
+    onChange(getColorString(0, 0, l))
   }
 
   const handleSaturationChange = (s: number) => {
     setSaturation(s)
+    if (s > 0) {
+      setSelectedGreyShade(null)
+      if (selectedHueBox === -1) {
+        setSelectedHueBox(findClosestHue(hue))
+      }
+    }
     onChange(getColorString(hue, s, lightness))
   }
 
   const handleLightnessChange = (l: number) => {
     const newLightness = l
     setLightness(newLightness)
+    if (saturation === 0) {
+      const closestGrey = greyShades.reduce((prev, curr) =>
+        Math.abs(curr - newLightness) < Math.abs(prev - newLightness) ? curr : prev
+      )
+      if (Math.abs(closestGrey - newLightness) <= 5) {
+        setSelectedGreyShade(closestGrey)
+      } else {
+        setSelectedGreyShade(null)
+      }
+    }
     onChange(getColorString(hue, saturation, newLightness))
   }
 
   return (
     <div className="color-picker">
+      <div className="color-picker-hue-boxes">
+        {greyShades.map((l) => (
+          <div
+            key={`grey-${l}`}
+            className={`color-picker-hue-box ${selectedGreyShade === l ? 'selected' : ''}`}
+            style={{ backgroundColor: getColorString(0, 0, l) }}
+            onClick={() => handleGreyShadeChange(l)}
+          />
+        ))}
+      </div>
       <div className="color-picker-hue-boxes">
         {hues.map((h) => (
           <div

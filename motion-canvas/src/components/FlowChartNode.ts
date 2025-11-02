@@ -116,6 +116,7 @@ export class FlowChartNode extends Node {
       width: 210, 
       scale: () => 1 + this.activation()*.1/2, 
       opacity: 0, 
+      position: { x: 0, y: 0 },
     })
 
     if (this.config.type === 'logo') {
@@ -227,8 +228,6 @@ export class FlowChartNode extends Node {
         delay_(startNode, tween_(dtNode, value => { this.image?.opacity(value)})),
         delay_(startNode, tween_(dtNode, value => { this.text.opacity(value)})),
         delay_(startLiftUp, tween_(dtLiftUp, value => { this.activation(value)})),
-        delay_(startLiftUp, tween_(dtLiftUp, value => { this.background.children()[1]?.scale(1+value*.1)})),
-        delay_(startLiftUp, tween_(dtLiftUp, value => { this.background.children()[1]?.y(95+value*5)})),
         delay_(startInfos, sequence_(.2, infoAnimations))
       ])
 

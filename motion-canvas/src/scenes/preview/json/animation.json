@@ -22,8 +22,22 @@
               "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "image": "Audi 80 B3.png"
+              "color": "hsl(0, 0%, 25%)",
+              "image": "nvidia.png",
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "8m7n2slnom4xsxbbch5zk"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "h6c5zgpvafv7svgpjbku9q"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "udt8ru1tnygz72lxkersxc"
+                }
+              ]
             },
             {
               "id": 943836,
@@ -43,7 +57,7 @@
               "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)",
+              "color": "hsl(210, 70%, 50%)",
               "parent": 237169,
               "infos": [
                 {
@@ -197,7 +211,7 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 1.8,
+      "duration": 2.7,
       "start": 0,
       "inputs": {
         "nodes": [
@@ -211,7 +225,7 @@
       "component": "flowChart0",
       "method": "fadeIn",
       "duration": 2.7,
-      "start": 1.8,
+      "start": 2.8,
       "inputs": {
         "nodes": [
           "Node 2"
@@ -224,7 +238,7 @@
       "component": "flowChart0",
       "method": "fadeIn",
       "duration": 2.8,
-      "start": 4.6,
+      "start": 5.6,
       "inputs": {
         "nodes": [
           "Node 3",
