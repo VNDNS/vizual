@@ -19,6 +19,7 @@ export interface FlowChartNode {
   suggestedChildren?: string[]
   componentId?: string | number
   image?: string
+  imageWidth?: number
   width?: number
   height?: number
   color?: string

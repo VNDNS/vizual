@@ -113,7 +113,7 @@ export class FlowChartNode extends Node {
     
     this.image = new Img({ 
       src: `./images/${this.config.image}`, 
-      width: this.config.type === 'logo' ? 350 : 210, 
+      width: this.config.type === 'logo' ? 350 : (this.config.imageWidth ?? 210), 
       scale: () => 1 + this.activation()*.1/2, 
       opacity: 0, 
       position: { x: 0, y: 0 },

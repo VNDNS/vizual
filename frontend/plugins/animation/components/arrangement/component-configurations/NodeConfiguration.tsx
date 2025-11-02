@@ -62,6 +62,11 @@ export const NodeConfiguration = () => {
     setComponents([...components])
   }
 
+  const handleSetImageWidth = (value: number) => {
+    selectedNode.imageWidth = value
+    setComponents([...components])
+  }
+
   const handleDeleteNode = () => {
     const nodes = getNodes()
     if (selectedNode.parent) {
@@ -189,6 +194,12 @@ export const NodeConfiguration = () => {
         <input type="text" value={selectedNode?.name} onChange={(e) => handleSetName(e.target.value)} />
       </div>
       <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
+      {selectedNode?.image && (
+        <div className="input-group">
+          <span>Image Width</span>
+          <input type="number" step={10} value={selectedNode?.imageWidth ?? 210} onChange={(e) => handleSetImageWidth(Number(e.target.value))} />
+        </div>
+      )}
       <div className="node-type-selection">
         <OptionSelection label="Node Type" options={['square', 'circle', 'text', 'logo']} setValue={handleSetNodeType} value={selectedNode?.type || ''} />
       </div>
