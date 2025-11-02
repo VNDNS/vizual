@@ -18,7 +18,6 @@ The configuration section contains the UI for the configuration of the layout.
 The main section can contain anything related to the mode.
 
 The frontend can communicate with the backend through a REST API.
-For each function there is a corresponding endpoint in the backend.
 All endpoints are defined in:
 ./server/endpoints/
 
@@ -29,9 +28,9 @@ The scss files are stored in:
 
 ## Preferred Code Style
 
-Components are preferred to not take props.
-They generally are not reusable and are only used in one place.
-Their main purpose is to improve readability and maintainability of the code.
+Components that are NOT located in the common folder are preferred to not take props.
+They generally are not implemented as reusable components and are only used in one place.
+The main purpose of its patterns is to improve readability and maintainability of the code.
 
 Custom hooks are preferred to not take arguments as well.
 
@@ -42,7 +41,7 @@ They are generally included in the usePersistence hook:
 the corresponding type is defined in:
 ./types/AnimationContextType.ts
 
-It is very much preferred to have big files. Preferrably keeping it under 100 lines.
+It is very much preferred to have small files. Preferrably keeping it under 100 lines of code.
 If data is processed in a function through multiple distinct steps, each step is put
 into a separate function, with a descriptive name.
 Side effects are to be avoided if possible.
@@ -51,5 +50,5 @@ Functions are always stored in a separate file with the name of the function.
 
 A custom hook should at max return one value.
 
-Logic within a react component should be moved to custom hooks.
+Logic within a react component like event handlers should be moved to separate custom hooks.
 The focus should be on reducing the number of lines for each code.
