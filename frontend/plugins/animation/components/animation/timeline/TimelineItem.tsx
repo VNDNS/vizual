@@ -1,3 +1,4 @@
+import { useSetPreviewAnimation } from "../../../../common/hooks/useSetPreviewAnimation"
 import { AnimationUI } from "../../../../../../types/AnimationUI"
 import { useAnimation } from "../../../context"
 import { useTimelineMeasurements } from "../../../hooks/useTimelineMeasurements"
@@ -23,7 +24,7 @@ export const TimelineItem = ({ item }: Props) => {
   const width = item.duration * baseUnit
   const left = item.start * baseUnit
   const component = components.find(entry => entry.name === item.component)
-
+  const setPreviewAnimation = useSetPreviewAnimation()
   return (
     <div
       className={`timeline-item ${selectedMethod?.id === item.id ? "timeline-item-selected" : ""} ${
@@ -55,7 +56,9 @@ export const TimelineItem = ({ item }: Props) => {
         className="timeline-item-close"
         onClick={event => {
           event.stopPropagation()
-          setAnimation(animation.filter(entry => entry.id !== item.id))
+          const updatedAnimation = animation.filter(entry => entry.id !== item.id)
+          setAnimation(updatedAnimation)
+          setPreviewAnimation(updatedAnimation)
         }}
       >
         x

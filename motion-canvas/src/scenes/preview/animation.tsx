@@ -28,6 +28,8 @@ export default makeScene2D(function* (view) {
 
   clips.push(flowChart0.fadeIn(['Node 2'],2.7))
 
+  clips.push(flowChart0.fadeIn(['Node 3','Node 4'],3))
+
   sendDurations(clips)
 
   for (const clip of clips) {

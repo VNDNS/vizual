@@ -12,6 +12,7 @@ setPreviewRouter.post('/set-preview', (req, res) => {
     //saveJson(data, previewFile(plugin))
   }
   if ( plugin === 'animation' || plugin === 'arrangement' ) {
+    console.log(data)
     saveJson(data, previewFile('animation'))
     generateScene(data)
   }

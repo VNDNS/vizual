@@ -6,153 +6,187 @@
         "data": {
           "nodes": [
             {
-              "id": 391140,
+              "id": 237169,
               "children": [
-                642869,
-                492593
+                943836
               ],
-              "x": -480,
-              "y": -240,
+              "x": 0,
+              "y": -360,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
-              "type": "text",
+              "componentId": "z51n236dhiigku2j5xr4uk",
+              "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "infos": []
+              "color": "hsl(0, 70%, 50%)"
             },
             {
-              "id": 642869,
-              "children": [],
-              "x": 420,
-              "y": -180,
+              "id": 943836,
+              "children": [
+                384352,
+                869026
+              ],
+              "x": 0,
+              "y": 120,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
+              "componentId": "z51n236dhiigku2j5xr4uk",
               "type": "square",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "parent": 391140,
+              "parent": 237169,
               "infos": [
                 {
                   "name": "Info 0",
-                  "id": "srl8jafd93k8na0jh4gk84"
+                  "id": "i6m7p97ouolu501tbs2yr"
                 },
                 {
                   "name": "Info 1",
-                  "id": "j2xflfvf9t9pfela9bheb8"
+                  "id": "cxcxa2uw3gg452jo9tdepv"
                 },
                 {
                   "name": "Info 2",
-                  "id": "56glknwddkxd886vjp28vt"
+                  "id": "61yohlhygylshw96fqr7c"
                 }
               ]
             },
             {
-              "id": 492593,
+              "id": 384352,
               "children": [],
-              "x": 180,
-              "y": 180,
+              "x": -480,
+              "y": 120,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "sbz5h0zilm9mcnv3yxc8fj",
+              "componentId": "z51n236dhiigku2j5xr4uk",
               "type": "square",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "parent": 391140
-            }
-          ],
-          "edges": [
-            {
-              "id": "391140-642869",
-              "x1": -320,
-              "y1": -280,
-              "x2": 260,
-              "y2": -180,
-              "sourceId": 391140,
-              "targetId": 642869,
-              "endSide": "left",
-              "startSide": "right",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
+              "parent": 943836,
+              "infos": [
                 {
-                  "x": -320,
-                  "y": -280
+                  "name": "Info 0",
+                  "id": "6ezzrtmmhk4ritk5dc0k1i"
                 },
                 {
-                  "x": -80,
-                  "y": -280
-                },
-                {
-                  "x": -30,
-                  "y": -230
-                },
-                {
-                  "x": -30,
-                  "y": -230
-                },
-                {
-                  "x": 20,
-                  "y": -180
-                },
-                {
-                  "x": 260,
-                  "y": -180
+                  "name": "Info 1",
+                  "id": "z5rn832h1wgt3cujlq6hcl"
                 }
               ]
             },
             {
-              "id": "391140-492593",
-              "x1": -320,
+              "id": 869026,
+              "children": [],
+              "x": 480,
+              "y": 120,
+              "year": 0,
+              "startSide": "right",
+              "endSide": "left",
+              "text": "",
+              "suggestedChildren": [],
+              "name": "Node 4",
+              "componentId": "z51n236dhiigku2j5xr4uk",
+              "type": "square",
+              "width": 240,
+              "height": 240,
+              "color": "hsl(0, 70%, 50%)",
+              "parent": 943836,
+              "infos": [
+                {
+                  "name": "Info 0",
+                  "id": "qrtocvia8ge36ve3d3dlt"
+                },
+                {
+                  "name": "Info 1",
+                  "id": "y6qx1ubn6kqkvuo7fdtf1b"
+                },
+                {
+                  "name": "Info 2",
+                  "id": "vevql3uraxccdsau0n5k9s"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "id": "237169-943836",
+              "x1": 0,
               "y1": -200,
-              "x2": 20,
-              "y2": 180,
-              "sourceId": 391140,
-              "targetId": 492593,
+              "x2": 0,
+              "y2": -40,
+              "sourceId": 237169,
+              "targetId": 943836,
+              "endSide": "top",
+              "startSide": "bottom",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": 0,
+                  "y": -200
+                },
+                {
+                  "x": 0,
+                  "y": -40
+                }
+              ]
+            },
+            {
+              "id": "943836-384352",
+              "x1": -160,
+              "y1": 120,
+              "x2": -320,
+              "y2": 120,
+              "sourceId": 943836,
+              "targetId": 384352,
+              "endSide": "right",
+              "startSide": "left",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": -160,
+                  "y": 120
+                },
+                {
+                  "x": -320,
+                  "y": 120
+                }
+              ]
+            },
+            {
+              "id": "943836-869026",
+              "x1": 160,
+              "y1": 120,
+              "x2": 320,
+              "y2": 120,
+              "sourceId": 943836,
+              "targetId": 869026,
               "endSide": "left",
               "startSide": "right",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": -320,
-                  "y": -200
+                  "x": 160,
+                  "y": 120
                 },
                 {
-                  "x": -235,
-                  "y": -200
-                },
-                {
-                  "x": -150,
-                  "y": -115
-                },
-                {
-                  "x": -150,
-                  "y": 95
-                },
-                {
-                  "x": -65,
-                  "y": 180
-                },
-                {
-                  "x": 20,
-                  "y": 180
+                  "x": 320,
+                  "y": 120
                 }
               ]
             }
@@ -167,7 +201,7 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "sbz5h0zilm9mcnv3yxc8fj",
+      "id": "z51n236dhiigku2j5xr4uk",
       "name": "flowChart0"
     }
   ],
@@ -183,7 +217,7 @@
         ]
       },
       "track": 0,
-      "id": "almwanbgjvm4insorn16jc"
+      "id": "inj25kb3xgbr5vwaquh36j"
     },
     {
       "component": "flowChart0",
@@ -196,7 +230,21 @@
         ]
       },
       "track": 0,
-      "id": "yvmpwz00easaall6bmyitb"
+      "id": "7e90ajcfxetbn6cle7cc4h"
+    },
+    {
+      "component": "flowChart0",
+      "method": "fadeIn",
+      "duration": 3,
+      "start": 4.5,
+      "inputs": {
+        "nodes": [
+          "Node 3",
+          "Node 4"
+        ]
+      },
+      "track": 0,
+      "id": "6615cwqtmrxahwjsgjp85n"
     }
   ],
   "tracks": 1,

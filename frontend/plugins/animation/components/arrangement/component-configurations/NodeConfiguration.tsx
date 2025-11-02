@@ -8,13 +8,14 @@ import { ArrayConfiguration } from "../../common/ArrayConfiguration"
 import { useComputeEdges } from "@context/hooks/useComputeEdges"
 import { FlowChartNode } from "@type/FlowChartTypes"
 import { id } from "../../../../../../common/id"
+import { useSetPreviewAnimation } from "../../../../common/hooks/useSetPreviewAnimation"
 
 export const NodeConfiguration = () => {
   const { setComponents, components, setAnimation, animation } = useAnimation()
   const { getSelectedNode, getSelectedComponent, getNodes, getSelectedNodes } = useAnimationHooks()
   const nodes = getNodes()
   const { computeEdges } = useComputeEdges()
-
+  const setPreviewAnimation = useSetPreviewAnimation()
   const [imageFile, setImageFile] = useState<string>('')
   const [selectedInfo, setSelectedInfo] = useState<string>('')
 
@@ -130,16 +131,22 @@ export const NodeConfiguration = () => {
   }
 
   const fadeInNodes = () => {
-    const selectedNodes_ = getSelectedNodes()
+    const selectedNodes_     = getSelectedNodes()
     const selectedComponent_ = getSelectedComponent()
-    const summedTimeInfos = selectedNodes_.map(node => node.infos?.length ? node.infos.length - 1 : 0).reduce((sum, timeInfo) => sum + timeInfo, 0)
-    console.log(summedTimeInfos)
-    const duration = (selectedNodes_.length-1) * .3 + 109/60 + summedTimeInfos * .2 + 30/60 * selectedNodes_.length
-    console.log(duration, summedTimeInfos)
-    const lastAnimation = animation.at(-1)
-    const start = (lastAnimation?.start ?? 0) + (lastAnimation?.duration ?? 0)
-    const newAnimation = { component: selectedComponent_?.name || '', method: 'fadeIn', duration: 1, start: start, inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, track: 0, id: id() }
-    setAnimation([...animation, newAnimation])
+    const lastAnimation      = animation.at(-1)
+    const start              = (lastAnimation?.start ?? 0) + (lastAnimation?.duration ?? 0)
+    const newAnimation       = { 
+      component: selectedComponent_?.name || '', 
+      method: 'fadeIn', 
+      duration: 1, 
+      start: start, 
+      inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, 
+      track: 0, 
+      id: id() 
+    }
+    const updatedAnimation = [...animation, newAnimation]
+    setAnimation(updatedAnimation)
+    setPreviewAnimation(updatedAnimation)
   }
 
   const handleAddInfo = () => {
