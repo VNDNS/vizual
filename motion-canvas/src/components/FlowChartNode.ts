@@ -113,7 +113,7 @@ export class FlowChartNode extends Node {
     
     this.image = new Img({ 
       src: `./images/${this.config.image}`, 
-      width: 210, 
+      width: this.config.type === 'logo' ? 350 : 210, 
       scale: () => 1 + this.activation()*.1/2, 
       opacity: 0, 
       position: { x: 0, y: 0 },
@@ -191,7 +191,7 @@ export class FlowChartNode extends Node {
 
   public fadeIn(): AnimationClip {
     if (this.config.type === 'logo') {
-      const startNode = 0
+      const startNode = this.config.parent || this.config.parents ? 1.3 : 0
       const dtNode = .5
       
       const logoClip = delay_(startNode, tween_(dtNode, value => { this.image?.opacity(value)}))

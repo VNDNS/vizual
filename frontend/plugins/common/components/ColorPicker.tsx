@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 
 
-const SATURATION = 70
-const LIGHTNESS = 50
+const SATURATION = 50
+const LIGHTNESS = 60
 
 interface ColorPickerProps {
   value?: string
@@ -18,15 +18,12 @@ const parseHsl = (hslString: string): { h: number; s: number; l: number } => {
       l: Number(match[3])
     }
   }
-  return { h: 0, s: 70, l: 50 }
+  return { h: 0, s: SATURATION, l: LIGHTNESS }
 }
 
 export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
-  const defaultColor = value || 'hsl(0, 70%, 50%)'
+  const defaultColor = value || `hsl(0, ${SATURATION}%, ${LIGHTNESS}%)`
   const initial = parseHsl(defaultColor)
-  const [hue, setHue] = useState(initial.h)
-  const [saturation, setSaturation] = useState(initial.s)
-  const [lightness, setLightness] = useState(initial.l)
 
   const hues = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
   const greyShades = [0, 25, 50, 75, 100]
@@ -51,14 +48,13 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
   }
 
   const [selectedHueBox, setSelectedHueBox] = useState(findClosestHue(initial.h))
-  const [selectedGreyShade, setSelectedGreyShade] = useState<number | null>(null)
+  const [selectedGreyShade, setSelectedGreyShade] = useState<number | null>(initial.s === 0 ? greyShades.reduce((prev, curr) =>
+    Math.abs(curr - initial.l) < Math.abs(prev - initial.l) ? curr : prev
+  ) : null)
 
   useEffect(() => {
     if (value) {
       const parsed = parseHsl(value)
-      setHue(parsed.h)
-      setSaturation(parsed.s)
-      setLightness(parsed.l)
       if (parsed.s === 0) {
         const closestGrey = greyShades.reduce((prev, curr) =>
           Math.abs(curr - parsed.l) < Math.abs(prev - parsed.l) ? curr : prev
@@ -77,45 +73,15 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
   }
 
   const handleHueChange = (h: number) => {
-    setHue(h)
     setSelectedHueBox(h)
     setSelectedGreyShade(null)
-    onChange(getColorString(h, saturation, lightness))
+    onChange(getColorString(h, SATURATION, LIGHTNESS))
   }
 
   const handleGreyShadeChange = (l: number) => {
     setSelectedGreyShade(l)
     setSelectedHueBox(-1)
-    setSaturation(0)
-    setLightness(l)
     onChange(getColorString(0, 0, l))
-  }
-
-  const handleSaturationChange = (s: number) => {
-    setSaturation(s)
-    if (s > 0) {
-      setSelectedGreyShade(null)
-      if (selectedHueBox === -1) {
-        setSelectedHueBox(findClosestHue(hue))
-      }
-    }
-    onChange(getColorString(hue, s, lightness))
-  }
-
-  const handleLightnessChange = (l: number) => {
-    const newLightness = l
-    setLightness(newLightness)
-    if (saturation === 0) {
-      const closestGrey = greyShades.reduce((prev, curr) =>
-        Math.abs(curr - newLightness) < Math.abs(prev - newLightness) ? curr : prev
-      )
-      if (Math.abs(closestGrey - newLightness) <= 5) {
-        setSelectedGreyShade(closestGrey)
-      } else {
-        setSelectedGreyShade(null)
-      }
-    }
-    onChange(getColorString(hue, saturation, newLightness))
   }
 
   return (
@@ -135,30 +101,10 @@ export const ColorPicker = ({ value, onChange }: ColorPickerProps) => {
           <div
             key={h}
             className={`color-picker-hue-box ${selectedHueBox === h ? 'selected' : ''}`}
-            style={{ backgroundColor: getColorString(h, saturation, lightness) }}
+            style={{ backgroundColor: getColorString(h, SATURATION, LIGHTNESS) }}
             onClick={() => handleHueChange(h)}
           />
         ))}
-      </div>
-      <div className="input-group">
-        <span>Saturation</span>
-        <input
-          type="number"
-          min="0"
-          max="100"
-          value={saturation}
-          onChange={(e) => handleSaturationChange(Number(e.target.value))}
-        />
-      </div>
-      <div className="input-group">
-        <span>Lightness</span>
-        <input
-          type="number"
-          min="0"
-          max="100"
-          value={lightness}
-          onChange={(e) => handleLightnessChange(Number(e.target.value))}
-        />
       </div>
     </div>
   )

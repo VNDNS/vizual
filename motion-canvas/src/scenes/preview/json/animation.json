@@ -6,131 +6,178 @@
         "data": {
           "nodes": [
             {
-              "id": 237169,
+              "id": 784906,
               "children": [
-                943836
+                878669
               ],
-              "x": 0,
-              "y": -360,
+              "x": -660,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "z51n236dhiigku2j5xr4uk",
-              "type": "square",
+              "componentId": "gbmtctmb70lvsixf6tvl4c",
+              "type": "circle",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 0%, 25%)",
-              "image": "nvidia.png",
+              "color": "hsl(0, 70%, 50%)",
               "infos": [
                 {
-                  "name": "Info 0",
-                  "id": "8m7n2slnom4xsxbbch5zk"
+                  "name": "Chris Malachowsky",
+                  "id": "szkcpiyteo91n0smpysql6"
                 },
                 {
-                  "name": "Info 1",
-                  "id": "h6c5zgpvafv7svgpjbku9q"
+                  "name": "May 2, 1959",
+                  "id": "hqfiyjs1e4nz71f6hcyjdm"
                 },
                 {
-                  "name": "Info 2",
-                  "id": "udt8ru1tnygz72lxkersxc"
+                  "name": "M.S. in Computer Science",
+                  "id": "aqfi7o45t7jdpptuknycb"
                 }
               ]
             },
             {
-              "id": 943836,
+              "id": 166843,
               "children": [
-                384352,
-                869026
+                878669
               ],
               "x": 0,
-              "y": 0,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 2",
-              "componentId": "z51n236dhiigku2j5xr4uk",
-              "type": "square",
+              "componentId": "gbmtctmb70lvsixf6tvl4c",
+              "type": "circle",
               "width": 240,
               "height": 240,
-              "color": "hsl(210, 70%, 50%)",
-              "parent": 237169,
+              "color": "hsl(0, 70%, 50%)",
               "infos": [
                 {
-                  "name": "Info 0",
-                  "id": "i6m7p97ouolu501tbs2yr"
+                  "name": "Jensen Huang",
+                  "id": "gzmq3sbhfx4fgjwmc340gp"
                 },
                 {
-                  "name": "Info 1",
-                  "id": "cxcxa2uw3gg452jo9tdepv"
+                  "name": "Feb 17, 1963",
+                  "id": "g15ebeyzkh5vzjxgevrfuk"
                 },
                 {
-                  "name": "Info 2",
-                  "id": "61yohlhygylshw96fqr7c"
+                  "name": "M.S. Electrical Engineering",
+                  "id": "kjqdw34rbpa3vazpka8667"
                 }
-              ]
+              ],
+              "image": "jensenHuang.jpg"
             },
             {
-              "id": 384352,
-              "children": [],
-              "x": -480,
-              "y": 0,
+              "id": 305668,
+              "children": [
+                878669
+              ],
+              "x": 720,
+              "y": -300,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 3",
-              "componentId": "z51n236dhiigku2j5xr4uk",
-              "type": "square",
+              "componentId": "gbmtctmb70lvsixf6tvl4c",
+              "type": "circle",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "parent": 943836,
-              "infos": []
+              "infos": [
+                {
+                  "name": "Curtis Priem",
+                  "id": "lfdmykg02ed9rm94ilipbi"
+                },
+                {
+                  "name": "Jan 19, 1959",
+                  "id": "8dga7z7e77j3gn8vm583gz"
+                },
+                {
+                  "name": "B.S. in Electrical Engineering",
+                  "id": "hh4c2snia694tb2cfixsq"
+                }
+              ]
             },
             {
-              "id": 869026,
+              "id": 878669,
               "children": [],
               "x": 0,
-              "y": 360,
+              "y": 240,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 4",
-              "componentId": "z51n236dhiigku2j5xr4uk",
-              "type": "square",
+              "componentId": "gbmtctmb70lvsixf6tvl4c",
+              "type": "logo",
               "width": 240,
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
-              "parent": 943836,
-              "infos": [
-                {
-                  "name": "Info 5",
-                  "id": "kpcnzlr2v7fep7un9z7rq"
-                },
-                {
-                  "name": "Info 6",
-                  "id": "cic97b1d2ukay4qet4d40i"
-                }
-              ]
+              "parents": [
+                784906,
+                166843,
+                305668
+              ],
+              "image": "nvidia.png",
+              "infos": []
             }
           ],
           "edges": [
             {
-              "id": "237169-943836",
+              "id": "784906-878669",
+              "x1": -660,
+              "y1": -140,
+              "x2": -60,
+              "y2": 80,
+              "sourceId": 784906,
+              "targetId": 878669,
+              "endSide": "top",
+              "startSide": "bottom",
+              "c0": 0.5,
+              "c1": 500,
+              "points": [
+                {
+                  "x": -660,
+                  "y": -140
+                },
+                {
+                  "x": -660,
+                  "y": -85
+                },
+                {
+                  "x": -605,
+                  "y": -30
+                },
+                {
+                  "x": -115,
+                  "y": -30
+                },
+                {
+                  "x": -60,
+                  "y": 25
+                },
+                {
+                  "x": -60,
+                  "y": 80
+                }
+              ]
+            },
+            {
+              "id": "166843-878669",
               "x1": 0,
-              "y1": -200,
+              "y1": -140,
               "x2": 0,
-              "y2": -160,
-              "sourceId": 237169,
-              "targetId": 943836,
+              "y2": 80,
+              "sourceId": 166843,
+              "targetId": 878669,
               "endSide": "top",
               "startSide": "bottom",
               "c0": 0.5,
@@ -138,57 +185,50 @@
               "points": [
                 {
                   "x": 0,
-                  "y": -200
+                  "y": -140
                 },
                 {
                   "x": 0,
-                  "y": -160
+                  "y": 80
                 }
               ]
             },
             {
-              "id": "943836-384352",
-              "x1": -160,
-              "y1": 0,
-              "x2": -320,
-              "y2": 0,
-              "sourceId": 943836,
-              "targetId": 384352,
-              "endSide": "right",
-              "startSide": "left",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -160,
-                  "y": 0
-                },
-                {
-                  "x": -320,
-                  "y": 0
-                }
-              ]
-            },
-            {
-              "id": "943836-869026",
-              "x1": 0,
-              "y1": 160,
-              "x2": 0,
-              "y2": 200,
-              "sourceId": 943836,
-              "targetId": 869026,
+              "id": "305668-878669",
+              "x1": 720,
+              "y1": -140,
+              "x2": 60,
+              "y2": 80,
+              "sourceId": 305668,
+              "targetId": 878669,
               "endSide": "top",
               "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": 0,
-                  "y": 160
+                  "x": 720,
+                  "y": -140
                 },
                 {
-                  "x": 0,
-                  "y": 200
+                  "x": 720,
+                  "y": -85
+                },
+                {
+                  "x": 665,
+                  "y": -30
+                },
+                {
+                  "x": 115,
+                  "y": -30
+                },
+                {
+                  "x": 60,
+                  "y": 25
+                },
+                {
+                  "x": 60,
+                  "y": 80
                 }
               ]
             }
@@ -203,7 +243,7 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "z51n236dhiigku2j5xr4uk",
+      "id": "gbmtctmb70lvsixf6tvl4c",
       "name": "flowChart0"
     }
   ],
@@ -211,42 +251,30 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 2.7,
+      "duration": 3.3000000000000003,
       "start": 0,
       "inputs": {
         "nodes": [
-          "Node 1"
+          "Node 1",
+          "Node 2",
+          "Node 3"
         ]
       },
       "track": 0,
-      "id": "inj25kb3xgbr5vwaquh36j"
+      "id": "qiou9lgrzz81v5sdc52h7q"
     },
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 2.7,
-      "start": 2.8,
+      "duration": 1.8,
+      "start": 3.3000000000000003,
       "inputs": {
         "nodes": [
-          "Node 2"
-        ]
-      },
-      "track": 0,
-      "id": "7e90ajcfxetbn6cle7cc4h"
-    },
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 2.8,
-      "start": 5.6,
-      "inputs": {
-        "nodes": [
-          "Node 3",
           "Node 4"
         ]
       },
       "track": 0,
-      "id": "6615cwqtmrxahwjsgjp85n"
+      "id": "6rnroeaxqkwabnn5r8iqk"
     }
   ],
   "tracks": 1,
