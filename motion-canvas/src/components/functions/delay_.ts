@@ -1,5 +1,5 @@
 import { delay } from "@motion-canvas/core";
-import { AnimationClip } from "./AnimationClip";
+import { AnimationClip } from "./types/AnimationClip";
 
 
 export const delay_ = (startTime: number, clip: AnimationClip): AnimationClip => {

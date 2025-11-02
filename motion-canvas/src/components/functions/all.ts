@@ -1,5 +1,5 @@
 import { all as all_ } from "@motion-canvas/core";
-import { AnimationClip } from "./AnimationClip";
+import { AnimationClip } from "./types/AnimationClip";
 
 export const all = (clips: AnimationClip[]) => {
   const duration = Math.max(...clips.map(clip => clip.duration));

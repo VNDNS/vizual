@@ -22,7 +22,8 @@
               "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)"
+              "color": "hsl(0, 70%, 50%)",
+              "image": "Audi 80 B3.png"
             },
             {
               "id": 943836,
@@ -31,7 +32,7 @@
                 869026
               ],
               "x": 0,
-              "y": 120,
+              "y": 0,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -63,7 +64,7 @@
               "id": 384352,
               "children": [],
               "x": -480,
-              "y": 120,
+              "y": 0,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -76,22 +77,13 @@
               "height": 240,
               "color": "hsl(0, 70%, 50%)",
               "parent": 943836,
-              "infos": [
-                {
-                  "name": "Info 0",
-                  "id": "6ezzrtmmhk4ritk5dc0k1i"
-                },
-                {
-                  "name": "Info 1",
-                  "id": "z5rn832h1wgt3cujlq6hcl"
-                }
-              ]
+              "infos": []
             },
             {
               "id": 869026,
               "children": [],
-              "x": 480,
-              "y": 120,
+              "x": 0,
+              "y": 360,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -106,16 +98,12 @@
               "parent": 943836,
               "infos": [
                 {
-                  "name": "Info 0",
-                  "id": "qrtocvia8ge36ve3d3dlt"
+                  "name": "Info 5",
+                  "id": "kpcnzlr2v7fep7un9z7rq"
                 },
                 {
-                  "name": "Info 1",
-                  "id": "y6qx1ubn6kqkvuo7fdtf1b"
-                },
-                {
-                  "name": "Info 2",
-                  "id": "vevql3uraxccdsau0n5k9s"
+                  "name": "Info 6",
+                  "id": "cic97b1d2ukay4qet4d40i"
                 }
               ]
             }
@@ -126,7 +114,7 @@
               "x1": 0,
               "y1": -200,
               "x2": 0,
-              "y2": -40,
+              "y2": -160,
               "sourceId": 237169,
               "targetId": 943836,
               "endSide": "top",
@@ -140,16 +128,16 @@
                 },
                 {
                   "x": 0,
-                  "y": -40
+                  "y": -160
                 }
               ]
             },
             {
               "id": "943836-384352",
               "x1": -160,
-              "y1": 120,
+              "y1": 0,
               "x2": -320,
-              "y2": 120,
+              "y2": 0,
               "sourceId": 943836,
               "targetId": 384352,
               "endSide": "right",
@@ -159,34 +147,34 @@
               "points": [
                 {
                   "x": -160,
-                  "y": 120
+                  "y": 0
                 },
                 {
                   "x": -320,
-                  "y": 120
+                  "y": 0
                 }
               ]
             },
             {
               "id": "943836-869026",
-              "x1": 160,
-              "y1": 120,
-              "x2": 320,
-              "y2": 120,
+              "x1": 0,
+              "y1": 160,
+              "x2": 0,
+              "y2": 200,
               "sourceId": 943836,
               "targetId": 869026,
-              "endSide": "left",
-              "startSide": "right",
+              "endSide": "top",
+              "startSide": "bottom",
               "c0": 0.5,
               "c1": 500,
               "points": [
                 {
-                  "x": 160,
-                  "y": 120
+                  "x": 0,
+                  "y": 160
                 },
                 {
-                  "x": 320,
-                  "y": 120
+                  "x": 0,
+                  "y": 200
                 }
               ]
             }
@@ -235,8 +223,8 @@
     {
       "component": "flowChart0",
       "method": "fadeIn",
-      "duration": 3,
-      "start": 4.5,
+      "duration": 2.8,
+      "start": 4.6,
       "inputs": {
         "nodes": [
           "Node 3",

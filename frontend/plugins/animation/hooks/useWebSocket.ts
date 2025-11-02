@@ -5,11 +5,7 @@ import { handleMessage } from './websocketHandlers/handleMessage'
 
 export const useWebSocket = () => {
   const context = useAnimation()
-  const contextRef = useRef(context)
-  
-  // useEffect(() => {
-  //   contextRef.current = context
-  // }, [context])
+
 
   useEffect(() => {
     let ws: WebSocket | null = null

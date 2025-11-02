@@ -1,4 +1,4 @@
-import { AnimationClip } from "./AnimationClip";
+import { AnimationClip } from "../types/AnimationClip";
 import { linear } from "./linear";
 
 

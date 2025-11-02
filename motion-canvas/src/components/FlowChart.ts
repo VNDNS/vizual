@@ -1,28 +1,11 @@
 import { Node } from "@motion-canvas/2d"
-import { SimpleSignal, all, createSignal, sequence, ThreadGenerator } from "@motion-canvas/core"
 import { FlowChartNode } from "./FlowChartNode"
 import { FlowChartEdge } from "./FlowChartEdge"
 import { FlowChartProps } from "./types/FlowChartProps"
 import { FlowChartConfig } from "./types/FlowChartConfig"
-
-type AnimationClip = { animation: ThreadGenerator, duration: number }
-
-export const all_ = (clips: AnimationClip[]) => {
-  const duration = Math.max(...clips.map(clip => clip.duration))
-  const animation = all(...clips.map(clip => clip.animation))
-  return { animation, duration }
-}
-
-export const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {
-
-  const endings = clips.map((clip: any, index: number) => clip.duration + spacing * index)
-  const totalDuration = Math.max(...endings)
-
-  return {
-    animation: sequence(spacing, ...clips.map(clip => clip.animation)),
-    duration: totalDuration
-  }
-}
+import { sequence_ } from "./functions/sequence_"
+import { all } from "./functions/all"
+import { AnimationClip } from "./types/AnimationClip"
 
 export class FlowChart extends Node {
 
@@ -82,7 +65,7 @@ export class FlowChart extends Node {
     }
     
     const nodeClip = this.nodes[nodeIndex].fadeIn()
-    const activateClip = all_([
+    const activateClip = all([
       ...edgeClips,
       nodeClip
     ])
@@ -117,7 +100,7 @@ export class FlowChart extends Node {
       }
       
       const nodeClip = this.nodes[nodeIndex].fadeIn()
-      const activateClip = all_([
+      const activateClip = all([
         ...edgeClips,
         nodeClip
       ])

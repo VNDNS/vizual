@@ -40,7 +40,11 @@ ${animations}
   sendDurations(clips)
 
   for (const clip of clips) {
-    yield* clip.animation
+    if (clip.animation) {
+      yield* clip.animation
+    } else {
+      yield* waitFor(clip.duration)
+    }
   }
 })`
 

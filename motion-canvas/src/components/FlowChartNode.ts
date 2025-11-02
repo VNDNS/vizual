@@ -1,14 +1,15 @@
 import { Rect, Txt, Node, Img, Line } from "@motion-canvas/2d"
 import { SimpleSignal, Color, createSignal, sequence } from "@motion-canvas/core"
 import { NodeConfig } from "./types/NodeConfig"
-import { FlowChart, sequence_ } from "./FlowChart"
+import { FlowChart } from "./FlowChart"
+import { sequence_ } from "./functions/sequence_"
 import { getShadowProps } from "./functions/getShadowProps"
-import { hsl } from "./hsl"
-import { all } from "./all"
-import { AnimationClip } from "./AnimationClip"
-import { delay_ } from "./delay_"
-import { tween_ } from "./tween_"
-import { linear_ } from "./linear_"
+import { hsl } from "./functions/hsl"
+import { all } from "./functions/all"
+import { AnimationClip } from "./types/AnimationClip"
+import { delay_ } from "./functions/delay_"
+import { tween_ } from "./functions/tween_"
+import { linear_ } from "./functions/linear_"
 
 const lineColor = hsl(0, 60, 83)
 

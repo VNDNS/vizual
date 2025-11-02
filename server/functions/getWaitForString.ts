@@ -6,5 +6,5 @@ export const getWaitForString = (animations: AnimationUI[], i: number) => {
   const previousAnimation = animations[i - 1];
   const deltaT            = getDeltaT(animation, previousAnimation, i);
   
-  return deltaT > 0 ? `  clips.push({animation: waitFor(${deltaT}), duration: ${deltaT}})` : '';
+  return deltaT > 0 ? `  clips.push({animation: null, duration: ${deltaT}})` : '';
 };
