@@ -1,5 +1,5 @@
 import { useState, useRef } from "react"
-import { LastCameraState } from "../../../../types/AnimationContextType"
+import { LastCameraState, CameraInitialState } from "../../../../types/AnimationContextType"
 
 export const useAnimationState = () => {
   const [mode, setMode] = useState<string>('arrangement')
@@ -9,6 +9,7 @@ export const useAnimationState = () => {
   const [cameraIsSelected, setCameraIsSelected] = useState<boolean>(false)
   const [camera, setCamera] = useState<{x: number, y: number, zoom: number, width: number, height: number}>({x: 0, y: 0, zoom: 1, width: 1920, height: 1080})
   const [lastCamera, setLastCamera] = useState<LastCameraState>({x: 0, y: 0, zoom: 1, width: 1920, height: 1080})
+  const [cameraInitialState, setCameraInitialState] = useState<CameraInitialState | null>(null)
   const [lastContainer, setLastContainer] = useState<any>(null)
   const [selectedFile, setSelectedFile] = useState('')
   const [currentDataFile, setCurrentDataFile] = useState<string>('')
@@ -89,6 +90,7 @@ export const useAnimationState = () => {
     cameraIsSelected, setCameraIsSelected,
     camera, setCamera,
     lastCamera, setLastCamera,
+    cameraInitialState, setCameraInitialState,
     lastContainer, setLastContainer,
     selectedComponent, setSelectedComponent,
     animation, setAnimation,

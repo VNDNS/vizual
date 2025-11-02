@@ -3,7 +3,7 @@ import { id } from "../../../../../../common/id"
 
 export const CameraConfiguration = () => {
 
-  const { animation, setAnimation, camera, selectedItems, components } = useAnimation()
+  const { animation, setAnimation, camera, selectedItems, components, cameraInitialState, setCameraInitialState } = useAnimation()
 
   const addAnimation = () => {
 
@@ -79,8 +79,21 @@ export const CameraConfiguration = () => {
 
 
 
+  const captureInitialState = () => {
+    const zoom = camera.width / 1920
+    setCameraInitialState({
+      x: camera.x,
+      y: camera.y,
+      zoom: 1/zoom
+    })
+  }
+
   return (
     <>
+      <button onClick={() => captureInitialState()}>Capture initial state</button>
+      {cameraInitialState && (
+        <div>Initial: x={cameraInitialState.x.toFixed(0)}, y={cameraInitialState.y.toFixed(0)}, zoom={cameraInitialState.zoom.toFixed(3)}</div>
+      )}
       <button onClick={() => addAnimation()}>Add animation</button>
       <button onClick={() => focusOnSelectedItems()}>Focus on selected items ({selectedItems.length})</button>
     </>

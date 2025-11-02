@@ -18,15 +18,15 @@ import { Sidebar } from '@context/components/arrangement/Sidebar';
 import { setPreview } from '../../common/requests/set-preview';
 
 const updateAnimation = () => {
-  const { animation, components, panelData, audioClips } = useAnimation()
-  const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips}
+  const { animation, components, panelData, audioClips, cameraInitialState } = useAnimation()
+  const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips, cameraInitialState}
   setPreview('animation', scene)
     
 }
 
 export const ArrangementLayout = () => {
 
-  const { showTimeline, showCameraPath, setShowCameraPath, audioClips, setComponents, setAnimation, setPanelData, setAudioClips, setShowTimeline, mode, setMode, showSidebar, setShowSidebar, showCamera, setShowCamera, debug, setDebug  } = useAnimation()
+  const { showTimeline, showCameraPath, setShowCameraPath, audioClips, setComponents, setAnimation, setPanelData, setAudioClips, setShowTimeline, mode, setMode, showSidebar, setShowSidebar, showCamera, setShowCamera, debug, setDebug, setCameraInitialState  } = useAnimation()
 
   useSetCurrentPlugin('arrangement');
 
@@ -39,6 +39,7 @@ export const ArrangementLayout = () => {
       setAnimation(data.animation)
       setPanelData(data.panel)
       setAudioClips(data.audio)
+      setCameraInitialState(data.cameraInitialState || null)
     })
 
     setSceneFile(file)

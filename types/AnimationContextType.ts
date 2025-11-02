@@ -18,6 +18,12 @@ export interface LastCameraState {
   height: number
 }
 
+export interface CameraInitialState {
+  x: number
+  y: number
+  zoom: number
+}
+
 export interface SelectionBox {
   topLeft: { x: number; y: number }
   bottomRight: { x: number; y: number }
@@ -38,6 +44,8 @@ export interface AnimationContextType {
   setCamera: (camera: CameraState) => void
   lastCamera: LastCameraState
   setLastCamera: (camera: LastCameraState) => void
+  cameraInitialState: CameraInitialState | null
+  setCameraInitialState: (state: CameraInitialState | null) => void
   lastContainer: any
   setLastContainer: (container: any) => void
   selectedComponent: string | null

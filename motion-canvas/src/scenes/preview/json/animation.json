@@ -6,236 +6,24 @@
         "data": {
           "nodes": [
             {
-              "id": 784906,
-              "children": [
-                878669
-              ],
-              "x": -1020,
-              "y": -300,
+              "id": 626503,
+              "children": [],
+              "x": -720,
+              "y": 0,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
               "text": "",
               "suggestedChildren": [],
               "name": "Node 1",
-              "componentId": "gbmtctmb70lvsixf6tvl4c",
-              "type": "circle",
+              "componentId": "nfcdtvaesjd4ylywgawwh",
+              "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Chris Malachowsky",
-                  "id": "szkcpiyteo91n0smpysql6"
-                },
-                {
-                  "name": "May 2, 1959",
-                  "id": "hqfiyjs1e4nz71f6hcyjdm"
-                },
-                {
-                  "name": "M.S. in Computer Science",
-                  "id": "aqfi7o45t7jdpptuknycb"
-                }
-              ],
-              "image": "Audi 100 C4.png",
-              "imageWidth": 210
-            },
-            {
-              "id": 166843,
-              "children": [
-                878669
-              ],
-              "x": -240,
-              "y": -300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 2",
-              "componentId": "gbmtctmb70lvsixf6tvl4c",
-              "type": "circle",
-              "width": 240,
-              "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Jensen Huang",
-                  "id": "gzmq3sbhfx4fgjwmc340gp"
-                },
-                {
-                  "name": "Feb 17, 1963",
-                  "id": "g15ebeyzkh5vzjxgevrfuk"
-                },
-                {
-                  "name": "M.S. Electrical Engineering",
-                  "id": "kjqdw34rbpa3vazpka8667"
-                }
-              ],
-              "image": "jensenHuang.jpg",
-              "imageWidth": 230
-            },
-            {
-              "id": 305668,
-              "children": [
-                878669
-              ],
-              "x": 600,
-              "y": -300,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 3",
-              "componentId": "gbmtctmb70lvsixf6tvl4c",
-              "type": "circle",
-              "width": 240,
-              "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "infos": [
-                {
-                  "name": "Curtis Priem",
-                  "id": "lfdmykg02ed9rm94ilipbi"
-                },
-                {
-                  "name": "Jan 19, 1959",
-                  "id": "8dga7z7e77j3gn8vm583gz"
-                },
-                {
-                  "name": "B.S. in Electrical Engineering",
-                  "id": "hh4c2snia694tb2cfixsq"
-                }
-              ]
-            },
-            {
-              "id": 878669,
-              "children": [],
-              "x": -240,
-              "y": 360,
-              "year": 0,
-              "startSide": "right",
-              "endSide": "left",
-              "text": "",
-              "suggestedChildren": [],
-              "name": "Node 4",
-              "componentId": "gbmtctmb70lvsixf6tvl4c",
-              "type": "logo",
-              "width": 240,
-              "height": 240,
-              "color": "hsl(0, 70%, 50%)",
-              "parents": [
-                784906,
-                166843,
-                305668
-              ],
-              "image": "nvidia.png",
-              "infos": []
+              "color": "hsl(0, 70%, 50%)"
             }
           ],
-          "edges": [
-            {
-              "id": "784906-878669",
-              "x1": -1020,
-              "y1": -140,
-              "x2": -300,
-              "y2": 200,
-              "sourceId": 784906,
-              "targetId": 878669,
-              "endSide": "top",
-              "startSide": "bottom",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -1020,
-                  "y": -140
-                },
-                {
-                  "x": -1020,
-                  "y": -55
-                },
-                {
-                  "x": -935,
-                  "y": 30
-                },
-                {
-                  "x": -385,
-                  "y": 30
-                },
-                {
-                  "x": -300,
-                  "y": 115
-                },
-                {
-                  "x": -300,
-                  "y": 200
-                }
-              ]
-            },
-            {
-              "id": "166843-878669",
-              "x1": -240,
-              "y1": -140,
-              "x2": -240,
-              "y2": 200,
-              "sourceId": 166843,
-              "targetId": 878669,
-              "endSide": "top",
-              "startSide": "bottom",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": -240,
-                  "y": -140
-                },
-                {
-                  "x": -240,
-                  "y": 200
-                }
-              ]
-            },
-            {
-              "id": "305668-878669",
-              "x1": 600,
-              "y1": -140,
-              "x2": -180,
-              "y2": 200,
-              "sourceId": 305668,
-              "targetId": 878669,
-              "endSide": "top",
-              "startSide": "bottom",
-              "c0": 0.5,
-              "c1": 500,
-              "points": [
-                {
-                  "x": 600,
-                  "y": -140
-                },
-                {
-                  "x": 600,
-                  "y": -55
-                },
-                {
-                  "x": 515,
-                  "y": 30
-                },
-                {
-                  "x": -95,
-                  "y": 30
-                },
-                {
-                  "x": -180,
-                  "y": 115
-                },
-                {
-                  "x": -180,
-                  "y": 200
-                }
-              ]
-            }
-          ],
+          "edges": [],
           "containerNodes": [],
           "name": "flowChart"
         },
@@ -246,54 +34,31 @@
       },
       "data": null,
       "color": "hsl(0,   40%, 45%)",
-      "id": "gbmtctmb70lvsixf6tvl4c",
+      "id": "nfcdtvaesjd4ylywgawwh",
       "name": "flowChart0"
     }
   ],
   "animation": [
     {
-      "component": "camera",
-      "method": "to",
-      "duration": 1,
-      "start": 0,
-      "inputs": {
-        "x": 0,
-        "y": 0,
-        "zoom": 0.7272727272727273
-      },
-      "track": 0,
-      "id": "eapphelr8qkb0n981g7yv9"
-    },
-    {
-      "component": "flowChart0",
-      "method": "fadeIn",
-      "duration": 3.3000000000000003,
-      "start": 1.2,
-      "inputs": {
-        "nodes": [
-          "Node 1",
-          "Node 2",
-          "Node 3"
-        ]
-      },
-      "track": 0,
-      "id": "qiou9lgrzz81v5sdc52h7q"
-    },
-    {
       "component": "flowChart0",
       "method": "fadeIn",
       "duration": 1.8,
-      "start": 4.6,
+      "start": 0,
       "inputs": {
         "nodes": [
-          "Node 4"
+          "Node 1"
         ]
       },
       "track": 0,
-      "id": "6rnroeaxqkwabnn5r8iqk"
+      "id": "wkdv4nqbhe8s8zqvnjbza"
     }
   ],
   "tracks": 1,
   "panel": [],
-  "audio": []
+  "audio": [],
+  "cameraInitialState": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  }
 }

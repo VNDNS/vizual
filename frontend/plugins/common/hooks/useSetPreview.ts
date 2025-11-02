@@ -6,15 +6,15 @@ import { getJson } from "../requests/get-json"
 
 export const useSetPreview = () => {
 
-  const { animation, components, currentData, selectedComponent, panelData, audioClips } = useAnimation()
+  const { animation, components, currentData, selectedComponent, panelData, audioClips, cameraInitialState } = useAnimation()
 
   
   useEffect(() => {
   
-    const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips}
+    const scene = { components, animation, tracks: 1, panel: panelData, audio: audioClips, cameraInitialState}
     setPreview('animation', scene)
     
-  }, [components, panelData, audioClips])
+  }, [components, panelData, audioClips, cameraInitialState])
   
   useEffect(() => {
 

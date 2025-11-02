@@ -5,13 +5,14 @@ import { getJson } from "../../common/requests/get-json"
 
 export const useFetchAnimation = () => {
   const { selectedFile, currentPlugin } = useGlobal()
-  const { setAnimation, setComponents, setNumTimelines } = useAnimation()
+  const { setAnimation, setComponents, setNumTimelines, setCameraInitialState } = useAnimation()
   
   const fetchFile = async () => {
-    const { animation, components, tracks } = await getJson(`./motion-canvas/src/animations/${selectedFile}`)
+    const { animation, components, tracks, cameraInitialState } = await getJson(`./motion-canvas/src/animations/${selectedFile}`)
     setAnimation(animation)
     setComponents(components)
     setNumTimelines(tracks)
+    setCameraInitialState(cameraInitialState || null)
   }
   
   useEffect(() => {

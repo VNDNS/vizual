@@ -14,6 +14,7 @@ export const usePersistence = (state: any) => {
         cameraIsSelected: state.cameraIsSelected,
         camera: state.camera,
         lastCamera: state.lastCamera,
+        cameraInitialState: state.cameraInitialState,
         lastContainer: state.lastContainer,
         selectedComponent: state.selectedComponent,
         animation: state.animation,
@@ -96,6 +97,7 @@ export const usePersistence = (state: any) => {
         state.setCameraIsSelected(parsedState.cameraIsSelected || false);
         state.setCamera(parsedState.camera || {x: 0, y: 0, width: 1920, height: 1080, zoom: 1});
         state.setLastCamera(parsedState.lastCamera || {x: 0, y: 0, zoom: 1, width: 1920, height: 1080});
+        state.setCameraInitialState(parsedState.cameraInitialState || null);
         state.setLastContainer(parsedState.lastContainer || null);
         state.setSelectedComponent(parsedState.selectedComponent || null);
         state.setAnimation(parsedState.animation || []);
@@ -170,6 +172,7 @@ export const usePersistence = (state: any) => {
     state.setCurrentData({nodes: [], edges: []});
     state.setComponents([]);
     state.setCameraIsSelected(false);
+    state.setCameraInitialState(null);
     state.setLastContainer(null);
     state.setSelectedComponent(null);
     state.setAnimation([]);
@@ -240,7 +243,7 @@ export const usePersistence = (state: any) => {
     
     return () => clearInterval(saveInterval);
   }, [
-    state.fileType, state.selectedFile, state.currentDataFile, state.currentData, state.components, state.cameraIsSelected, state.camera, state.lastContainer, state.selectedComponent,
+    state.fileType, state.selectedFile, state.currentDataFile, state.currentData, state.components,     state.cameraIsSelected, state.camera, state.lastCamera, state.cameraInitialState, state.lastContainer, state.selectedComponent,
     state.animation, state.selectedMethod, state.selectedTimeline, state.showTimeline, state.showSidebar, state.showCameraPath, state.showCamera, state.showPanelConfiguration, state.showBackgroundConfiguration, state.showJointConfiguration, state.drawingBackground, state.frame, state.zoom, state.timelineScale,
     state.timelineScrollX, state.numTimelines, state.mode, state.origin, state.selectedNode, state.selectedNodes, state.tableOfContents,
     state.description, state.nodeDescription, state.languageModel, state.summary, state.sections, state.sectionIndex, state.imageModel,

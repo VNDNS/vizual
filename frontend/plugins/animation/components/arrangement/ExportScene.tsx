@@ -3,13 +3,13 @@ import { saveJson } from "../../../common/requests/save-json"
 
 export const ExportScene = () => {
 
-  const { fileName, setFileName, animation, components, panelData, audioClips } = useAnimation()
+  const { fileName, setFileName, animation, components, panelData, audioClips, cameraInitialState } = useAnimation()
 
   const exportScene = (fileName: string) => {
 
     console.log(animation)
     const fullPath = 'motion-canvas/src/animations/' + fileName + '.json'
-    const scene = { components: components, animation, tracks: 1, panel:panelData, audio: audioClips}
+    const scene = { components: components, animation, tracks: 1, panel:panelData, audio: audioClips, cameraInitialState}
     saveJson(scene, fullPath);
   }
 
