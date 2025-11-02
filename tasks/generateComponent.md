@@ -2,10 +2,10 @@
 
 _______________________________________________________________________
 
-when an animation scene is created like in motion-canvas/src/scenes/preview/animation.tsx
-motion-canvas knows the total duration of the animation in frames.
-your task is to find out, if i can get access to the duration of each individual animation.
-One approach could be to intercept the process, take an animation, run it, and count the frames.
+Images that are assigned to a flowchart node currently have a fixed width of 210px.
+Please implement an input field to set the width of the image to a value that is configured in NodeConfiguration.tsx.
+The input should have a step size of 10px and a default of 210px.
+Adjust FlowChartNode.ts to use the new width.
 _______________________________________________________________________
 
 For an animation component these points have to be implemented:
