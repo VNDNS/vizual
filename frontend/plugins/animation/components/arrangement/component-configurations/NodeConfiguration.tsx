@@ -1,188 +1,54 @@
 import { FileDisplay } from "../../../../common/components/FileDisplay"
 import { ColorPicker } from "../../../../common/components/ColorPicker"
-import { useAnimation } from "../../../context"
 import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
-import { useEffect, useState } from "react"
 import { OptionSelection } from "../../common/OptionSelection"
 import { ArrayConfiguration } from "../../common/ArrayConfiguration"
-import { useComputeEdges } from "@context/hooks/useComputeEdges"
-import { FlowChartNode } from "@type/FlowChartTypes"
-import { id } from "../../../../../../common/id"
-import { useSetPreviewAnimation } from "../../../../common/hooks/useSetPreviewAnimation"
+import { useHandleSetNodeName } from "./useHandleSetNodeName"
+import { useHandleSetNodeType } from "./useHandleSetNodeType"
+import { useHandleSetNodeWidth } from "./useHandleSetNodeWidth"
+import { useHandleSetNodeHeight } from "./useHandleSetNodeHeight"
+import { useHandleSetNodeColor } from "./useHandleSetNodeColor"
+import { useHandleSetNodeImage } from "./useHandleSetNodeImage"
+import { useHandleSetNodeImageWidth } from "./useHandleSetNodeImageWidth"
+import { useHandleDeleteNode } from "./useHandleDeleteNode"
+import { useHandleAddNode } from "./useHandleAddNode"
+import { useFadeInNodes } from "./useFadeInNodes"
+import { useHandleAddInfo } from "./useHandleAddInfo"
+import { useHandleSetInfoValue } from "./useHandleSetInfoValue"
+import { useHandleDeleteInfo } from "./useHandleDeleteInfo"
+import { useNodeImageFile } from "./useNodeImageFile"
+import { useSelectedInfo } from "./useSelectedInfo"
 
 export const NodeConfiguration = () => {
-  const { setComponents, components, setAnimation, animation } = useAnimation()
-  const { getSelectedNode, getSelectedComponent, getNodes, getSelectedNodes } = useAnimationHooks()
-  const nodes = getNodes()
-  const { computeEdges } = useComputeEdges()
-  const setPreviewAnimation = useSetPreviewAnimation()
-  const [imageFile, setImageFile] = useState<string>('')
-  const [selectedInfo, setSelectedInfo] = useState<string>('')
+  
+  const { getSelectedNode, getSelectedComponent } = useAnimationHooks()
+  const { imageFile, setImageFile }               = useNodeImageFile()
+  const { selectedInfo, setSelectedInfo }         = useSelectedInfo()
+  
+  const handleSetName       = useHandleSetNodeName()
+  const handleSetNodeType   = useHandleSetNodeType()
+  const handleSetWidth      = useHandleSetNodeWidth()
+  const handleSetHeight     = useHandleSetNodeHeight()
+  const handleSetColor      = useHandleSetNodeColor()
+  const handleSetImageBase  = useHandleSetNodeImage()
+  const handleSetImageWidth = useHandleSetNodeImageWidth()
+  const handleDeleteNode    = useHandleDeleteNode()
+  const handleAddNode       = useHandleAddNode()
+  const fadeInNodes         = useFadeInNodes()
+  const handleAddInfo       = useHandleAddInfo()
+  const handleSetInfoValue  = useHandleSetInfoValue()
+  const handleDeleteInfo    = useHandleDeleteInfo()
+  const selectedNode        = getSelectedNode()
+  const selectedComponent   = getSelectedComponent()
 
-  const selectedNode = getSelectedNode()
-  const selectedComponent_ = getSelectedComponent()
+  const handleSetImage = (image: string) => {
+    handleSetImageBase(image)
+    setImageFile(image)
+  }
 
-  useEffect(() => {
-    setImageFile(selectedNode?.image || '')
-  }, [selectedNode?.image])
 
-  if(selectedComponent_?.type !== 'flowChart') {
+  if(selectedComponent?.type !== 'flowChart') {
     return null
-  }
-
-  const setImage = (image: string) => {
-    selectedNode.image = image
-    setComponents([...components])
-  }
-
-  const handleSetName = (name: string) => {
-    selectedNode.name = name
-    setComponents([...components])
-  }
-
-  const handleSetNodeType = (type: string) => {
-    selectedNode.type = type
-    setComponents([...components])
-  }
-
-  const handleSetWidth = (value: number) => {
-    selectedNode.width = value
-    setComponents([...components])
-    computeEdges()
-  }
-
-  const handleSetHeight = (value: number) => {
-    selectedNode.height = value
-    setComponents([...components])
-    computeEdges()
-  }
-
-  const handleSetColor = (color: string) => {
-    selectedNode.color = color
-    setComponents([...components])
-  }
-
-  const handleSetImageWidth = (value: number) => {
-    selectedNode.imageWidth = value
-    setComponents([...components])
-  }
-
-  const handleDeleteNode = () => {
-    const nodes = getNodes()
-    if (selectedNode.parent) {
-      const parent = nodes.find((node: any) => node.id === selectedNode.parent)
-      if (parent) {
-        parent.children = parent.children.filter((child: any) => child !== selectedNode.id)
-      }
-    }
-    if (Array.isArray(selectedNode.parents)) {
-      selectedNode.parents.forEach((parentId: any) => {
-        const parent = nodes.find((node: any) => node.id === parentId)
-        if (parent) {
-          parent.children = parent.children.filter((child: any) => child !== selectedNode.id)
-        }
-      })
-    }
-    nodes.splice(nodes.indexOf(selectedNode), 1)
-    setComponents([...components])
-  }
-
-  const handleAddNode = () => {
-    const selectedNodes_ = getSelectedNodes()
-    const newNodeId = Math.floor(Math.random() * 1000000)
-    
-    let newNodeX = (selectedNode?.x ?? 0) + 300
-    let newNodeY = selectedNode?.y ?? 0
-    
-    if (selectedNodes_.length > 1) {
-      const avgX = selectedNodes_.reduce((sum, n) => sum + (n.x ?? 0), 0) / selectedNodes_.length
-      const avgY = selectedNodes_.reduce((sum, n) => sum + (n.y ?? 0), 0) / selectedNodes_.length
-      newNodeX = avgX + 300
-      newNodeY = avgY
-    }
-
-    const node: any = {
-      id: newNodeId,
-      children: [],
-      x: newNodeX,
-      y: newNodeY,
-      year: 0,
-      startSide: 'right',
-      endSide: 'left',
-      text: '',
-      suggestedChildren: [],
-      name: `Node ${nodes.length + 1}`,
-      componentId: selectedComponent_.id,
-      type: 'square',
-      width: 240,
-      height: 240,
-      color: 'hsl(0, 70%, 50%)'
-    }
-
-    if (selectedNodes_.length > 1) {
-      node.parents = selectedNodes_.map(n => n.id)
-      selectedNodes_.forEach((selectedNode_) => {
-        selectedNode_.children.push(newNodeId)
-      })
-    } else if (selectedNode) {
-      node.parent = selectedNode.id
-      selectedNode.children.push(newNodeId)
-    }
-    
-    const newNodes = [...nodes, node]
-    selectedComponent_.configuration.data.nodes = newNodes
-    setComponents([...components])
-    computeEdges()
-  }
-
-  const fadeInNodes = () => {
-    const selectedNodes_     = getSelectedNodes()
-    const selectedComponent_ = getSelectedComponent()
-    const lastAnimation      = animation.at(-1)
-    const start              = (lastAnimation?.start ?? 0) + (lastAnimation?.duration ?? 0)
-    const newAnimation       = { 
-      component: selectedComponent_?.name || '', 
-      method: 'fadeIn', 
-      duration: 1, 
-      start: start, 
-      inputs: { nodes: selectedNodes_.map((node: FlowChartNode) => node.name) }, 
-      track: 0, 
-      id: id() 
-    }
-    const updatedAnimation = [...animation, newAnimation]
-    setAnimation(updatedAnimation)
-    setPreviewAnimation(updatedAnimation)
-  }
-
-  const handleAddInfo = () => {
-    if (!selectedNode.infos) {
-      selectedNode.infos = []
-    }
-    const infos = selectedNode.infos
-    infos.push({ name: 'Info ' + infos.length, id: id() })
-    setComponents([...components])
-  }
-
-  const handleSetSelectedInfo = (id: string) => {
-    setSelectedInfo(id)
-  }
-
-  const handleSetInfoValue = (value: string) => {
-    const index = selectedNode?.infos?.findIndex((info: any) => info.id === selectedInfo)
-    if (index !== undefined && index !== -1) {
-      selectedNode.infos[index].name = value
-      setComponents([...components])
-    }
-  }
-
-  const handleDeleteInfo = (id: string) => {
-    if (selectedNode?.infos) {
-      selectedNode.infos = selectedNode.infos.filter((info: any) => info.id !== id)
-      if (selectedInfo === id) {
-        setSelectedInfo('')
-      }
-      setComponents([...components])
-    }
   }
 
   const selectedInfo_ = selectedNode?.infos?.find((info: any) => info.id === selectedInfo)
@@ -193,7 +59,7 @@ export const NodeConfiguration = () => {
         <span>Name</span>
         <input type="text" value={selectedNode?.name} onChange={(e) => handleSetName(e.target.value)} />
       </div>
-      <FileDisplay directoryKey="node-image" state={imageFile} setState={setImage} />
+      <FileDisplay directoryKey="node-image" state={imageFile} setState={handleSetImage} />
       {selectedNode?.image && (
         <div className="input-group">
           <span>Image Width</span>
@@ -214,13 +80,13 @@ export const NodeConfiguration = () => {
       <ColorPicker value={selectedNode?.color || 'hsl(0, 70%, 50%)'} onChange={handleSetColor} />
       <button onClick={handleDeleteNode}>Delete</button>
       <button onClick={handleAddNode}>Add Node</button>
-      <button onClick={fadeInNodes}>Fade In Nodes</button>
+      <button onClick={() => fadeInNodes()}>Fade In Nodes</button>
       <div className="input-group">
         <span>Info</span>
-        <input type="text" value={selectedInfo_?.name} onChange={(e) => handleSetInfoValue(e.target.value)} />
+        <input type="text" value={selectedInfo_?.name} onChange={(e) => handleSetInfoValue(e.target.value, selectedInfo)} />
       </div>
       <button onClick={handleAddInfo}>Add Info</button>
-      <ArrayConfiguration options={selectedNode?.infos} setValue={handleSetSelectedInfo} value={selectedInfo} onDelete={handleDeleteInfo} />
+      <ArrayConfiguration options={selectedNode?.infos} setValue={setSelectedInfo} value={selectedInfo} onDelete={(id) => handleDeleteInfo(id, setSelectedInfo)} />
     </>
   )
 }
