@@ -2,10 +2,8 @@
 
 _______________________________________________________________________
 
-Images that are assigned to a flowchart node currently have a fixed width of 210px.
-Please implement an input field to set the width of the image to a value that is configured in NodeConfiguration.tsx.
-The input should have a step size of 10px and a default of 210px.
-Adjust FlowChartNode.ts to use the new width.
+The camera configuration currently assumes a fixed initial state.
+Lets add a button to the camera configuration, that captures the current state of the camera and stores it in the corresponding state variable. This initial state should be propagated to the motion-canvas component.
 _______________________________________________________________________
 
 For an animation component these points have to be implemented:
