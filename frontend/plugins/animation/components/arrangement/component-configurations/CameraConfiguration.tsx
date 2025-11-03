@@ -31,7 +31,6 @@ export const CameraConfiguration = () => {
     
     const start = (animation.at(-1)?.start || 0) + (animation.at(-1)?.duration || 0)
 
-    console.log("selectedItems", selectedItems)
 
     const items: any[] = []
     
