@@ -1,7 +1,9 @@
 import { initial, signal, Rect, Txt, Node, Img, NodeProps, Line } from "@motion-canvas/2d"
-import { SimpleSignal, all, createSignal, sequence } from "@motion-canvas/core"
+import { SimpleSignal, createSignal } from "@motion-canvas/core"
 import { hsl } from "./DynamicBarChart"
 import { debug } from '../../../debug'
+import { AnimationClip } from "./types/AnimationClip"
+import { sequence_ } from "./functions/sequence_"
 
 interface BarChartData {
   name: string
@@ -247,12 +249,19 @@ export class BarChart extends Rect {
     yield* this.activations[index](1, duration)
   }
 
-  public *fadeIn(duration: number) {
-    const animations = []
+  public fadeIn(duration: number): AnimationClip {
+    const animations: AnimationClip[] = []
     for(let i = 0; i < this.activations.length; i++) {
-      animations.push(this.activate(i, 1))
+      animations.push({
+        animation: this.activations[i](1, 1),
+        duration: 1
+      })
     }
-    yield* sequence(.2, ...animations, this.titleText.opacity(1, 1))
+    const titleClip: AnimationClip = {
+      animation: this.titleText.opacity(1, 1),
+      duration: 1
+    }
+    return sequence_(.2, [...animations, titleClip])
   }
 
   public *fadeOut(duration: number) {

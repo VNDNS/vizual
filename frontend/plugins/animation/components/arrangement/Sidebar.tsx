@@ -7,6 +7,7 @@ import { CameraConfiguration } from "./component-configurations/CameraConfigurat
 import { PanelConfiguration } from "./component-configurations/PanelConfiguration"
 import { sidebarOptions } from "./sidebarOptions"
 import { ContainerConfiguration } from "./component-configurations/ContainerConfiguration"
+import { ComponentConfiguration } from "./component-configurations/ComponentConfiguration"
 
 export const Sidebar = () => {
 
@@ -23,6 +24,7 @@ export const Sidebar = () => {
         {sidebarMode === 'camera-configuration'     && <CameraConfiguration />}
         {sidebarMode === 'animation-configuration'  && <AnimationConfiguration />}
         {sidebarMode === 'panel-configuration'      && <PanelConfiguration />}
+        {sidebarMode === 'component-configuration'  && <ComponentConfiguration />}
       </div>
     </div>
   )

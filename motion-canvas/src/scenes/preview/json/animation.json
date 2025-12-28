@@ -8,8 +8,8 @@
             {
               "id": 626503,
               "children": [],
-              "x": -720,
-              "y": 0,
+              "x": -600,
+              "y": -180,
               "year": 0,
               "startSide": "right",
               "endSide": "left",
@@ -20,7 +20,7 @@
               "type": "square",
               "width": 240,
               "height": 240,
-              "color": "hsl(0, 70%, 50%)"
+              "color": "hsl(0, 50%, 60%)"
             }
           ],
           "edges": [],
@@ -36,6 +36,36 @@
       "color": "hsl(0,   40%, 45%)",
       "id": "nfcdtvaesjd4ylywgawwh",
       "name": "flowChart0"
+    },
+    {
+      "type": "barChart",
+      "configuration": {
+        "data": [
+          {
+            "name": "Microsoft",
+            "value": 14000,
+            "logo": "microsoft"
+          },
+          {
+            "name": "Nintendo",
+            "value": 2000,
+            "logo": "nintendo"
+          },
+          {
+            "name": "Sony",
+            "value": 3000,
+            "logo": "sony"
+          }
+        ],
+        "x": 120,
+        "y": 0,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
+      "color": "hsl(60,  40%, 45%)",
+      "id": "7vwa58lu4n3tg0k94canhg",
+      "name": "barChart1"
     }
   ],
   "animation": [
@@ -51,6 +81,15 @@
       },
       "track": 0,
       "id": "wkdv4nqbhe8s8zqvnjbza"
+    },
+    {
+      "component": "barChart1",
+      "method": "fadeIn",
+      "duration": 1.2,
+      "start": 1.8,
+      "inputs": {},
+      "track": 0,
+      "id": "9u90t0jgzb8c66i93uxha5"
     }
   ],
   "tracks": 1,

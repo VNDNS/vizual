@@ -1,5 +1,5 @@
 import { sequence } from "@motion-canvas/core";
-import { AnimationClip } from "./AnimationClip.1";
+import { AnimationClip } from "../types/AnimationClip";
 
 
 export const sequence_ = (spacing: number, clips: AnimationClip[]): AnimationClip => {

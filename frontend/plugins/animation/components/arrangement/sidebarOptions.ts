@@ -4,4 +4,5 @@ export const sidebarOptions = [
   'camera-configuration',
   'panel-configuration',
   'container-configuration',
+  'component-configuration',
 ];
