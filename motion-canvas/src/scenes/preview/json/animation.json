@@ -85,7 +85,7 @@
     {
       "component": "barChart1",
       "method": "fadeIn",
-      "duration": 1.2,
+      "duration": 1.6,
       "start": 1.8,
       "inputs": {},
       "track": 0,

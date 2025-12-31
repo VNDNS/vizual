@@ -2,8 +2,11 @@
 
 _______________________________________________________________________
 
-The camera configuration currently assumes a fixed initial state.
-Lets add a button to the camera configuration, that captures the current state of the camera and stores it in the corresponding state variable. This initial state should be propagated to the motion-canvas component.
+Lets create an animation component called Molecule.
+It will use data which describes the structure of a molecule.
+However for now, it should just display a rectangle.
+It should have a fade-in animation and a fade-out animation.
+thats it for now.
 _______________________________________________________________________
 
 For an animation component these points have to be implemented:
