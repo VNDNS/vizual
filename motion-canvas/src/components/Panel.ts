@@ -8,6 +8,7 @@ import { Image } from "./Image";
 import { LinePlot } from "./LinePlot";
 import { KeyValueTable } from "./KeyValueTable";
 import { Text } from "./Text";
+import { Molecule } from "./Molecule";
 
 const componentConfigs: Record<string, any> = {
   'linePlot' : { width: 800, height: 600 , padding: 150, panelX: -300, panelY: 0},
@@ -17,6 +18,7 @@ const componentConfigs: Record<string, any> = {
   'image' : { maxWidth: 1200, maxHeight: 850, offsetX: 0, padding: 0},
   'keyValueTable' : {panelX: -400, panelY: 0, padding: 70, columns: 3, gapX: 60, gapY: 60},
   'text' : {panelX: -400, panelY: 0, padding: 80, maxWidth: 600},
+  'molecule' : {width: 800, height: 600, panelX: -300, panelY: 0, padding: 150},
 }
 
 
@@ -173,6 +175,13 @@ export class Panel extends Node {
       this.dy(dimensions.panelY)
       this.panel.padding(dimensions.padding)
       newComponent = new Text({text: component.data, textType: component.textType, author: component.author, subject: component.subject, date: component.date})
+    }
+    if(component.type === 'molecule') {
+      const dimensions = componentConfigs[component.type as keyof typeof componentConfigs]
+      this.dx(dimensions.panelX)
+      this.dy(dimensions.panelY)
+      this.panel.padding(dimensions.padding)
+      newComponent = new Molecule({data: component.data})
     }
 
     // const a = new Rect({layout: true, width: 300, height: 300})

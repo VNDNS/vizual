@@ -57,8 +57,8 @@
             "logo": "sony"
           }
         ],
-        "x": 120,
-        "y": 0,
+        "x": -240,
+        "y": 120,
         "width": 240,
         "height": 240
       },
@@ -66,6 +66,20 @@
       "color": "hsl(60,  40%, 45%)",
       "id": "7vwa58lu4n3tg0k94canhg",
       "name": "barChart1"
+    },
+    {
+      "type": "molecule",
+      "configuration": {
+        "data": {},
+        "x": 0,
+        "y": -60,
+        "width": 240,
+        "height": 240
+      },
+      "data": null,
+      "color": "hsl(120, 40%, 45%)",
+      "id": "djqrq2g8kdvsw55idl4qqd",
+      "name": "molecule2"
     }
   ],
   "animation": [
@@ -90,6 +104,15 @@
       "inputs": {},
       "track": 0,
       "id": "9u90t0jgzb8c66i93uxha5"
+    },
+    {
+      "component": "molecule2",
+      "method": "fadeIn",
+      "duration": 1,
+      "start": 4,
+      "inputs": {},
+      "track": 0,
+      "id": "ghkl0cbqiof2jfwso5k60x"
     }
   ],
   "tracks": 1,

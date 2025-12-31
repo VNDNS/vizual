@@ -7,6 +7,8 @@ const getDirectoryRouter = express.Router()
 getDirectoryRouter.post('/get-directory', (req, res) => {
   const { data: fileType } = req.body
 
+  console.log('fileType', fileType)
+
   let path = ''
   if (fileType === 'plot') {
     path = paths.plots
