@@ -3,6 +3,9 @@
 @use '../../mixins/flex-center' as *;
 
 .timeline {
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
   border: 1px solid $border-color;
   padding-left:10px;
   display: flex;
@@ -45,6 +48,7 @@
   }
   
   &-item {
+    overflow-x: hidden;
     background-color: $background-color-2;
     padding: 4px 6px;
     height: 80px;
@@ -75,8 +79,6 @@
         cursor: grabbing;
       }
     }
-
-    overflow-x: hidden;
   }
 
   &-item-resize-handle {
@@ -147,10 +149,6 @@
       background: rgba(255, 255, 255, 0.5); // Even brighter when clicking
     }
   }
-
-  // Firefox
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 .timeline-list-container {

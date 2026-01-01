@@ -37,8 +37,6 @@ getDirectoryRouter.post('/get-directory', (req, res) => {
     path = dataPath('panel')
   }
 
-  console.log('path', path, 'fileType', fileType)
-
   const files = fs.readdirSync(path)
   res.json({ success: true, files })
 })
