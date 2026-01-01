@@ -7,16 +7,13 @@ import { Camera }       from '../../components/Camera';
 import { Panel }        from '../../components/Panel';
 import { Highlighter }  from '../../components/Highlighter';
 import { sendDurations } from './sendDurations';
-import { FlowChart } from '../../components/FlowChart'
-import { BarChart } from '../../components/BarChart'
 import { Molecule } from '../../components/Molecule'
 
 export default makeScene2D(function* (view) {
   
-  const flowChart0 = new FlowChart(animationData.components[0].configuration)
-  const barChart1 = new BarChart(animationData.components[1].configuration)
-  const molecule2 = new Molecule(animationData.components[2].configuration)
-  const components = [flowChart0, barChart1, molecule2]
+  const molecule0 = new Molecule(animationData.components[0].configuration)
+  const molecule1 = new Molecule(animationData.components[1].configuration)
+  const components = [molecule0, molecule1]
   const clips = []
 
   const camera = new Camera(animationData.cameraInitialState ? { initialX: animationData.cameraInitialState.x, initialY: animationData.cameraInitialState.y, initialZoom: animationData.cameraInitialState.zoom } : {})
@@ -25,16 +22,13 @@ export default makeScene2D(function* (view) {
   view.add(camera)
   view.add(panel)
   view.add(highlighter)
-  camera.add(flowChart0)
-  camera.add(barChart1)
-  camera.add(molecule2)
+  camera.add(molecule0)
+  camera.add(molecule1)
 
 
-  clips.push(flowChart0.fadeIn(['Node 1'],1.8))
-
-  clips.push(barChart1.fadeIn(1.6))
-  clips.push({animation: null, duration: 0.6})
-  clips.push(molecule2.fadeIn(1))
+  clips.push(molecule0.fadeIn(1))
+  clips.push({animation: null, duration: 2})
+  clips.push(molecule0.fadeOut(1))
 
   sendDurations(clips)
 

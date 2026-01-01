@@ -7,8 +7,6 @@ const getDirectoryRouter = express.Router()
 getDirectoryRouter.post('/get-directory', (req, res) => {
   const { data: fileType } = req.body
 
-  console.log('fileType', fileType)
-
   let path = ''
   if (fileType === 'plot') {
     path = paths.plots
@@ -35,7 +33,11 @@ getDirectoryRouter.post('/get-directory', (req, res) => {
     path = paths.dataPath('videos')
   } else if (fileType === 'video-analysis') {
     path = dataPath('video-analysis')
+  } else if (fileType === 'panel') {
+    path = dataPath('panel')
   }
+
+  console.log('path', path, 'fileType', fileType)
 
   const files = fs.readdirSync(path)
   res.json({ success: true, files })

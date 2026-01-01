@@ -7,7 +7,6 @@ export const ExportScene = () => {
 
   const exportScene = (fileName: string) => {
 
-    console.log(animation)
     const fullPath = 'motion-canvas/src/animations/' + fileName + '.json'
     const scene = { components: components, animation, tracks: 1, panel:panelData, audio: audioClips, cameraInitialState}
     saveJson(scene, fullPath);

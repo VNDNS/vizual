@@ -28,15 +28,12 @@ export const FileSelection = ({ onDataChange, directory }: FileSelectionProps) =
   const isFirstRender = useRef(true)
 
   useEffect(() => {
-    console.log('currentDataFile', currentDataFile, isFirstRender.current)
     // if (isFirstRender.current) {
     //   isFirstRender.current = false
     //   return
     // }
     if (!!currentDataFile) {
-      console.log('hello', currentDataFile)
       const fullPath = 'server/data/' + directory + '/' + currentDataFile
-      console.log('fullPath', fullPath)
       getJson(fullPath).then(data => {
         onDataChange(data)
       })
