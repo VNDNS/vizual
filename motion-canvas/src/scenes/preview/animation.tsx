@@ -13,7 +13,8 @@ export default makeScene2D(function* (view) {
   
   const molecule0 = new Molecule(animationData.components[0].configuration)
   const molecule1 = new Molecule(animationData.components[1].configuration)
-  const components = [molecule0, molecule1]
+  const molecule2 = new Molecule(animationData.components[2].configuration)
+  const components = [molecule0, molecule1, molecule2]
   const clips = []
 
   const camera = new Camera(animationData.cameraInitialState ? { initialX: animationData.cameraInitialState.x, initialY: animationData.cameraInitialState.y, initialZoom: animationData.cameraInitialState.zoom } : {})
@@ -24,11 +25,14 @@ export default makeScene2D(function* (view) {
   view.add(highlighter)
   camera.add(molecule0)
   camera.add(molecule1)
+  camera.add(molecule2)
 
 
   clips.push(molecule0.fadeIn(1))
-  clips.push({animation: null, duration: 2})
-  clips.push(molecule0.fadeOut(1))
+
+  clips.push(molecule1.fadeIn(1))
+
+  clips.push(molecule2.fadeIn(1))
 
   sendDurations(clips)
 

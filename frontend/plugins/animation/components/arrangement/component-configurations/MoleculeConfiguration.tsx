@@ -1,7 +1,9 @@
+import { useState } from "react"
+import { FileDisplay } from "../../../../common/components/FileDisplay"
 import { useAnimation } from "../../../context"
 import { useAnimationHooks } from "../../../hooks/useAnimationHooks"
 import { ComponentAnimation } from "../../animation/ComponentAnimation"
-import { FileSelection } from "../../common/FileSelection"
+import { getJson } from "../../../../common/requests/get-json"
 
 export const MoleculeConfiguration = () => {
 
@@ -10,17 +12,22 @@ export const MoleculeConfiguration = () => {
 
   const component = getSelectedComponent()
 
-  const setData = (data: any) => {
+
+  const setData = (file: string) => {
     if (component) {
-      component.configuration.data = data
-      setComponents([...components])
+      const fullPath = 'server/data/molecule/' + file
+      getJson(fullPath).then((data: any) => {
+        component.configuration.file = file
+        component.configuration.data = data
+        setComponents([...components])
+      })
     }
   }
 
   return (
     <div className="molecule-configuration">
       <div className="inputs">
-        <FileSelection onDataChange={setData} directory="molecule" />
+        <FileDisplay directoryKey="molecule" state={component?.configuration?.file} setState={setData} />
       </div>
       <div className="animations">
         <ComponentAnimation label="fadeIn" type="molecule" method="fadeIn" />

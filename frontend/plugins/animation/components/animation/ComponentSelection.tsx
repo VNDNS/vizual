@@ -26,6 +26,7 @@ export const ComponentSelection = () => {
     const component: ComponentUI = {
       type: fileType,
       configuration: {
+        file: files[0],
         data: data,
         x: 0,
         y: 0, 

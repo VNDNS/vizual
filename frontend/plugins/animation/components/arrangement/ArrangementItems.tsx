@@ -1,29 +1,7 @@
 import { useAnimation } from "../../context";
+import { ArrangementItem } from "./ArrangementItem.1";
 import { Container } from "./Container";
 import { FlowChart } from "./FlowChart";
-import { useHandleComponentMouseDown } from "./useHandleComponentMouseDown";
-
-const ArrangementItem = ({props}: any) => {
-
-  const handleMouseDown = useHandleComponentMouseDown(props.id, "component");
-  const { color, name, configuration } = props
-  const { width, height, x, y } = configuration
-  const { selectedItems } = useAnimation();
-
-  const groupProps = {
-    transform: `translate(${x}, ${y})`,
-    onMouseDown: handleMouseDown,
-    onDragStart: (e: React.DragEvent) => e.preventDefault(),
-    className: "arrangement-item"
-  };
-
-  return (
-    <g {...groupProps}>
-      <rect x={x - width / 2} y={y - height / 2} width={width} height={height} fill={color} rx={10} ry={10} />
-      <text x={x} y={y} textAnchor="middle" dominantBaseline="middle" fill="white" fontSize={32}>{name}</text>
-    </g>
-  )
-}
 
 export const ArrangementItems = () => {
 

@@ -1,10 +1,14 @@
 import { useAnimation } from "@context/context";
+import { useAnimationHooks } from "@context/hooks/useAnimationHooks";
 import { useComputed } from "@context/hooks/useComputed";
 
 export const DebugOverlay = () => {
 
   const { origin, draggingElement, debug, selectedItems, camera } = useAnimation();
   const { draggingStartScreen, draggingCurrentScreen, isDragging } = useComputed();
+  const { getSelectedComponent } = useAnimationHooks();
+
+  const selectedComponent = getSelectedComponent();
 
   if(!debug) return null
 
@@ -18,6 +22,7 @@ export const DebugOverlay = () => {
         <div>isDragging: {isDragging ? "true" : "false"}</div>
         <div>selectedItems: {selectedItems.length}</div>
         <div>camera zoom: {Math.floor(1920/camera.width*100)}%</div>
+        <div>selected component: {selectedComponent?.name}</div>
       </text>
     </div>
   );
