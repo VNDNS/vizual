@@ -8,6 +8,7 @@ const ArrangementItem = ({props}: any) => {
   const handleMouseDown = useHandleComponentMouseDown(props.id, "component");
   const { color, name, configuration } = props
   const { width, height, x, y } = configuration
+  const { selectedItems } = useAnimation();
 
   const groupProps = {
     transform: `translate(${x}, ${y})`,

@@ -1,6 +1,5 @@
 import { useAnimation } from "@context/context";
 
-
 export const useHandleComponentMouseDown = (id: string, itemType: string) => {
   const { setDraggingElement, setSelectedItems, selectedItems, setSelectedComponent } = useAnimation();
 
